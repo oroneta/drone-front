@@ -1,7 +1,9 @@
-version: "3.1"
+version: "3.8"
 services:
-    db:
+    oroneta.drone-front.db:
         image: mysql
+        container_name: oroneta.drone-front.db
+        restart: unless-stopped
         ports: 
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
@@ -12,24 +14,28 @@ services:
         volumes:
             - ../dump:/docker-entrypoint-initdb.d
             - ../conf:/etc/mysql/conf.d
-            - mysql:/var/lib/mysql
+            - oroneta.drone-front.mysql:/var/lib/mysql
         networks:
             - default
-    www:
-        build: ./php.Dockerfile
+    oroneta.drone-front.www:
+        container_name: oroneta.drone-front.www
+        restart: unless-stopped
+        build: ./www
         ports: 
             - "80:80"
         volumes:
             - ../www:/var/www/html
         links:
-            - db
+            - oroneta.drone-front.db
         networks:
             - default
-    phpmyadmin:
+    oroneta.drone-front.phpmyadmin:
         # image: phpmyadmin/phpmyadmin
         image: linuxserver/phpmyadmin
+        restart: unless-stopped
+        container_name: oroneta.drone-front.phpmyadmin
         links: 
-            - db:db
+            - oroneta.drone-front.db
         ports:
             - 8000:80
         environment:
@@ -37,4 +43,4 @@ services:
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 
 volumes:
-    mysql:
+    oroneta.drone-front.mysql:
