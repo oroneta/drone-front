@@ -9,9 +9,11 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_DATABASE: dbname
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            MYSQL_USER: Oroneta_Admin
+            MYSQL_PASSWORD: Oroneta_Password
+            MYSQL_ROOT_PASSWORD: Oroneta_Password 
         volumes:
+            - /etc/timezone:/etc/timezone:ro
             - ../dump:/docker-entrypoint-initdb.d
             - ../conf:/etc/mysql/conf.d
             - oroneta.drone-front.mysql:/var/lib/mysql
@@ -24,7 +26,7 @@ services:
         ports: 
             - "80:80"
         volumes:
-            - ../www:/var/www/html
+            - oroneta.drone-front.www:/var/www/html
         links:
             - oroneta.drone-front.db
         networks:
@@ -37,10 +39,9 @@ services:
         links: 
             - oroneta.drone-front.db
         ports:
-            - 8000:80
+            - 8081:80
         environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            PMA_HOST: oroneta.drone-front.db
 volumes:
     oroneta.drone-front.mysql:
+    oroneta.drone-front.www:
