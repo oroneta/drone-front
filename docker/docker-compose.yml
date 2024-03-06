@@ -27,8 +27,6 @@ services:
             dockerfile: ./docker/www/Dockerfile
         ports: 
             - "80:80"
-        volumes:
-            - oroneta.drone-front.www:/var/www/html
         depends_on:
             - oroneta.drone-front.db
 
@@ -36,7 +34,7 @@ services:
 
     oroneta.drone-front.phpmyadmin:
         # image: phpmyadmin/phpmyadmin
-        image: linuxserver/phpmyadmin
+        image: linuxserver/phpmyadmin:latest
         restart: unless-stopped
         container_name: oroneta.drone-front.phpmyadmin
         depends_on: 
@@ -53,4 +51,3 @@ services:
 
 volumes:
     oroneta.drone-front.mysql:
-    oroneta.drone-front.www:
