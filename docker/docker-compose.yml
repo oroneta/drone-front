@@ -8,40 +8,51 @@ services:
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
-            MYSQL_DATABASE: dbname
-            MYSQL_USER: Oroneta_Admin
-            MYSQL_PASSWORD: Oroneta_Password
-            MYSQL_ROOT_PASSWORD: Oroneta_Password 
+            MYSQL_DATABASE: ${DB_NAME}
+            MYSQL_USER: ${DB_USER}
+            MYSQL_PASSWORD: ${DB_PASS}
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
         volumes:
+            - /etc/timezone:/etc/timezone:ro
             - /etc/timezone:/etc/timezone:ro
             - ../dump:/docker-entrypoint-initdb.d
             - ../conf:/etc/mysql/conf.d
             - oroneta.drone-front.mysql:/var/lib/mysql
-        networks:
-            - default
+
+
     oroneta.drone-front.www:
         container_name: oroneta.drone-front.www
         restart: unless-stopped
-        build: ./www
+        build: 
+            context: ..
+            dockerfile: ./docker/www/Dockerfile
         ports: 
             - "80:80"
         volumes:
             - oroneta.drone-front.www:/var/www/html
-        links:
+        depends_on:
             - oroneta.drone-front.db
-        networks:
-            - default
+
+        # network_mode: "host"
+
     oroneta.drone-front.phpmyadmin:
         # image: phpmyadmin/phpmyadmin
         image: linuxserver/phpmyadmin
         restart: unless-stopped
         container_name: oroneta.drone-front.phpmyadmin
-        links: 
+        depends_on: 
             - oroneta.drone-front.db
         ports:
-            - 8081:80
+            - "8081:80"
         environment:
+            # PMA_HOST: ${DB_HOST}
             PMA_HOST: oroneta.drone-front.db
+            # PMA_PORT: ${DB_PORT}
+
+        # network_mode: "host"
+
+
 volumes:
     oroneta.drone-front.mysql:
+    oroneta.drone-front.www:
     oroneta.drone-front.www:

@@ -1,8 +1,10 @@
 FROM php:8.0.0-apache
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN rm -rf ../../www/html
-COPY ../../www /var/www/html
+WORKDIR /var/www/html
+
+RUN rm -rf ./*
+COPY ../www .
 
 RUN docker-php-ext-install mysqli
 # Include alternative DB driver
@@ -15,6 +17,8 @@ RUN apt-get update \
     && apt-get install -y libonig-dev \
     && rm -rf /var/lib/apt/lists/* \
     && docker-php-ext-install zip
+
+
 
 
 
