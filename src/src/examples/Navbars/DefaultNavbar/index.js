@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-react/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import { useState, useEffect } from "react";
 
@@ -114,46 +97,58 @@ function DefaultNavbar({ transparent, light, action }) {
             fontWeight="medium"
             sx={{
               margin: "0 auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              gridColumnGap: "0.5rem",
             }}
           >
-            VISION UI FREE
+            <svg width="30" height="30" viewBox="0 0 637 637" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M529 292C419.291 380.181 319.57 414.739 99 462.5C179.445 424.114 224.055 402.283 292 356C208.926 345.973 175.23 325.677 119.5 284.5C278.568 310.897 368.137 315.682 529 292Z" fill="white"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M386.674 296.013C321.164 256.489 278.685 227.72 241 174C250.348 233.213 263.967 262.426 294.884 296.037C325.41 297.438 355.312 297.45 386.674 296.013ZM402.005 305.22C368.455 307.208 336.863 307.595 304.855 306.452C306.019 307.625 307.203 308.807 308.409 310L403 305.815C402.668 305.617 402.336 305.418 402.005 305.22Z" fill="white"/>
+            </svg>
+            <div
+              sx={{
+                paddingLeft: "1px"
+              }}
+            >ORONETA</div>
           </VuiTypography>
         </VuiBox>
-        <VuiBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
-          <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
-          <DefaultNavbarLink icon="person" name="profile" route="/profile" />
-          <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" />
-          <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
+        <VuiBox sx={{display:"flex", justifyContent:"space-between"}}>
+          <VuiBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0} mr={10}>
+            <DefaultNavbarLink icon="account_circle" name="sign up" route="/authentication/sign-up" />
+            <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
+          </VuiBox>
+          {action &&
+            (action.type === "internal" ? (
+              <VuiBox display={{ xs: "none", lg: "inline-block" }}>
+                <VuiButton
+                  component={Link}
+                  to={action.route}
+                  // variant="gradient"
+                  color={action.color ? action.color : "info"}
+                  size="small"
+                >
+                  {action.label}
+                </VuiButton>
+              </VuiBox>
+            ) : (
+              <VuiBox display={{ xs: "none", lg: "inline-block" }}>
+                <VuiButton
+                  component="a"
+                  href={action.route}
+                  target="_blank"
+                  rel="noreferrer"
+                  color={action.color ? action.color : "info"}
+                  sx={({ typography: { size }, functions: { pxToRem } }) => ({
+                    fontSize: pxToRem(size.sm),
+                  })}
+                >
+                  {action.label}
+                </VuiButton>
+              </VuiBox>
+            ))}
         </VuiBox>
-        {action &&
-          (action.type === "internal" ? (
-            <VuiBox display={{ xs: "none", lg: "inline-block" }}>
-              <VuiButton
-                component={Link}
-                to={action.route}
-                variant="gradient"
-                color={action.color ? action.color : "info"}
-                size="small"
-              >
-                {action.label}
-              </VuiButton>
-            </VuiBox>
-          ) : (
-            <VuiBox display={{ xs: "none", lg: "inline-block" }}>
-              <VuiButton
-                component="a"
-                href={action.route}
-                target="_blank"
-                rel="noreferrer"
-                color={action.color ? action.color : "info"}
-                sx={({ typography: { size }, functions: { pxToRem } }) => ({
-                  fontSize: pxToRem(size.sm),
-                })}
-              >
-                {action.label}
-              </VuiButton>
-            </VuiBox>
-          ))}
         <VuiBox
           display={{ xs: "inline-block", lg: "none" }}
           lineHeight={0}

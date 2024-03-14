@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-react/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
@@ -47,11 +29,11 @@ function SignIn() {
 
   return (
     <CoverLayout
-      title="Nice to see you!"
+      title="Ready to fly!"
       color="white"
       description="Enter your email and password to sign in"
       premotto="INSPIRED BY THE FUTURE:"
-      motto="THE VISION UI DASHBOARD"
+      motto="THE VISION OF NEW CITIES"
       image={bgSignIn}
     >
       <VuiBox component="form" role="form">

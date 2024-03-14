@@ -1,21 +1,3 @@
-/*!
-
-=========================================================
-* Vision UI Free React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-react/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 import { useState } from "react";
 
 // react-router-dom components
@@ -58,10 +40,10 @@ function SignIn() {
     <CoverLayout
       title="Welcome!"
       color="white"
-      description="Use these awesome forms to login or create new account in your project for free."
+      description="One step away from your account to control your future"
       image={bgSignIn}
       premotto="INSPIRED BY THE FUTURE:"
-      motto="THE VISION UI DASHBOARD"
+      motto="THE VISION OF NEW CITIES"
       cardContent
     >
       <GradientBorder borderRadius={borders.borderRadius.form} minWidth="100%" maxWidth="100%">
@@ -180,6 +162,30 @@ function SignIn() {
           >
             or
           </VuiTypography>
+          <VuiBox mb={2}>
+            <VuiBox mb={1} ml={0.5}>
+              <VuiTypography component="label" variant="button" color="white" fontWeight="medium">
+                Company ID
+              </VuiTypography>
+            </VuiBox>
+            <GradientBorder
+              minWidth="100%"
+              borderRadius={borders.borderRadius.lg}
+              padding="1px"
+              backgroundImage={radialGradient(
+                palette.gradients.borderLight.main,
+                palette.gradients.borderLight.state,
+                palette.gradients.borderLight.angle
+              )}
+            >
+              <VuiInput
+                placeholder="Your company ID..."
+                sx={({ typography: { size } }) => ({
+                  fontSize: size.sm,
+                })}
+              />
+            </GradientBorder>
+          </VuiBox>
           <VuiBox mb={2}>
             <VuiBox mb={1} ml={0.5}>
               <VuiTypography component="label" variant="button" color="white" fontWeight="medium">
