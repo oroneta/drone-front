@@ -30,7 +30,7 @@ function Billing() {
             <Grid item xs={12} lg={7} xl={8}>
               <Grid container spacing={3}>
                 <Grid item xs={12} xl={6}>
-                  <MasterCard number={7812213908237916} valid="05/24" cvv="09X" />
+                  <MasterCard number={"523503516763****"} valid="05/30" cvv="***" />
                 </Grid>
                 <Grid item xs={12} md={12} xl={6}>
                   <CreditBalance />

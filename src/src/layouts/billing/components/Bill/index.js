@@ -89,7 +89,7 @@ function Bill({ name, company, email, vat, noGutter }) {
           </VuiTypography>
         </VuiBox>
         <VuiTypography variant="caption" color="text">
-          VAT Number:&nbsp;&nbsp;&nbsp;
+          CIF Number:&nbsp;&nbsp;&nbsp;
           <VuiTypography variant="caption" fontWeight="regular" color="text">
             {vat}
           </VuiTypography>

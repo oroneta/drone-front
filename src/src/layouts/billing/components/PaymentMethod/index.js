@@ -48,7 +48,7 @@ function PaymentMethod() {
             >
               <Mastercard width="21px" />
               <VuiTypography pl={2} variant="button" color="white" fontWeight="medium">
-                7812 2139 0823 XXXX
+                5235 0351 6763 ****
               </VuiTypography>
               <VuiBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">
@@ -71,7 +71,7 @@ function PaymentMethod() {
             >
               <Visa width="25px" />
               <VuiTypography pl={2} variant="button" color="white" fontWeight="medium">
-                7812 2139 0823 XXXX
+                4812 2139 0823 ****
               </VuiTypography>
               <VuiBox ml="auto" lineHeight={0}>
                 <Tooltip title="Edit Card" placement="top">
