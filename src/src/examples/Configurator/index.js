@@ -90,7 +90,7 @@ function Configurator() {
             Vision UI Configurator
           </VuiTypography>
           <VuiTypography variant="body2" color="white" fontWeight="bold">
-            See our dashboard options.
+            Change your configuration
           </VuiTypography>
         </VuiBox>
 
@@ -111,7 +111,7 @@ function Configurator() {
 
       <Divider light />
 
-      <VuiBox pt={1.25} pb={3} px={3}>
+      { /*<VuiBox pt={1.25} pb={3} px={3}>
         <VuiBox>
           <VuiTypography variant="h6" color="white">
             Sidenav Colors
@@ -194,7 +194,6 @@ function Configurator() {
             Navbar Fixed
           </VuiTypography>
 
-          {/* <Switch checked={fixedNavbar} onChange={handleFixedNavbar} color="info" /> */}
           <VuiSwitch checked={fixedNavbar} onChange={handleFixedNavbar} color="info" />
         </VuiBox>
 
@@ -269,7 +268,7 @@ function Configurator() {
             </VuiButton>
           </VuiBox>
         </VuiBox>
-      </VuiBox>
+      </VuiBox> */}
     </ConfiguratorRoot>
   );
 }
