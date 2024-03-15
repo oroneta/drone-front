@@ -8,7 +8,7 @@ import colors from 'assets/theme/base/colors';
 import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const SatisfactionRate = () => {
+const ActiveEmployees = () => {
 	const { info, gradients } = colors;
 	const { cardContent } = gradients;
 
@@ -16,10 +16,10 @@ const SatisfactionRate = () => {
 		<Card sx={{ height: '340px' }}>
 			<VuiBox display='flex' flexDirection='column'>
 				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='4px'>
-					Satisfaction Rate
+					Active employees
 				</VuiTypography>
 				<VuiTypography variant='button' color='text' fontWeight='regular' mb='20px'>
-					From all projects
+					From your team
 				</VuiTypography>
 				<VuiBox sx={{ alignSelf: 'center', justifySelf: 'center', zIndex: '-1' }}>
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
@@ -78,7 +78,7 @@ const SatisfactionRate = () => {
 							95%
 						</VuiTypography>
 						<VuiTypography color='text' variant='caption' fontWeight='regular'>
-							Based on likes
+							Users
 						</VuiTypography>
 					</VuiBox>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
@@ -90,4 +90,4 @@ const SatisfactionRate = () => {
 	);
 };
 
-export default SatisfactionRate;
+export default ActiveEmployees;

@@ -90,7 +90,7 @@ function CoverLayout({
             {premotto}
           </VuiTypography>
           <VuiTypography
-            textAlign={cardContent ? "center" : "start"}
+            textAlign="center"
             variant="h2"
             fontWeight="bold"
             color="logo"
