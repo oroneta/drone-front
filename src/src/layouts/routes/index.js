@@ -1,35 +1,19 @@
-/*!
 
-=========================================================
-* Vision UI Free React - v1.0.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/vision-ui-free-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com/)
-* Licensed under MIT (https://github.com/creativetimofficial/vision-ui-free-react/blob/master LICENSE.md)
-
-* Design and Coded by Simmmple & Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 import { Card, Stack } from "@mui/material";
 // @mui material components
 import Grid from "@mui/material/Grid";
 import colors from "assets/theme/base/colors";
 
-// Vision UI Dashboard React base styles
+// Oroneta base styles
 import linearGradient from "assets/theme/functions/linearGradient";
 
-// Vision UI Dashboard React components
+// Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiProgress from "components/VuiProgress";
 import VuiTypography from "components/VuiTypography";
 
-// Vision UI Dashboard React contexts
+// Oroneta contexts
 import { setDirection, useVisionUIController } from "context";
 import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
 import BarChart from "examples/Charts/BarCharts/BarChart";
@@ -38,20 +22,20 @@ import BarChart from "examples/Charts/BarCharts/BarChart";
 import LineChart from "examples/Charts/LineCharts/LineChart";
 import Footer from "examples/Footer";
 
-// Vision UI Dashboard React example components
+// Oroneta example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import OrderOverview from "layouts/rtl/components/OrderOverview";
-import Projects from "layouts/rtl/components/Projects";
-import ReferralTracking from "layouts/rtl/components/ReferralTracking";
-import SatisfactionRate from "layouts/rtl/components/SatisfactionRate";
+import OrderOverview from "layouts/routes/components/OrderOverview";
+import Projects from "layouts/routes/components/Projects";
+import ReferralTracking from "layouts/routes/components/ReferralTracking";
+import SatisfactionRate from "layouts/routes/components/SatisfactionRate";
 
 // Dashboard layout components
-import WelcomeMark from "layouts/rtl/components/WelcomeMark";
-import { barChartDataDashboard } from "layouts/rtl/data/barChartData";
-import { barChartOptionsDashboard } from "layouts/rtl/data/barChartOptions";
-import { lineChartDataDashboard } from "layouts/rtl/data/lineChartData";
-import { lineChartOptionsDashboard } from "layouts/rtl/data/lineChartOptions";
+import WelcomeMark from "layouts/routes/components/WelcomeMark";
+import { barChartDataDashboard } from "layouts/routes/data/barChartData";
+import { barChartOptionsDashboard } from "layouts/routes/data/barChartOptions";
+import { lineChartDataDashboard } from "layouts/routes/data/lineChartData";
+import { lineChartOptionsDashboard } from "layouts/routes/data/lineChartOptions";
 import { useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 

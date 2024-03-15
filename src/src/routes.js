@@ -20,23 +20,23 @@
   10. The `component` key is used to store the component of its route.
 */
 
-// Vision UI Dashboard React layouts
+// Oroneta layouts
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
+import Drones from "layouts/drones";
+import Map from "layouts/map";
+import Routes from "layouts/routes";
+//
 import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+import Company from "layouts/company";
 
-// Vision UI Dashboard React icons
-import { IoRocketSharp } from "react-icons/io5";
-import { IoIosDocument } from "react-icons/io";
+// Oroneta icons
 import { BsFillPersonFill } from "react-icons/bs";
-import { IoBuild } from "react-icons/io5";
 import { BsCreditCardFill } from "react-icons/bs";
 import { IoStatsChart } from "react-icons/io5";
-import { IoHome } from "react-icons/io5";
+import { MdRoute } from "react-icons/md";
+import { FaPhoenixSquadron, FaMap } from "react-icons/fa";
+import OronetaLandLogo from "examples/Icons/OronetaLandLogo";
 
 const routes = [
   {
@@ -44,38 +44,39 @@ const routes = [
     name: "Dashboard",
     key: "dashboard",
     route: "/dashboard",
-    icon: <IoHome size="15px" color="inherit" />,
+    icon: <IoStatsChart size="15px" color="inherit" />,
     component: Dashboard,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
-    route: "/tables",
-    icon: <IoStatsChart size="15px" color="inherit" />,
-    component: Tables,
+    name: "Drones",
+    key: "drones",
+    route: "/drones",
+    icon: <FaPhoenixSquadron size="15px" color="inherit" />,
+    component: Drones,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Billing",
-    key: "billing",
-    route: "/billing",
-    icon: <BsCreditCardFill size="15px" color="inherit" />,
-    component: Billing,
+    name: "Map",
+    key: "map",
+    route: "/map",
+    icon: <FaMap size="15px" color="inherit" />,
+    component: Map,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "RTL",
-    key: "rtl",
-    route: "/rtl",
-    icon: <IoBuild size="15px" color="inherit" />,
-    component: RTL,
+    name: "Routes",
+    key: "routes",
+    route: "/routes",
+    icon: <MdRoute size="18px" color="inherit" />,
+    component: Routes,
     noCollapse: true,
   },
-  { type: "title", title: "Account Pages", key: "account-pages" },
+  // ------------------------------
+  { type: "title", title: "Account", key: "account-pages" },
   {
     type: "collapse",
     name: "Profile",
@@ -87,20 +88,20 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    route: "/authentication/sign-in",
-    icon: <IoIosDocument size="15px" color="inherit" />,
-    component: SignIn,
+    name: "Company",
+    key: "company",
+    route: "/company",
+    icon: <OronetaLandLogo size="22px" color="inherit" />,
+    component: Company,
     noCollapse: true,
   },
   {
     type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    route: "/authentication/sign-up",
-    icon: <IoRocketSharp size="15px" color="inherit" />,
-    component: SignUp,
+    name: "Billing",
+    key: "billing",
+    route: "/billing",
+    icon: <BsCreditCardFill size="15px" color="inherit" />,
+    component: Billing,
     noCollapse: true,
   },
 ];

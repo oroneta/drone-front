@@ -9,11 +9,11 @@ import Menu from "@mui/material/Menu";
 
 // react-router components
 import { Link } from "react-router-dom";
-// Vision UI Dashboard React components
+// Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiButton from "components/VuiButton";
 
-// Vision UI Dashboard React example components
+// Oroneta example components
 import DefaultNavbarLink from "examples/Navbars/DefaultNavbar/DefaultNavbarLink";
 import palette from "assets/theme/base/colors";
 import tripleLinearGradient from "assets/theme/functions/tripleLinearGradient";
