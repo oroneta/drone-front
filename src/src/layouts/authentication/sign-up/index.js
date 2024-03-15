@@ -11,7 +11,7 @@ import Stack from "@mui/material/Stack";
 // Icons
 import { FaApple, FaFacebook, FaGoogle } from "react-icons/fa";
 
-// Vision UI Dashboard React components
+// Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 import VuiInput from "components/VuiInput";

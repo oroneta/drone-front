@@ -3,7 +3,7 @@ import { useState } from "react";
 // react-router-dom components
 import { Link } from "react-router-dom";
 
-// Vision UI Dashboard React components
+// Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 import VuiInput from "components/VuiInput";

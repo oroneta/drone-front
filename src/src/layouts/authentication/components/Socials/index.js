@@ -1,6 +1,6 @@
 
 
-// Vision UI Dashboard React components
+// Oroneta components
 import VuiButton from "components/VuiButton";
 import VuiBox from "components/VuiBox";
 
