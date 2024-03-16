@@ -2,60 +2,42 @@
 
 // @mui material components
 import Grid from "@mui/material/Grid";
-import Icon from "@mui/material/Icon";
-import { Card, LinearProgress, Stack } from "@mui/material";
+import { Card } from "@mui/material";
 
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
-import VuiProgress from "components/VuiProgress";
 
 // Oroneta example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
-import linearGradient from "assets/theme/functions/linearGradient";
 
 // Oroneta base styles
-import typography from "assets/theme/base/typography";
-import colors from "assets/theme/base/colors";
+// import colors from "assets/theme/base/colors";
 
 // Dashboard layout components
 import WelcomeMark from "layouts/dashboard/components/WelcomeMark";
-import Projects from "layouts/dashboard/components/Projects";
 // import OrdersOverview from "layouts/dashboard/components/OrderOverview";
 import ActiveEmployees from "layouts/dashboard/components/ActiveEmployees";
 import ChargerStation from "layouts/dashboard/components/ChargerStation";
 
 // React icons
-import { IoIosRocket } from "react-icons/io";
-import { IoGlobe } from "react-icons/io5";
-import { IoBuild } from "react-icons/io5";
-import { IoWallet } from "react-icons/io5";
-import { IoDocumentText } from "react-icons/io5";
-import { FaShoppingCart } from "react-icons/fa";
 import { TbDrone } from "react-icons/tb";
-import { SiFlyway } from "react-icons/si";
 import { FaPlane } from "react-icons/fa";
 import { RiBattery2ChargeFill } from "react-icons/ri";
 import { FaFeatherAlt } from "react-icons/fa";
 
-
-
-
 // Data
 import LineChart from "examples/Charts/LineCharts/LineChart";
-import BarChart from "examples/Charts/BarCharts/BarChart";
 import { lineChartDataDashboard } from "layouts/dashboard/data/lineChartData";
 import { lineChartOptionsDashboard } from "layouts/dashboard/data/lineChartOptions";
-import { barChartDataDashboard } from "layouts/dashboard/data/barChartData";
-import { barChartOptionsDashboard } from "layouts/dashboard/data/barChartOptions";
-import { MapView } from "./components/MapView";
+import { MapView } from '../../examples/MapView';
 
 function Dashboard() {
-  const { gradients } = colors;
-  const { cardContent } = gradients;
+  // const { gradients } = colors;
+  // const { cardContent } = gradients;
 
   return (
     <DashboardLayout>
@@ -133,9 +115,9 @@ function Dashboard() {
               </Card>
             </Grid>
             <Grid item xs={12} lg={6} xl={5}>
-              <Card style={{height: "447.47px"}}>
-                  <MapView />
-              </Card>
+              <MapView height={"447.47px"} borderRadius={"20px"} enableTool={false} zoom={8}/>
+              {/* <Card style={{height: }}>
+              </Card> */}
             </Grid>
           </Grid>
         </VuiBox>

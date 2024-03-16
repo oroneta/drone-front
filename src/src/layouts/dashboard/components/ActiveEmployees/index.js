@@ -23,7 +23,7 @@ const ActiveEmployees = () => {
 				</VuiTypography>
 				<VuiBox sx={{ alignSelf: 'center', justifySelf: 'center', zIndex: '-1' }}>
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
-						<CircularProgress variant='determinate' value={60} size={170} color='info' />
+						<CircularProgress variant='determinate' value={16.6} size={170} color='info' />
 						<VuiBox
 							sx={{
 								top: 0,
@@ -66,7 +66,7 @@ const ActiveEmployees = () => {
 						zIndex: '1000'
 					})}>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
-						0%
+						0
 					</VuiTypography>
 					<VuiBox
 						flexDirection='column'
@@ -75,14 +75,14 @@ const ActiveEmployees = () => {
 						alignItems='center'
 						sx={{ minWidth: '80px' }}>
 						<VuiTypography color='white' variant='h3'>
-							95%
+							1
 						</VuiTypography>
 						<VuiTypography color='text' variant='caption' fontWeight='regular'>
 							Users
 						</VuiTypography>
 					</VuiBox>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
-						100%
+						6
 					</VuiTypography>
 				</VuiBox>
 			</VuiBox>
