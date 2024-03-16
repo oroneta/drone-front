@@ -1,3 +1,8 @@
+// @mui material components
+import Card from "@mui/material/Card";
+// Oroneta components
+import VuiTypography from "components/VuiTypography";
+import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 
 
 // @mui material components
@@ -5,7 +10,6 @@
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import team1 from "assets/images/avatar1.png";
 import team2 from "assets/images/avatar2.png";
@@ -17,17 +21,13 @@ import profile2 from "assets/images/profile-2.png";
 import profile3 from "assets/images/profile-3.png";
 // Oroneta components
 import VuiBox from "components/VuiBox";
-import VuiTypography from "components/VuiTypography";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
-import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 import Footer from "examples/Footer";
 // Oroneta example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 // Overview page components
-import Header from "layouts/profile/components/Header";
-import PlatformSettings from "layouts/profile/components/PlatformSettings";
-import Welcome from "./components/Welcome/index";
-import CarInformations from "./components/CarInformations";
+import Header from "layouts/company/components/Header";
+import EmployeesList from "layouts/company/components/EmployeesList";
 
 function Overview() {
   return (
@@ -46,8 +46,8 @@ function Overview() {
           <Grid
             item
             xs={12}
-            xl={4}
-            xxl={3}
+            xl={8}
+            xxl={8}
             sx={({ breakpoints }) => ({
               minHeight: "400px",
               [breakpoints.only("xl")]: {
@@ -55,26 +55,13 @@ function Overview() {
               },
             })}
           >
-            <Welcome />
+            <EmployeesList />
           </Grid>
           <Grid
             item
             xs={12}
-            xl={5}
-            xxl={6}
-            sx={({ breakpoints }) => ({
-              [breakpoints.only("xl")]: {
-                gridArea: "2 / 1 / 3 / 3",
-              },
-            })}
-          >
-            <CarInformations />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            xl={3}
-            xxl={3}
+            xl={4}
+            xxl={4}
             sx={({ breakpoints }) => ({
               [breakpoints.only("xl")]: {
                 gridArea: "1 / 2 / 2 / 3",
@@ -112,18 +99,15 @@ function Overview() {
         </Grid>
       </VuiBox>
       <Grid container spacing={3} mb="30px">
-        <Grid item xs={12} xl={3} height="100%">
-          <PlatformSettings />
-        </Grid>
-        <Grid item xs={12} xl={9}>
+        <Grid item xs={12} xl={12}>
           <Card>
             <VuiBox display="flex" flexDirection="column" height="100%">
               <VuiBox display="flex" flexDirection="column" mb="24px">
                 <VuiTypography color="white" variant="lg" fontWeight="bold" mb="6px">
-                  Projects
+                  Last defined routes
                 </VuiTypography>
                 <VuiTypography color="text" variant="button" fontWeight="regular">
-                  Architects design houses
+                  Company defined routes
                 </VuiTypography>
               </VuiBox>
               <Grid container spacing={3}>

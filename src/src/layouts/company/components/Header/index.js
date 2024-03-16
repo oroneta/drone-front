@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 // Images
-import burceMars from "assets/images/avatar-simmmple.png";
+import burceMars from "assets/images/OronetaLogo.png";
 // Oroneta base styles
 import breakpoints from "assets/theme/base/breakpoints";
 import VuiAvatar from "components/VuiAvatar";
@@ -16,8 +16,8 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 // Oroneta icons
 import { IoCube } from "react-icons/io5";
-import { IoDocument } from "react-icons/io5";
-import { IoBuild } from "react-icons/io5";
+import { FaUsers } from "react-icons/fa";
+import { FaRegIdCard } from "react-icons/fa6";
 // Oroneta example components
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import { useEffect, useState } from "react";
@@ -111,10 +111,10 @@ function Header() {
               })}
             >
               <VuiTypography variant="lg" color="white" fontWeight="bold">
-                Mark Johnson
+                Oroneta
               </VuiTypography>
               <VuiTypography variant="button" color="text" fontWeight="regular">
-                mark@simmmple.com
+                Aviation Technology Company
               </VuiTypography>
             </VuiBox>
           </Grid>
@@ -124,11 +124,11 @@ function Header() {
                 orientation={tabsOrientation}
                 value={tabValue}
                 onChange={handleSetTabValue}
-                sx={{ background: "transparent", display: "flex", justifyContent: "flex-end" }}
+                sx={{ background: "transparent", display: "flex", justifyContent: "flex-end", marginTop: "15px"}}
               >
-                <Tab label="OVERVIEW" icon={<IoCube color="white" size="16px" />} />
-                <Tab label="TEAMS" icon={<IoDocument color="white" size="16px" />} />
-                <Tab label="PROJECTS" icon={<IoBuild color="white" size="16px" />} />
+                <Tab label="EMPLOYEES" icon={<FaUsers color="white" size="16px" />} />
+                <Tab label="PLAN" icon={<IoCube color="white" size="16px" />} />
+                <Tab label="REGISTRANT" icon={<FaRegIdCard color="white" size="16px" />} />
               </Tabs>
             </AppBar>
           </Grid>
