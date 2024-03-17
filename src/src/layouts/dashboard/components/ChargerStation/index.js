@@ -116,7 +116,7 @@ function ChargerStation() {
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
 						<CircularProgress
 							variant='determinate'
-							value={70}
+							value={74}
 							size={window.innerWidth >= 1024 ? 200 : window.innerWidth >= 768 ? 170 : 200}
 							color='success'
 						/>
@@ -145,7 +145,7 @@ function ChargerStation() {
 											fontSize: '32px'
 										}
 									})}>
-									97%
+									74%
 								</VuiTypography>
 								<VuiTypography color='text' variant='button'>
 									Powered
