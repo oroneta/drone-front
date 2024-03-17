@@ -4,12 +4,12 @@ import Card from "@mui/material/Card";
 import VuiTypography from "components/VuiTypography";
 import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 
-
 // @mui material components
 // @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+
 import Grid from "@mui/material/Grid";
 import team1 from "assets/images/avatar1.png";
 import team2 from "assets/images/avatar2.png";
