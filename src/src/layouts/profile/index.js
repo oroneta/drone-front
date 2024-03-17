@@ -27,14 +27,8 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import Welcome from "./components/Welcome/index";
-// import CarInformations from "./components/CarInformations";
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
-import CarInformations from "layouts/company/components/CarInformations";
-// import { Calendar, dayjsLocalizer } from 'react-big-calendar'
-// import 'react-big-calendar/lib/css/react-big-calendar.css';
-// import dayjs from 'dayjs'
+import Calendario from "./components/Calendar";
+
 
 function Overview() {
   return (
@@ -65,14 +59,9 @@ function Overview() {
             <Welcome />
           </Grid>
           <Grid item xs={12} lg={6} xl={5}>
-              <Card style={{height: "447.47px"}}>
-                <div style={{height: "400px", backgroundColor: "gray", display:"flex", alignItems: "center", borderRadius:"15px"}}>
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateCalendar />
-                  </LocalizationProvider>
-                </div>
-              
-              </Card>
+              {/* <Card style={{height: "447.47px"}}> */}
+                <Calendario />
+              {/* </Card> */}
             </Grid>
           <Grid
             item
@@ -87,11 +76,11 @@ function Overview() {
           >
             <ProfileInfoCard
               title="profile information"
-              description="Hi, I’m Irati Medina, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Hi, I’m Alexis Montalvo, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
               info={{
-                fullName: "Irati Medina",
+                fullName: "Alexis Montalvo Callaú",
                 mobile: "(34) 123 123 123",
-                email: "irati@oroneta.com",
+                email: "amoncal@oroneta.com",
                 location: "Spain",
               }}
               social={[

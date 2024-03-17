@@ -111,10 +111,10 @@ function Header() {
               })}
             >
               <VuiTypography variant="lg" color="white" fontWeight="bold">
-                Irati Medina
+                Alexis Montalvo Callaú
               </VuiTypography>
               <VuiTypography variant="button" color="text" fontWeight="regular">
-                irati@oroneta.com
+                amoncal@oroneta.com
               </VuiTypography>
             </VuiBox>
           </Grid>

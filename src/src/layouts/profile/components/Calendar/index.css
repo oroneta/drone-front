@@ -1,0 +1,14 @@
+.rbc-event {
+    background: #000069;
+    height: 1000px;
+}
+
+.rbc-active {
+    background-color: #000069;
+    padding: 10px;
+    
+}
+
+.rbc-day-bg {
+    background: #9f9fd3;
+}
