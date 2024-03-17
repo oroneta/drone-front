@@ -28,6 +28,27 @@ const Welcome = () => {
             Nice to see you, Alexis Montalvo!
           </VuiTypography>
         </VuiBox>
+        {/* In the middle and center */}
+        <VuiBox display="flex" justifyContent="center" mb="auto">
+          <VuiBox
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            textAlign="center"
+          >
+            <VuiTypography
+              color="white"
+              variant="h3"
+              fontWeight="bold"
+              mb="5px"
+            >
+              Streaks
+            </VuiTypography>
+            <VuiTypography color="white" variant="h2" fontWeight="semibold">
+              43 Days
+            </VuiTypography>
+          </VuiBox>
+        </VuiBox>
         <VuiBox justifySelf="flex-end">
           <VuiTypography
             component="a"

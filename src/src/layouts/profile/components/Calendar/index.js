@@ -27,9 +27,8 @@ function Calendario() {
 			views={['month', 'day', 'agenda']}
 			defaultView='month'
             style={{
-            	height:"100%",
+            	height:"447.47px",
                 width:"100%",
-                backgroundColor: "gray",
             }}
         />
 	)

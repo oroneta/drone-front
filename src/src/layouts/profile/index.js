@@ -24,8 +24,8 @@ import Footer from "examples/Footer";
 // Oroneta example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 // Overview page components
-import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Welcome from "./components/Welcome/index";
 import Calendario from "./components/Calendar";
 
@@ -33,7 +33,7 @@ import Calendario from "./components/Calendar";
 function Overview() {
   return (
     <DashboardLayout>
-      <Header />
+      <DashboardNavbar />
       <VuiBox mt={5} mb={3}>
         <Grid
           container
@@ -58,11 +58,21 @@ function Overview() {
           >
             <Welcome />
           </Grid>
-          <Grid item xs={12} lg={6} xl={5}>
-              {/* <Card style={{height: "447.47px"}}> */}
+          <Grid 
+            item
+            xs={12}
+            xl={5}
+            xxl={6}
+            sx={({ breakpoints }) => ({
+              [breakpoints.only("xl")]: {
+                gridArea: "2 / 1 / 3 / 3",
+              },
+            })}
+            >
+              {/* <Card style={{height: ""}}> */}
                 <Calendario />
               {/* </Card> */}
-            </Grid>
+          </Grid>
           <Grid
             item
             xs={12}
