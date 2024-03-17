@@ -7,10 +7,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
-import team1 from "assets/images/avatar1.png";
-import team2 from "assets/images/avatar2.png";
-import team3 from "assets/images/avatar3.png";
-import team4 from "assets/images/avatar4.png";
+// import team1 from "assets/images/avatar1.png";
+// import team2 from "assets/images/avatar2.png";
+// import team3 from "assets/images/avatar3.png";
+// import team4 from "assets/images/avatar4.png";
 // Images
 import profile1 from "assets/images/profile-1.png";
 import profile2 from "assets/images/profile-2.png";
@@ -27,7 +27,14 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import Welcome from "./components/Welcome/index";
-import CarInformations from "./components/CarInformations";
+// import CarInformations from "./components/CarInformations";
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
+import CarInformations from "layouts/company/components/CarInformations";
+// import { Calendar, dayjsLocalizer } from 'react-big-calendar'
+// import 'react-big-calendar/lib/css/react-big-calendar.css';
+// import dayjs from 'dayjs'
 
 function Overview() {
   return (
@@ -57,19 +64,16 @@ function Overview() {
           >
             <Welcome />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            xl={5}
-            xxl={6}
-            sx={({ breakpoints }) => ({
-              [breakpoints.only("xl")]: {
-                gridArea: "2 / 1 / 3 / 3",
-              },
-            })}
-          >
-            <CarInformations />
-          </Grid>
+          <Grid item xs={12} lg={6} xl={5}>
+              <Card style={{height: "447.47px"}}>
+                <div style={{height: "400px", backgroundColor: "gray", display:"flex", alignItems: "center", borderRadius:"15px"}}>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DateCalendar />
+                  </LocalizationProvider>
+                </div>
+              
+              </Card>
+            </Grid>
           <Grid
             item
             xs={12}
@@ -83,26 +87,26 @@ function Overview() {
           >
             <ProfileInfoCard
               title="profile information"
-              description="Hi, I’m Mark Johnson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Hi, I’m Irati Medina, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
               info={{
-                fullName: "Mark Johnson",
-                mobile: "(44) 123 1234 123",
-                email: "mark@simmmple.com",
-                location: "United States",
+                fullName: "Irati Medina",
+                mobile: "(34) 123 123 123",
+                email: "irati@oroneta.com",
+                location: "Spain",
               }}
               social={[
                 {
-                  link: "https://www.facebook.com/CreativeTim/",
+                  link: "#",
                   icon: <FacebookIcon />,
                   color: "facebook",
                 },
                 {
-                  link: "https://twitter.com/creativetim",
+                  link: "#",
                   icon: <TwitterIcon />,
                   color: "twitter",
                 },
                 {
-                  link: "https://www.instagram.com/creativetimofficial/",
+                  link: "#",
                   icon: <InstagramIcon />,
                   color: "instagram",
                 },
@@ -120,71 +124,47 @@ function Overview() {
             <VuiBox display="flex" flexDirection="column" height="100%">
               <VuiBox display="flex" flexDirection="column" mb="24px">
                 <VuiTypography color="white" variant="lg" fontWeight="bold" mb="6px">
-                  Projects
-                </VuiTypography>
-                <VuiTypography color="text" variant="button" fontWeight="regular">
-                  Architects design houses
+                  Last Routes
                 </VuiTypography>
               </VuiBox>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
                     image={profile1}
-                    label="project #2"
-                    title="modern"
-                    description="As Uber works through a huge amount of internal management turmoil."
+                    label="route #2"
+                    title="UPV"
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "VIEW",
                     }}
-                    authors={[
-                      { image: team1, name: "Elena Morison" },
-                      { image: team2, name: "Ryan Milly" },
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team4, name: "Peterson" },
-                    ]}
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
                     image={profile2}
-                    label="project #1"
-                    title="scandinavian"
-                    description="Music is something that every person has his or her own specific opinion about."
+                    label="route #1"
+                    title="UPV"
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "VIEW",
                     }}
-                    authors={[
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team4, name: "Peterson" },
-                      { image: team1, name: "Elena Morison" },
-                      { image: team2, name: "Ryan Milly" },
-                    ]}
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
                     image={profile3}
-                    label="project #3"
-                    title="minimalist"
-                    description="Different people have different taste, and various types of music."
+                    label="route #3"
+                    title="UPV"
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "VIEW",
                     }}
-                    authors={[
-                      { image: team4, name: "Peterson" },
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team2, name: "Ryan Milly" },
-                      { image: team1, name: "Elena Morison" },
-                    ]}
                   />
                 </Grid>
               </Grid>

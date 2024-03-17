@@ -25,10 +25,13 @@ const CarInformations = () => {
 			})}>
 			<VuiBox display='flex' flexDirection='column'>
 				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='6px'>
-					Car Informations
+					Calendar
 				</VuiTypography>
 				<VuiTypography variant='button' color='text' fontWeight='regular' mb='30px'>
-					Hello, Mark Johnson! Your Car is ready.
+					Hello, Irati Medina! This is your calendar.
+				</VuiTypography>
+				<VuiTypography>
+					Hola Mundo
 				</VuiTypography>
 				<Stack
 					spacing='24px'
@@ -40,6 +43,7 @@ const CarInformations = () => {
 						[breakpoints.up('md')]: {
 							flexDirection: 'row'
 						},
+
 						[breakpoints.only('xl')]: {
 							flexDirection: 'column'
 						}

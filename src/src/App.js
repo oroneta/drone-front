@@ -125,7 +125,7 @@ export default function App() {
               color={sidenavColor}
               brand=""
               brandName="ORONETA"
-              routes={routes}
+              routes={routes}w
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
