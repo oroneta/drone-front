@@ -37,7 +37,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
   const { pathname } = useLocation();
-
+  const session = false;
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({

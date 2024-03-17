@@ -8,7 +8,7 @@ import colors from 'assets/theme/base/colors';
 import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
-const SatisfactionRate = () => {
+const ActiveEmployees = () => {
 	const { info, gradients } = colors;
 	const { cardContent } = gradients;
 
@@ -16,14 +16,14 @@ const SatisfactionRate = () => {
 		<Card sx={{ height: '340px' }}>
 			<VuiBox display='flex' flexDirection='column'>
 				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='4px'>
-					Satisfaction Rate
+					Active employees
 				</VuiTypography>
 				<VuiTypography variant='button' color='text' fontWeight='regular' mb='20px'>
-					From all projects
+					From your team
 				</VuiTypography>
 				<VuiBox sx={{ alignSelf: 'center', justifySelf: 'center', zIndex: '-1' }}>
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
-						<CircularProgress variant='determinate' value={60} size={170} color='info' />
+						<CircularProgress variant='determinate' value={16.6} size={170} color='info' />
 						<VuiBox
 							sx={{
 								top: 0,
@@ -66,7 +66,7 @@ const SatisfactionRate = () => {
 						zIndex: '1000'
 					})}>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
-						0%
+						0
 					</VuiTypography>
 					<VuiBox
 						flexDirection='column'
@@ -75,14 +75,14 @@ const SatisfactionRate = () => {
 						alignItems='center'
 						sx={{ minWidth: '80px' }}>
 						<VuiTypography color='white' variant='h3'>
-							95%
+							1
 						</VuiTypography>
 						<VuiTypography color='text' variant='caption' fontWeight='regular'>
-							Based on likes
+							Users
 						</VuiTypography>
 					</VuiBox>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
-						100%
+						6
 					</VuiTypography>
 				</VuiBox>
 			</VuiBox>
@@ -90,4 +90,4 @@ const SatisfactionRate = () => {
 	);
 };
 
-export default SatisfactionRate;
+export default ActiveEmployees;

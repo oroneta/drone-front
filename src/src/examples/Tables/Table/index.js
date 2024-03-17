@@ -77,7 +77,7 @@ function Table({ columns, rows }) {
             key={uuidv4()}
             component="td"
             p={1}
-            borderBottom={row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null}
+            // borderBottom={row.hasBorder ? `${borderWidth[1]} solid ${light.main}` : null}
           >
             <VuiBox display="flex" alignItems="center" py={0.5} px={1}>
               <VuiBox mr={2}>

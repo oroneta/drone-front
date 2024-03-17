@@ -7,7 +7,7 @@ import { FaEllipsisH } from 'react-icons/fa';
 import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
-function ReferralTracking() {
+function ChargerStation() {
 	const { info, gradients } = colors;
 	const { cardContent } = gradients;
 
@@ -25,7 +25,7 @@ function ReferralTracking() {
 					sx={{ width: '100%' }}
 					mb='40px'>
 					<VuiTypography variant='lg' color='white' mr='auto' fontWeight='bold'>
-						Referral Tracking
+						Charger Station
 					</VuiTypography>
 					<VuiBox
 						display='flex'
@@ -83,10 +83,10 @@ function ReferralTracking() {
 								}
 							})}>
 							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
-								Invited
+								Activated
 							</VuiTypography>
 							<VuiTypography color='white' variant='lg' fontWeight='bold'>
-								145 people
+								20 Stations
 							</VuiTypography>
 						</VuiBox>
 						<VuiBox
@@ -106,17 +106,17 @@ function ReferralTracking() {
 								}
 							})}>
 							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
-								Bonus
+								Disactivated
 							</VuiTypography>
 							<VuiTypography color='white' variant='lg' fontWeight='bold'>
-								1,465
+								3 Stations
 							</VuiTypography>
 						</VuiBox>
 					</Stack>
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
 						<CircularProgress
 							variant='determinate'
-							value={70}
+							value={74}
 							size={window.innerWidth >= 1024 ? 200 : window.innerWidth >= 768 ? 170 : 200}
 							color='success'
 						/>
@@ -133,7 +133,7 @@ function ReferralTracking() {
 							}}>
 							<VuiBox display='flex' flexDirection='column' justifyContent='center' alignItems='center'>
 								<VuiTypography color='text' variant='button' mb='4px'>
-									Safety
+									Most
 								</VuiTypography>
 								<VuiTypography
 									color='white'
@@ -145,10 +145,10 @@ function ReferralTracking() {
 											fontSize: '32px'
 										}
 									})}>
-									9.3
+									74%
 								</VuiTypography>
 								<VuiTypography color='text' variant='button'>
-									Total Score
+									Powered
 								</VuiTypography>
 							</VuiBox>
 						</VuiBox>
@@ -159,4 +159,4 @@ function ReferralTracking() {
 	);
 }
 
-export default ReferralTracking;
+export default ChargerStation;

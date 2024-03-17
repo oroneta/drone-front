@@ -6,6 +6,8 @@ import App from "App";
 
 // Oroneta Context Provider
 import { VisionUIControllerProvider } from "context";
+// import { MapView } from "layouts/dashboard/components/MapView";
+// import { MapContainer, TileLayer } from "react-leaflet";
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

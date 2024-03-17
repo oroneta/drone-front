@@ -21,11 +21,11 @@ const WelcomeMark = () => {
             Welcome back,
           </VuiTypography>
           <VuiTypography color="white" variant="h3" fontWeight="bold" mb="18px">
-            Mark Johnson
+            Irati Medina
           </VuiTypography>
           <VuiTypography color="text" variant="h6" fontWeight="regular" mb="auto">
             Glad to see you again!
-            <br /> Ask me anything.
+            <br /> Ready to be your Copilot
           </VuiTypography>
         </VuiBox>
         <VuiTypography
@@ -51,7 +51,7 @@ const WelcomeMark = () => {
             },
           }}
         >
-          Tap to record
+          Watch Company
           <Icon sx={{ fontWeight: "bold", ml: "5px" }}>arrow_forward</Icon>
         </VuiTypography>
       </VuiBox>
