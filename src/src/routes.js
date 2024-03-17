@@ -30,6 +30,9 @@ import Billing from "layouts/billing";
 import Profile from "layouts/profile";
 import Company from "layouts/company";
 
+import SignIn from "layouts/authentication/sign-in";
+import SignUp from "layouts/authentication/sign-up";
+
 // Oroneta icons
 import { BsFillPersonFill } from "react-icons/bs";
 import { BsCreditCardFill } from "react-icons/bs";
@@ -102,6 +105,23 @@ const routes = [
     route: "/billing",
     icon: <BsCreditCardFill size="15px" color="inherit" />,
     component: Billing,
+    noCollapse: true,
+  },
+  // ------------------------------
+  {
+    type: "internal",
+    name: "Sign In",
+    key: "sign-in",
+    route: "/authentication/sign-in",
+    component: SignIn,
+    noCollapse: true,
+  },
+  {
+    type: "internal",
+    name: "Sign Up",
+    key: "sign-up",
+    route: "/authentication/sign-up",
+    component: SignUp,
     noCollapse: true,
   },
 ];
