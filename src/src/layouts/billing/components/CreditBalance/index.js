@@ -21,7 +21,7 @@ import { MdOutlineDomain } from "react-icons/md";
 
 const CreditBalance = () => {
   return (
-    <Card sx={{ padding: "30px" }}>
+    <Card className="Card-Root" sx={{ padding: "30px" }}>
       <VuiBox display="flex" flexDirection="column">
         <VuiBox
           mb="32px"
@@ -54,7 +54,7 @@ const CreditBalance = () => {
               justifyContent="center"
               alignItems="center"
               sx={{
-                background: "rgba(34, 41, 78, 0.7)",
+                background: "#1e1f23",
                 borderRadius: "50%",
                 width: "42px",
                 height: "42px",

@@ -32,16 +32,9 @@ function CoverLayout({
   cardContent,
   children,
 }) {
-  const { gradients } = colors;
+  // const { gradients } = colors;
   return (
-    <PageLayout
-      background={tripleLinearGradient(
-        gradients.cover.main,
-        gradients.cover.state,
-        gradients.cover.stateSecondary,
-        gradients.cover.angle
-      )}
-    >
+    <PageLayout>
       <DefaultNavbar
         action={{
           type: "external",
@@ -79,13 +72,24 @@ function CoverLayout({
           alignItems="center"
           flexDirection="column"
         >
+          {/* VuiBox as a transparent bg */}
+          <VuiBox
+            height="100%"
+            width="100%"
+            position="absolute"
+            top={0}
+            left={0}
+            sx={{
+              background: "linear-gradient(90deg, rgba(0,0,0,0), rgba(12, 11, 16, 0.4), rgba(12, 11, 16, 0.9), rgba(12, 11, 16, 1))",
+            }}
+          />
           <VuiTypography
             textAlign={cardContent ? "center" : "start"}
             variant="subtitle1"
             fontWeight="medium"
             color="white"
             mb="10px"
-            sx={{ mb: 1, letterSpacing: "8px" }}
+            sx={{ mb: 1, letterSpacing: "8px", zIndex: 9 }}
           >
             {premotto}
           </VuiTypography>
@@ -96,7 +100,7 @@ function CoverLayout({
             color="logo"
             mb="10px"
             textGradient
-            sx={{ letterSpacing: "8px" }}
+            sx={{ letterSpacing: "8px", zIndex: 9}}
           >
             {motto}
           </VuiTypography>
@@ -141,6 +145,9 @@ function CoverLayout({
                     fontWeight="bold"
                     color={color}
                     mb="10px"
+                    sx={{
+                      zIndex: 9,
+                    }}
                   >
                     {title}
                   </VuiTypography>
@@ -150,6 +157,7 @@ function CoverLayout({
                     sx={({ typography: { size }, functions: { pxToRem } }) => ({
                       fontWeight: "regular",
                       fontSize: size.sm,
+                      zIndex: 9
                     })}
                     color="white"
                   >

@@ -17,7 +17,7 @@ import Invoice from "layouts/billing/components/Invoice";
 function Invoices() {
   let todayUS = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
   return (
-    <Card id="delete-account" sx={{ height: "100%" }}>
+    <Card className="Card-Root" id="delete-account" sx={{ height: "100%" }}>
       <VuiBox mb="28px" display="flex" justifyContent="space-between" alignItems="center">
         <VuiTypography variant="h6" fontWeight="medium" color="white">
           Last Invoices

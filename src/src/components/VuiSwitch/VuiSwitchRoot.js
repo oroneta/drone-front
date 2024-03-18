@@ -12,7 +12,7 @@ export default styled(Switch)(({ theme, ownerState }) => {
   // styles for the button with variant="contained"
   const containedStyles = () => {
     // background color value
-    const backgroundValue = palette[color] ? palette[color].main : white.main;
+    // const backgroundValue = palette[color] ? palette[color].main : white.main;
 
     // color value when button is focused
 
@@ -20,13 +20,16 @@ export default styled(Switch)(({ theme, ownerState }) => {
       "&.MuiSwitch-root": {
         "& .MuiSwitch-thumb": {
           backgroundColor: white.main,
+          borderRadius: "3px",
         },
         "& .MuiSwitch-track": {
           backgroundColor: `${secondary.main} !important`,
           borderColor: "transparent",
+          borderRadius: "5px",
         },
         "& .Mui-checked+.MuiSwitch-track": {
-          backgroundColor: `${backgroundValue} !important`,
+          backgroundColor: `#664eff !important`,
+          borderRadius: "5px",
         },
       },
     };

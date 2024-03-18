@@ -46,14 +46,14 @@ function SignIn() {
       motto="THE VISION OF NEW CITIES"
       cardContent
     >
-      <GradientBorder borderRadius={borders.borderRadius.form} minWidth="100%" maxWidth="100%">
+      <VuiBox borderRadius="15px" minWidth="100%" maxWidth="100%">
         <VuiBox
           component="form"
           role="form"
           borderRadius="inherit"
           p="45px"
           sx={({ palette: { secondary } }) => ({
-            backgroundColor: secondary.focus,
+            backgroundColor: "transparent",
           })}
         >
           <VuiTypography
@@ -68,20 +68,20 @@ function SignIn() {
             Register with
           </VuiTypography>
           <Stack mb="25px" justifyContent="center" alignItems="center" direction="row" spacing={2}>
-            <GradientBorder borderRadius="xl">
+            <VuiBox borderRadius="xl">
               <a href="#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"
                   align="center"
-                  bg="rgb(19,21,54)"
-                  borderradius="15px"
+                  bg="#151419"
+                  borderradius="5px"
                   sx={({ palette: { secondary }, borders: { borderRadius } }) => ({
-                    borderRadius: borderRadius.xl,
+                    borderRadius: "5px",
                     padding: "25px",
-                    backgroundColor: secondary.focus,
+                    backgroundColor: "#151419",
                     "&:hover": {
-                      backgroundColor: rgba(secondary.focus, 0.9),
+                      backgroundColor: "#0c0b10",
                     },
                   })}
                 >
@@ -95,21 +95,21 @@ function SignIn() {
                   />
                 </IconButton>
               </a>
-            </GradientBorder>
-            <GradientBorder borderRadius="xl">
+            </VuiBox>
+            <VuiBox borderRadius="xl">
               <a href="#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"
                   align="center"
-                  bg="rgb(19,21,54)"
-                  borderradius="15px"
+                  bg="#151419"
+                  borderradius="5px"
                   sx={({ palette: { secondary }, borders: { borderRadius } }) => ({
-                    borderRadius: borderRadius.xl,
+                    borderRadius: "5px",
                     padding: "25px",
-                    backgroundColor: secondary.focus,
+                    backgroundColor: "#151419",
                     "&:hover": {
-                      backgroundColor: rgba(secondary.focus, 0.9),
+                      backgroundColor: "#0c0b10",
                     },
                   })}
                 >
@@ -123,21 +123,21 @@ function SignIn() {
                   />
                 </IconButton>
               </a>
-            </GradientBorder>
-            <GradientBorder borderRadius="xl">
+            </VuiBox>
+            <VuiBox borderRadius="xl">
               <a href="#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"
                   align="center"
-                  bg="rgb(19,21,54)"
-                  borderradius="15px"
+                  bg="#151419"
+                  borderradius="5px"
                   sx={({ palette: { secondary }, borders: { borderRadius } }) => ({
-                    borderRadius: borderRadius.xl,
+                    borderRadius: "5px",
                     padding: "25px",
-                    backgroundColor: secondary.focus,
+                    backgroundColor: "#151419",
                     "&:hover": {
-                      backgroundColor: rgba(secondary.focus, 0.9),
+                      backgroundColor: "#0c0b10",
                     },
                   })}
                 >
@@ -151,7 +151,7 @@ function SignIn() {
                   />
                 </IconButton>
               </a>
-            </GradientBorder>
+            </VuiBox>
           </Stack>
           <VuiTypography
             color="text"
@@ -292,7 +292,7 @@ function SignIn() {
             </VuiTypography>
           </VuiBox>
         </VuiBox>
-      </GradientBorder>
+      </VuiBox>
     </CoverLayout>
   );
 }

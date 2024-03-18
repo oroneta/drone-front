@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 import VuiSwitchRoot from "components/VuiSwitch/VuiSwitchRoot";
 
 const VuiSwitch = forwardRef(({ color, size, ...rest }, ref) => (
-  <VuiSwitchRoot {...rest} ref={ref} color="white" size={size} ownerState={{ color, size }} />
+  <VuiSwitchRoot {...rest} ref={ref} color="white" size={size} ownerState={{ color, size }} sx={{borderRadius: "5px"}}/>
 ));
 
 // Setting default values for the props of VuiSwitch
