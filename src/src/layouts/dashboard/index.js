@@ -38,7 +38,7 @@ import { MapView } from '../../examples/MapView';
 function Dashboard() {
   // const { gradients } = colors;
   // const { cardContent } = gradients;
-
+  const url = "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps";
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -115,7 +115,7 @@ function Dashboard() {
               </Card>
             </Grid>
             <Grid item xs={12} lg={6} xl={5}>
-              <MapView height={"447.47px"} borderRadius={"5px"} enableTool={false} zoom={8}/>
+              <MapView href={url} height={"447.47px"} borderRadius={"5px"} enableTool={false} zoom={8}/>
               {/* <Card style={{height: }}>
               </Card> */}
             </Grid>

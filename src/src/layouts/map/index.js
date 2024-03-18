@@ -12,6 +12,8 @@ import { MapView } from "examples/MapView";
 
 function Mapping() {
   // Width 100% and height 100% to fill the parent container
+  // const url = "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps"
+  const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
   return (
       // <VuiBox width="100%" height="100%">
       // </VuiBox>
@@ -28,7 +30,7 @@ function Mapping() {
         },
       })}
     >
-      <MapView height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} zoom={16}/>
+      <MapView href={url} height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} zoom={16}/>
     </VuiBox>
   );
 }
