@@ -52,6 +52,7 @@ function Header() {
     <VuiBox position="relative">
       <DashboardNavbar light />
       <Card
+        className="Card-Root"
         sx={{
           px: 3,
           mt: 2,
@@ -91,7 +92,7 @@ function Header() {
             <VuiAvatar
               src={burceMars}
               alt="profile-image"
-              variant="rounded"
+              sx={{borderRadius: "5px"}}
               size="xl"
               shadow="sm"
             />

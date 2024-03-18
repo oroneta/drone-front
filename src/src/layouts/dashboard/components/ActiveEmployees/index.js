@@ -4,16 +4,16 @@ import { Card } from '@mui/material';
 import VuiBox from 'components/VuiBox';
 import VuiTypography from 'components/VuiTypography';
 import { IoHappy } from 'react-icons/io5';
-import colors from 'assets/theme/base/colors';
-import linearGradient from 'assets/theme/functions/linearGradient';
+// import colors from 'assets/theme/base/colors';
+// import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const ActiveEmployees = () => {
-	const { info, gradients } = colors;
-	const { cardContent } = gradients;
+	// const { info, gradients } = colors;
+	// const { cardContent } = gradients;
 
 	return (
-		<Card sx={{ height: '340px' }}>
+		<Card className="Card-Root" sx={{ height: '340px' }}>
 			<VuiBox display='flex' flexDirection='column'>
 				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='4px'>
 					Active employees
@@ -23,7 +23,7 @@ const ActiveEmployees = () => {
 				</VuiTypography>
 				<VuiBox sx={{ alignSelf: 'center', justifySelf: 'center', zIndex: '-1' }}>
 					<VuiBox sx={{ position: 'relative', display: 'inline-flex' }}>
-						<CircularProgress variant='determinate' value={16.6} size={170} color='info' />
+						<CircularProgress variant='determinate' value={16.6} size={170} sx={{color: "#664eff"}} />
 						<VuiBox
 							sx={{
 								top: 0,
@@ -37,7 +37,7 @@ const ActiveEmployees = () => {
 							}}>
 							<VuiBox
 								sx={{
-									background: info.main,
+									background: "#664eff",
 									transform: 'translateY(-50%)',
 									width: '50px',
 									height: '50px',
@@ -60,12 +60,13 @@ const ActiveEmployees = () => {
 						flexDirection: 'row',
 						height: '82px',
 						mx: 'auto',
-						borderRadius: '20px',
-						background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
+						borderRadius: '5px',
+						color: 'white',
+						background: '#1e1f23',
 						transform: 'translateY(-90%)',
 						zIndex: '1000'
 					})}>
-					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
+					<VuiTypography color='white' variant='caption' display='inline-block' fontWeight='regular'>
 						0
 					</VuiTypography>
 					<VuiBox
@@ -77,11 +78,11 @@ const ActiveEmployees = () => {
 						<VuiTypography color='white' variant='h3'>
 							1
 						</VuiTypography>
-						<VuiTypography color='text' variant='caption' fontWeight='regular'>
+						<VuiTypography color='white' variant='caption' fontWeight='regular'>
 							Users
 						</VuiTypography>
 					</VuiBox>
-					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>
+					<VuiTypography color='white' variant='caption' display='inline-block' fontWeight='regular'>
 						6
 					</VuiTypography>
 				</VuiBox>

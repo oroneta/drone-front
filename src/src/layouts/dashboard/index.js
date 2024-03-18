@@ -92,7 +92,7 @@ function Dashboard() {
         <VuiBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={6} xl={7}>
-              <Card>
+              <Card className="Card-Root">
                 <VuiBox sx={{ height: "100%" }}>
                   <VuiTypography variant="lg" color="white" fontWeight="bold" mb="5px">
                     Drones Usage
@@ -115,7 +115,7 @@ function Dashboard() {
               </Card>
             </Grid>
             <Grid item xs={12} lg={6} xl={5}>
-              <MapView height={"447.47px"} borderRadius={"20px"} enableTool={false} zoom={8}/>
+              <MapView height={"447.47px"} borderRadius={"5px"} enableTool={false} zoom={8}/>
               {/* <Card style={{height: }}>
               </Card> */}
             </Grid>

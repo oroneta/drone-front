@@ -21,21 +21,14 @@ function SidenavCard({ color, ...rest }) {
   const { miniSidenav, sidenavColor } = controller;
 
   return (
-    <Card sx={(theme) => card(theme, { miniSidenav })}>
+    <Card className="Card-Fix" sx={(theme) => card(theme, { miniSidenav, borderRadius: "5px" })}>
       <CardContent sx={(theme) => cardContent(theme, { sidenavColor })}>
-        <VuiBox
-          bgColor="white"
-          width="2rem"
-          height="2rem"
-          borderRadius="md"
-          shadow="md"
-          mb={2}
-          sx={cardIconBox}
-        >
-          <Icon fontSize="medium" sx={(theme) => cardIcon(theme, { color })}>
-            star
-          </Icon>
-        </VuiBox>
+          <VuiBox
+            width="2rem"
+            height="2rem"
+            mb={2}
+          >
+          </VuiBox>
         <VuiBox lineHeight={1}>
           <VuiTypography variant="h6" color="white">
             Need help?

@@ -5,14 +5,13 @@ import colors from "assets/theme/base/colors";
 import bgAdmin from "assets/images/body-background.png";
 
 const { info, dark } = colors;
-export default {
+const globals = {
   html: {
     scrollBehavior: "smooth",
     background: dark.body,
   },
   body: {
-    background: `url(${bgAdmin})`,
-    backgroundSize: "cover",
+    background: `#121212`,
   },
   "*, *::before, *::after": {
     margin: 0,
@@ -29,3 +28,4 @@ export default {
     color: `${info.main} !important`,
   },
 };
+export default globals;

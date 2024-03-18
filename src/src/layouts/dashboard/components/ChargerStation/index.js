@@ -2,20 +2,20 @@ import React from 'react';
 import { Card, Stack } from '@mui/material';
 import VuiBox from 'components/VuiBox';
 import VuiTypography from 'components/VuiTypography';
-import colors from 'assets/theme/base/colors';
+// import colors from 'assets/theme/base/colors';
 import { FaEllipsisH } from 'react-icons/fa';
-import linearGradient from 'assets/theme/functions/linearGradient';
+// import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function ChargerStation() {
-	const { info, gradients } = colors;
-	const { cardContent } = gradients;
+	// const { info, gradients } = colors;
+	// const { cardContent } = gradients;
 
 	return (
 		<Card
+			className="Card-Root"
 			sx={{
 				height: '100%',
-				background: linearGradient(gradients.cardDark.main, gradients.cardDark.state, gradients.cardDark.deg)
 			}}>
 			<VuiBox sx={{ width: '100%' }}>
 				<VuiBox
@@ -31,9 +31,9 @@ function ChargerStation() {
 						display='flex'
 						justifyContent='center'
 						alignItems='center'
-						bgColor='#22234B'
-						sx={{ width: '37px', height: '37px', cursor: 'pointer', borderRadius: '12px' }}>
-						<FaEllipsisH color={info.main} size='18px' />
+						bgColor='#1e1f23'
+						sx={{ width: '37px', color: 'white', height: '37px', cursor: 'pointer', borderRadius: '5px' }}>
+						<FaEllipsisH color={"white"} size='18px' />
 					</VuiBox>
 				</VuiBox>
 				<VuiBox
@@ -72,8 +72,8 @@ function ChargerStation() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
-								borderRadius: '20px',
+								background: "#1e1f23",
+								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
 									maxWidth: '110px !important'
 								},
@@ -95,8 +95,8 @@ function ChargerStation() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
-								borderRadius: '20px',
+								background: "#1e1f23",
+								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
 									maxWidth: '110px !important'
 								},

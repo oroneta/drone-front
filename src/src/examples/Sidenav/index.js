@@ -217,7 +217,7 @@ function Sidenav({ color, brandName, routes, ...rest }) {
             href="https://github.com/oroneta"
             target="_blank"
             rel="noreferrer"
-            variant="gradient"
+            variant="contained"
             color={color}
             fullWidth
           >

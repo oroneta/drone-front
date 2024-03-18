@@ -87,7 +87,7 @@ function Configurator() {
       >
         <VuiBox>
           <VuiTypography color="white" variant="h5" fontWeight="bold">
-            Vision UI Configurator
+            Dashboard Configurator
           </VuiTypography>
           <VuiTypography variant="body2" color="white" fontWeight="bold">
             Change your configuration
