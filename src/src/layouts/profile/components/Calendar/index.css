@@ -1,0 +1,38 @@
+.rbc-event {
+    background: #000069;
+}
+
+.rbc-calendar {
+    border-radius: 20px !important;
+    color: #fff !important;
+}
+.rbc-calendar button {
+    color: #fff !important;
+}
+.rbc-toolbar {
+    background-color: rgba(6, 11, 40, 0.94);
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+}
+.rbc-toolbar button {
+    color: #fff !important;
+}
+.rbc-toolbar button.rbc-active {
+    color: #000 !important;
+}
+.rbc-toolbar button:hover {
+    color: #000 !important;
+}
+.rbc-month-view {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgba(6, 11, 40, 0.94);
+}
+
+.rbc-active {
+    color: #000 !important;
+    background-color: #fff !important;
+    padding: 10px;
+}
