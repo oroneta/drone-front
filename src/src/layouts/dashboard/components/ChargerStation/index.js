@@ -75,17 +75,17 @@ function ChargerStation() {
 								background: "#1e1f23",
 								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
-									maxWidth: '110px !important'
+									maxWidth: '160px !important'
 								},
 								[breakpoints.up('xxl')]: {
 									minWidth: '180px',
 									maxWidth: '100% !important'
 								}
 							})}>
-							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
+							<VuiTypography color='text' sx={{fontSize: "12px"}} fontWeight='regular' mb='5px'>
 								Activated
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='white' fontSize="12px" fontWeight='bold' sx={{fontSize: "15px"}}>
 								20 Stations
 							</VuiTypography>
 						</VuiBox>
@@ -98,17 +98,17 @@ function ChargerStation() {
 								background: "#1e1f23",
 								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
-									maxWidth: '110px !important'
+									maxWidth: '160px !important'
 								},
 								[breakpoints.up('xxl')]: {
 									minWidth: '180px',
 									maxWidth: '100% !important'
 								}
 							})}>
-							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
+							<VuiTypography color='text' sx={{fontSize: "12px"}} fontWeight='regular' mb='5px'>
 								Disactivated
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='white' fontWeight='bold' sx={{fontSize: "15px"}}>
 								3 Stations
 							</VuiTypography>
 						</VuiBox>
@@ -117,7 +117,7 @@ function ChargerStation() {
 						<CircularProgress
 							variant='determinate'
 							value={74}
-							size={window.innerWidth >= 1024 ? 200 : window.innerWidth >= 768 ? 170 : 200}
+							size={window.innerWidth >= 1024 ? 170 : window.innerWidth >= 768 ? 150 : 100}
 							color='success'
 						/>
 						<VuiBox

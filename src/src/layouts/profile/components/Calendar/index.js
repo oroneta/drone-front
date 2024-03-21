@@ -7,11 +7,11 @@ function Calendario() {
 	const localizer = dayjsLocalizer(dayjs);
 	
 	const events = [
-		{
-			start: dayjs('2024-03-17T12:00:00').toDate(),
-			end: dayjs('2024-03-17T22:00:00').toDate(),
-			title: "Ruta a tu corazon <3",
-		},
+		// {
+		// 	start: dayjs('2024-03-17T12:00:00').toDate(),
+		// 	end: dayjs('2024-03-17T22:00:00').toDate(),
+		// 	title: "Ruta a tu corazon <3",
+		// },
 		{
 			start: dayjs('2024-03-18T12:00:00').toDate(),
 			end: dayjs('2024-03-20T22:00:00').toDate(),

@@ -1,0 +1,81 @@
+$background-color: #0c0b10;
+$primary-color: #151419;
+$highlight-color: #01b574;
+$highlight-color2: #664eff;
+
+.rbc-calendar {
+    color: #fff !important;
+    font-family: 'Plus Jakarta Display', sans-serif;
+
+    .rbc-toolbar {
+        background-color: $primary-color !important;
+        color: #fff !important;
+        font-family: 'Plus Jakarta Display', sans-serif;
+        border-radius: 3px;
+        padding: 10px;
+        button {
+            color: #fff !important;
+            background-color: $primary-color !important;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 !important;
+            font-family: 'Plus Jakarta Display', sans-serif;
+            &:hover {
+                background-color: $highlight-color2 !important;
+                color: #fff !important;
+            }
+        }
+        .rbc-active {
+            background-color: $highlight-color2 !important;
+            color: #fff !important;
+        }
+    }
+
+    .rbc-month-view {
+        border: 0;
+        background-color: $primary-color !important;
+        color: #fff !important;
+        font-weight: bold;
+        font-family: 'Plus Jakarta Display', sans-serif;
+        border-radius: 3px;
+        .rbc-day-bg {
+            background-color: $primary-color !important;
+        }
+        .rbc-off-range-bg {
+            background-color: #1e1f23 !important;
+            color: #bdbdbd !important;
+            font-weight: regular;
+        }
+        .rbc-header {
+            font-weight: regular;
+            font-size: 14px !important;
+            padding: 5px;
+        }
+        .rbc-header, .rbc-day-bg, .rbc-month-row {
+            // border: .5px solid #1e1f23 !important;
+            border: 0;
+        }
+        .rbc-date-cell {
+            padding-right: 10px;
+        }
+        .rbc-today {
+            background-color: $highlight-color2 !important;
+        }
+    }
+
+
+    // Events
+    .rbc-event {
+        background-color: $highlight-color !important;
+        color: #fff !important;
+        border-radius: 3px;
+        padding: 0px 5px;
+        font-size: 12px;
+        font-family: 'Plus Jakarta Display', sans-serif;
+        font-weight: 400 !important;
+        cursor: pointer;
+        &:hover {
+            background-color: $highlight-color !important;
+        }
+    }
+}

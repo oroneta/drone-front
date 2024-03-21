@@ -13,6 +13,7 @@ const Welcome = () => {
         background: `url(${welcome})`,
         backgroundSize: "cover",
         borderRadius: "20px",
+        filter: "brightness(0.9)",
         height: "100%",
         [breakpoints.only("xl")]: {
           gridArea: "1 / 1 / 2 / 2",
