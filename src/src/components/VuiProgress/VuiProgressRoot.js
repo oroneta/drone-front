@@ -14,17 +14,17 @@ export default styled(LinearProgress)(({ theme, ownerState }) => {
   // background value
   let backgroundValue;
 
-  if (variant === "gradient") {
-    backgroundValue = gradients[color]
-      ? linearGradient(gradients[color].main, gradients[color].state)
-      : linearGradient(gradients.info.main, gradients.info.state);
-  } else {
-    backgroundValue = palette[color] ? palette[color].main : palette.info.main;
-  }
+  // if (variant === "gradient") {
+  //   backgroundValue = gradients[color]
+  //     ? linearGradient(gradients[color].main, gradients[color].state)
+  //     : linearGradient(gradients.info.main, gradients.info.state);
+  // } else {
+  //   backgroundValue = palette[color] ? palette[color].main : palette.info.main;
+  // }
 
   return {
     "& .MuiLinearProgress-bar": {
-      background: backgroundValue,
+      background: "#664eff",
       width: `${value}%`,
       color: text.main,
     },

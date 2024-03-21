@@ -12,7 +12,7 @@ import Bill from "layouts/billing/components/Bill";
 
 function BillingInformation() {
   return (
-    <Card id="delete-account">
+    <Card className="Card-Root" id="delete-account">
       <VuiBox>
         <VuiTypography variant="lg" color="white" fontWeight="bold">
           Billing Information

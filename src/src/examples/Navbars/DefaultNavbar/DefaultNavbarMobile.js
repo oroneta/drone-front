@@ -41,12 +41,7 @@ function DefaultNavbarMobile({ open, close }) {
       MenuListProps={{
         style: {
           width: `calc(${width}px - 4rem)`,
-          backgroundImage: tripleLinearGradient(
-            palette.gradients.cover.main,
-            palette.gradients.cover.state,
-            palette.gradients.cover.stateSecondary,
-            palette.gradients.cover.deg
-          ),
+          background: "#151419",
           backgroundColor: "unset !important",
           padding: "8px",
         },

@@ -30,12 +30,7 @@ function PageLayout({ children }) {
       minHeight="100vh"
       sx={({ functions: { tripleLinearGradient }, palette: { gradients } }) => ({
         overflowX: "hidden",
-        backgroundImage: tripleLinearGradient(
-          gradients.cover.main,
-          gradients.cover.state,
-          gradients.cover.stateSecondary,
-          gradients.cover.deg
-        ),
+        background: "#0c0b10",
         position: "relative",
       })}
     >

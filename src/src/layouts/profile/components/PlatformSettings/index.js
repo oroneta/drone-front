@@ -20,7 +20,7 @@ function PlatformSettings() {
   const [mails, setMails] = useState(false);
 
   return (
-    <Card sx={{ minHeight: "490px", height: "100%" }}>
+    <Card className="Card-Root" sx={{ minHeight: "490px", height: "100%" }}>
       <VuiBox mb="26px">
         <VuiTypography variant="lg" fontWeight="bold" color="white" textTransform="capitalize">
           platform settings

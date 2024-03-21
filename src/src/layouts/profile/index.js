@@ -119,7 +119,7 @@ function Overview() {
           <PlatformSettings />
         </Grid>
         <Grid item xs={12} xl={9}>
-          <Card>
+          <Card className="Card-Root">
             <VuiBox display="flex" flexDirection="column" height="100%">
               <VuiBox display="flex" flexDirection="column" mb="24px">
                 <VuiTypography color="white" variant="lg" fontWeight="bold" mb="6px">

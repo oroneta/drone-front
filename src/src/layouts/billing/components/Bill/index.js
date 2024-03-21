@@ -10,12 +10,12 @@ import Icon from "@mui/material/Icon";
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 import VuiButton from "components/VuiButton";
-import linearGradient from "assets/theme/functions/linearGradient";
+// import linearGradient from "assets/theme/functions/linearGradient";
 import colors from "assets/theme/base/colors";
 
 function Bill({ name, company, email, vat, noGutter }) {
   const { gradients } = colors;
-  const { bill } = gradients;
+  // const { bill } = gradients;
 
   return (
     <VuiBox
@@ -23,7 +23,7 @@ function Bill({ name, company, email, vat, noGutter }) {
       display="flex"
       justifyContent="space-between"
       alignItems="flex-start"
-      sx={{ background: linearGradient(bill.main, bill.state, bill.deg) }}
+      sx={{ background: "#1e1f23" }}
       borderRadius="lg"
       p="24px"
       mb={noGutter ? "0px" : "24px"}

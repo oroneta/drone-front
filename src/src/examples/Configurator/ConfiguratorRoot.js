@@ -36,12 +36,8 @@ export default styled(Drawer)(({ theme, ownerState }) => {
 
   return {
     "& .MuiDrawer-paper": {
-      backdropFilter: `blur(${pxToRem(42)})`,
-      background: linearGradient(
-        gradients.sidenav.main,
-        gradients.sidenav.state,
-        gradients.sidenav.deg
-      ),
+      backdropFilter: `blur(120px)`,
+      background: "rgba(30, 31, 35, 0.5)",
 
       height: "100vh",
       margin: 0,

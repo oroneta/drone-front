@@ -25,7 +25,7 @@ function PaymentMethod() {
   const { grey } = colors;
 
   return (
-    <Card id="delete-account">
+    <Card className="Card-Root" id="delete-account">
       <VuiBox display="flex" justifyContent="space-between" alignItems="center" mb="32px">
         <VuiTypography variant="lg" fontWeight="bold" color="white">
           Payment Method

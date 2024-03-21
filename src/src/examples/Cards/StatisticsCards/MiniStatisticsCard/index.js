@@ -17,7 +17,7 @@ function MiniStatisticsCard({ bgColor, title, count, percentage, icon, direction
   const { info } = colors;
 
   return (
-    <Card sx={{ padding: "17px" }}>
+    <Card className="Card-Root" sx={{ padding: "17px" }}>
       <VuiBox>
         <VuiBox>
           <Grid container alignItems="center">

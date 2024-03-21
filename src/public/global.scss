@@ -1,0 +1,109 @@
+$background-color: #0c0b10;
+$primary-color: #151419;
+$highlight-color: #01b574;
+$highlight-color2: #664eff;
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+	background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #CBCBCB;
+	outline: 2px solid #FFF;
+	outline-offset: -2px;
+	border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background-color: #909090;
+}
+body {
+    background-color: $background-color !important;
+    .MuiButton-root.MuiButton-contained, .MuiTab-root.Mui-selected {
+        border-radius: 5px;
+        background-color: $highlight-color2;
+        &:hover {
+            // Make it darker withouth changing the color
+            filter: brightness(0.7);
+            transform: none !important;
+        }
+    }
+    #root {
+        min-height: 100vh;
+        // Sidebar
+        .css-1cjsu7f-MuiPaper-root-MuiDrawer-paper {
+            .MuiList-root {
+                .MuiBox-root {
+                    border-radius: 0;
+                    .MuiListItemIcon-root {
+                        background-color: #151419 !important;
+                        svg {
+                            fill: #fff !important;
+                            // path {
+                            //     fill: #000 !important;
+                            // }
+                        }
+                    }
+                    &.css-wac2lw {
+                        border-left: 3px solid $highlight-color2;
+                        background-color: $primary-color !important;
+                        &:hover {
+                            background-color: $primary-color !important;
+                        }
+    
+                    }
+                    &:hover {
+                        background-color: $primary-color !important;
+                        color: #fff !important;
+                    }
+                }
+            }
+        }
+        // Header 
+        .css-8t2800, .css-8t2800 .MuiInputBase-root, .css-8t2800 input, .css-19i8cn2, .css-19i8cn2 input, .css-19i8cn2 .MuiInputBase-root{
+            border: none;
+            border-radius: 5px;
+            background: $primary-color !important;
+            .css-unz5y7 {
+                .MuiIcon-root {
+                    color: #fff !important;
+                }
+                color: #fff !important;
+            }
+        }
+        header.MuiAppBar-root {
+            border-radius: 5px;
+        }
+
+        // Mobile header
+        @media screen and (max-width: 600px){
+            .css-141xdzq {
+                justify-content: end;
+            }
+            .css-1edr710 {
+                display: none;
+            }
+        }
+
+        // Dashboard
+        .Card-Root {
+            background: $primary-color !important;
+            border-radius: 5px;
+        }
+        .Card-Fix {
+            border-radius: 5px;
+        }
+        .Configurator {
+            background: $primary-color !important;
+        }
+        .css-1lcz7bp-MuiPaper-root-MuiCard-root {
+            .css-uo81m3 {
+                background: transparent !important;
+            }
+        }
+        
+    }
+}

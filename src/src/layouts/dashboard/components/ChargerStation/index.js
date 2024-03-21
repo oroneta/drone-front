@@ -2,20 +2,20 @@ import React from 'react';
 import { Card, Stack } from '@mui/material';
 import VuiBox from 'components/VuiBox';
 import VuiTypography from 'components/VuiTypography';
-import colors from 'assets/theme/base/colors';
+// import colors from 'assets/theme/base/colors';
 import { FaEllipsisH } from 'react-icons/fa';
-import linearGradient from 'assets/theme/functions/linearGradient';
+// import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
 
 function ChargerStation() {
-	const { info, gradients } = colors;
-	const { cardContent } = gradients;
+	// const { info, gradients } = colors;
+	// const { cardContent } = gradients;
 
 	return (
 		<Card
+			className="Card-Root"
 			sx={{
 				height: '100%',
-				background: linearGradient(gradients.cardDark.main, gradients.cardDark.state, gradients.cardDark.deg)
 			}}>
 			<VuiBox sx={{ width: '100%' }}>
 				<VuiBox
@@ -31,9 +31,9 @@ function ChargerStation() {
 						display='flex'
 						justifyContent='center'
 						alignItems='center'
-						bgColor='#22234B'
-						sx={{ width: '37px', height: '37px', cursor: 'pointer', borderRadius: '12px' }}>
-						<FaEllipsisH color={info.main} size='18px' />
+						bgColor='#1e1f23'
+						sx={{ width: '37px', color: 'white', height: '37px', cursor: 'pointer', borderRadius: '5px' }}>
+						<FaEllipsisH color={"white"} size='18px' />
 					</VuiBox>
 				</VuiBox>
 				<VuiBox
@@ -72,20 +72,20 @@ function ChargerStation() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
-								borderRadius: '20px',
+								background: "#1e1f23",
+								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
-									maxWidth: '110px !important'
+									maxWidth: '160px !important'
 								},
 								[breakpoints.up('xxl')]: {
 									minWidth: '180px',
 									maxWidth: '100% !important'
 								}
 							})}>
-							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
+							<VuiTypography color='text' sx={{fontSize: "12px"}} fontWeight='regular' mb='5px'>
 								Activated
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='white' fontSize="12px" fontWeight='bold' sx={{fontSize: "15px"}}>
 								20 Stations
 							</VuiTypography>
 						</VuiBox>
@@ -95,20 +95,20 @@ function ChargerStation() {
 							p='20px 22px'
 							flexDirection='column'
 							sx={({ breakpoints }) => ({
-								background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
-								borderRadius: '20px',
+								background: "#1e1f23",
+								borderRadius: '5px',
 								[breakpoints.up('xl')]: {
-									maxWidth: '110px !important'
+									maxWidth: '160px !important'
 								},
 								[breakpoints.up('xxl')]: {
 									minWidth: '180px',
 									maxWidth: '100% !important'
 								}
 							})}>
-							<VuiTypography color='text' variant='button' fontWeight='regular' mb='5px'>
+							<VuiTypography color='text' sx={{fontSize: "12px"}} fontWeight='regular' mb='5px'>
 								Disactivated
 							</VuiTypography>
-							<VuiTypography color='white' variant='lg' fontWeight='bold'>
+							<VuiTypography color='white' fontWeight='bold' sx={{fontSize: "15px"}}>
 								3 Stations
 							</VuiTypography>
 						</VuiBox>
@@ -117,7 +117,7 @@ function ChargerStation() {
 						<CircularProgress
 							variant='determinate'
 							value={74}
-							size={window.innerWidth >= 1024 ? 200 : window.innerWidth >= 768 ? 170 : 200}
+							size={window.innerWidth >= 1024 ? 170 : window.innerWidth >= 768 ? 150 : 100}
 							color='success'
 						/>
 						<VuiBox

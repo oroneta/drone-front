@@ -67,6 +67,7 @@ function ProfileInfoCard({ title, description, info, social }) {
 
   return (
     <Card
+      className="Card-Root"
       sx={{
         height: "100%",
       }}

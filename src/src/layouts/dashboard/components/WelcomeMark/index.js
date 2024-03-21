@@ -12,13 +12,14 @@ const WelcomeMark = () => {
       height: "340px",
       py: "32px",
       backgroundImage: `url(${gif})`,
+      borderRadius: "5px",
       backgroundSize: "cover",
       backgroundPosition: "50%"
     })}>
       <VuiBox height="100%" display="flex" flexDirection="column" justifyContent="space-between">
         <VuiBox>
           <VuiTypography color="text" variant="button" fontWeight="regular" mb="12px">
-            Welcome back,
+            Alexis Montalvo,
           </VuiTypography>
           <VuiTypography color="white" variant="h3" fontWeight="bold" mb="18px">
             Alexis Montalvo
@@ -30,7 +31,7 @@ const WelcomeMark = () => {
         </VuiBox>
         <VuiTypography
           component="a"
-          href="#"
+          href="/company"
           variant="button"
           color="white"
           fontWeight="regular"

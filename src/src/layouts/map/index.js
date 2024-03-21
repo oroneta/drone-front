@@ -4,9 +4,7 @@
 import VuiBox from "components/VuiBox";
 
 // Oroneta example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+// import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 
 // Mapping page components
 import { MapView } from "examples/MapView";
@@ -14,14 +12,26 @@ import { MapView } from "examples/MapView";
 
 function Mapping() {
   // Width 100% and height 100% to fill the parent container
+  // const url = "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps"
+  const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
   return (
-    <DashboardLayout>
-      <DashboardNavbar />
-      <VuiBox mt={4} width="100%" height="100%">
-        <MapView height={"calc(100vh - 180px)"} width={"100%"} borderRadius={"10px"} enableTool={true} zoom={16}/>
-      </VuiBox>
-      <Footer />
-    </DashboardLayout>
+      // <VuiBox width="100%" height="100%">
+      // </VuiBox>
+    <VuiBox
+      sx={({ breakpoints, transitions, functions: { pxToRem } }) => ({
+        position: "relative",
+        height: "100vh",
+        [breakpoints.up("xl")]: {
+          marginLeft: pxToRem(274),
+          transition: transitions.create(["margin-left", "margin-right"], {
+            easing: transitions.easing.easeInOut,
+            duration: transitions.duration.standard,
+          }),
+        },
+      })}
+    >
+      <MapView href={url} height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} zoom={16}/>
+    </VuiBox>
   );
 }
 

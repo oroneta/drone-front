@@ -23,17 +23,15 @@ function TransactionsList() {
 	const { cardContent } = gradients;
 
 	return (
-		<Card>
+		<Card
+		className="Card-Root"
+		>
                 <VuiBox>
                   <VuiBox
                     mb="24px"
                     height="220px"
                     sx={{
-                      background: linearGradient(
-                        cardContent.main,
-                        cardContent.state,
-                        cardContent.deg
-                      ),
+                      background: "transparent",
                       borderRadius: "20px",
                     }}
                   >
@@ -61,11 +59,10 @@ function TransactionsList() {
                         mb="6px"
                       >
                         <VuiBox
-                          bgColor="info"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
+                          sx={{ background: "#664eff", borderRadius: "6px", width: "25px", height: "25px" }}
                         >
                           <IoWallet color="#fff" size="12px" />
                         </VuiBox>
@@ -76,7 +73,7 @@ function TransactionsList() {
                       <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
                         €46.50
                       </VuiTypography>
-                      <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
+                      <VuiProgress value={60} sx={{ background: "#2D2E5F" }} />
                     </Grid>
                     <Grid item xs={6} md={3} lg={3}>
                       <Stack
@@ -85,11 +82,10 @@ function TransactionsList() {
                         mb="6px"
                       >
                         <VuiBox
-                          bgColor="info"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
+                          sx={{ background: "#664eff", borderRadius: "6px", width: "25px", height: "25px" }}
                         >
                           <IoIosRocket color="#fff" size="12px" />
                         </VuiBox>
@@ -109,11 +105,10 @@ function TransactionsList() {
                         mb="6px"
                       >
                         <VuiBox
-                          bgColor="info"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
+                          sx={{ background: "#664eff", borderRadius: "6px", width: "25px", height: "25px" }}
                         >
                           <GiElectric color="#fff" size="12px" />
                         </VuiBox>
@@ -133,11 +128,10 @@ function TransactionsList() {
                         mb="6px"
                       >
                         <VuiBox
-                          bgColor="info"
                           display="flex"
                           justifyContent="center"
                           alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
+                          sx={{ background: "#664eff", borderRadius: "6px", width: "25px", height: "25px" }}
                         >
                           <IoBuild color="#fff" size="12px" />
                         </VuiBox>
