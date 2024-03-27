@@ -28,7 +28,7 @@ import Routes from "layouts/routes";
 //
 import Billing from "layouts/billing";
 import Profile from "layouts/profile";
-import Company from "layouts/company";
+import Company from "./layouts/company";
 
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
