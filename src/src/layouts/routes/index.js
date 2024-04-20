@@ -1,283 +1,104 @@
 
 
-import { Card, Stack } from "@mui/material";
-// @mui material components
-import Grid from "@mui/material/Grid";
-import colors from "assets/theme/base/colors";
 
-// Oroneta base styles
-import linearGradient from "assets/theme/functions/linearGradient";
+// @mui material components
+import Card from "@mui/material/Card";
+import Grid from "@mui/material/Grid";
 
 // Oroneta components
 import VuiBox from "components/VuiBox";
-import VuiProgress from "components/VuiProgress";
 import VuiTypography from "components/VuiTypography";
-
-// Oroneta contexts
-import { setDirection, useVisionUIController } from "context";
-import MiniStatisticsCard from "examples/Cards/StatisticsCards/MiniStatisticsCard";
-import BarChart from "examples/Charts/BarCharts/BarChart";
-
-// Data
-import LineChart from "examples/Charts/LineCharts/LineChart";
-import Footer from "examples/Footer";
 
 // Oroneta example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import OrderOverview from "layouts/routes/components/OrderOverview";
-import Projects from "layouts/routes/components/Projects";
-import ReferralTracking from "layouts/routes/components/ReferralTracking";
-import SatisfactionRate from "layouts/routes/components/SatisfactionRate";
+import Footer from "examples/Footer";
+import Table from "examples/Tables/Table";
 
-// Dashboard layout components
-import WelcomeMark from "layouts/routes/components/WelcomeMark";
-import { barChartDataDashboard } from "layouts/routes/data/barChartData";
-import { barChartOptionsDashboard } from "layouts/routes/data/barChartOptions";
-import { lineChartDataDashboard } from "layouts/routes/data/lineChartData";
-import { lineChartOptionsDashboard } from "layouts/routes/data/lineChartOptions";
-import { useEffect } from "react";
-import { FaShoppingCart } from "react-icons/fa";
-
-// React icons
-import { IoIosRocket } from "react-icons/io";
-import { IoBuild, IoDocumentText, IoGlobe, IoWallet } from "react-icons/io5";
+// Data
+import authorsTableData from "layouts/drones/data/authorsTableData";
+import { MapView } from "examples/MapView";
+import DroneInfo from "../drones/components/DroneInfo";
+import { UserContext } from "context/UserContext";
+import { useContext } from "react";
 
 function RTL() {
-  const { gradients } = colors;
-  const { cardContent } = gradients;
-  const [, dispatch] = useVisionUIController();
 
-  // Changing the direction to rtl
-  useEffect(() => {
-    setDirection(dispatch, "rtl");
-
-    return () => setDirection(dispatch, "ltr");
-  }, []);
-
-  return (
-    <DashboardLayout>
-      <DashboardNavbar />
-      <VuiBox py={3}>
-        <VuiBox mb={3}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6} xl={3}>
-              <MiniStatisticsCard
-                title={{ text: "أموال اليوم", fontWeight: "regular" }}
-                count="$53,000"
-                percentage={{ color: "success", text: "+55%" }}
-                icon={{ color: "info", component: <IoWallet size="22px" color="white" /> }}
-              />
+    const { columns, rows } = authorsTableData;
+    const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+    const { infoDrone } = useContext( UserContext );
+    console.log(infoDrone);
+    return (
+      <DashboardLayout>
+        <DashboardNavbar />
+        <VuiBox py={3}>
+        <VuiBox mt={5} mb={3}>
+          <Grid
+            container
+            spacing={3}
+            sx={({ breakpoints }) => ({
+              [breakpoints.only("xl")]: {
+                gridTemplateColumns: "repeat(2, 1fr)",
+              },
+            })}
+          >
+            <Grid
+              item
+              xs={12}
+              xl={8}
+              xxl={8}
+              sx={({ breakpoints }) => ({
+                minHeight: "400px",
+                [breakpoints.only("xl")]: {
+                  gridArea: "1 / 1 / 2 / 2",
+                },
+              })}
+            >
+              <MapView href={url} height={"calc(90vh - 300px)"} width={"100%"} borderRadius={"10px"} enableTool={true} zoom={15}/>
             </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
-              <MiniStatisticsCard
-                title={{ text: "مستخدمي اليوم" }}
-                count="2,300"
-                percentage={{ color: "success", text: "+3%" }}
-                icon={{ color: "info", component: <IoGlobe size="22px" color="white" /> }}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
-              <MiniStatisticsCard
-                title={{ text: "عملاء جدد" }}
-                count="+3,462"
-                percentage={{ color: "error", text: "-2%" }}
-                icon={{ color: "info", component: <IoDocumentText size="22px" color="white" /> }}
-              />
-            </Grid>
-            <Grid item xs={12} sm={6} xl={3}>
-              <MiniStatisticsCard
-                title={{ text: "إجمالي المبيعات" }}
-                count="$103,430"
-                percentage={{ color: "success", text: "+5%" }}
-                icon={{ color: "info", component: <FaShoppingCart size="20px" color="white" /> }}
-              />
+            <Grid
+              item
+              xs={12}
+              xl={4}
+              xxl={4}
+              sx={({ breakpoints }) => ({
+                [breakpoints.only("xl")]: {
+                  gridArea: "1 / 2 / 2 / 3",
+                },
+              })}
+            >
+              <DroneInfo height={"calc(90vh - 300px)"} />
             </Grid>
           </Grid>
         </VuiBox>
-        <VuiBox mb={3}>
-          <Grid container spacing="18px">
-            <Grid item xs={12} xl={5}>
-              <WelcomeMark />
-            </Grid>
-            <Grid item xs={12} lg={6} xl={3}>
-              <SatisfactionRate />
-            </Grid>
-            <Grid item xs={12} lg={6} xl={4}>
-              <ReferralTracking />
-            </Grid>
-          </Grid>
+          <VuiBox mb={3}>
+            <Card>
+              <VuiBox display="flex" justifyContent="space-between" alignItems="center" mb="22px">
+                <VuiTypography variant="lg" color="white">
+                  Drones
+                </VuiTypography>
+              </VuiBox>
+              <VuiBox
+                sx={{
+                  "& th": {
+                    borderBottom: ({ borders: { borderWidth }, palette: { grey } }) =>
+                      `${borderWidth[1]} solid ${grey[700]}`,
+                  },
+                  "& .MuiTableRow-root:not(:last-child)": {
+                    "& td": {
+                      borderBottom: ({ borders: { borderWidth }, palette: { grey } }) =>
+                        `${borderWidth[1]} solid ${grey[700]}`,
+                    },
+                  },
+                }}
+              >
+                <Table columns={columns} rows={rows} />
+              </VuiBox>
+            </Card>
+          </VuiBox>
         </VuiBox>
-        <VuiBox mb={3}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} lg={7}>
-              <Card>
-                <VuiBox sx={{ height: "100%" }}>
-                  <VuiTypography variant="lg" color="white" fontWeight="bold" mb="5px">
-                    نظرة عامة على المبيعات
-                  </VuiTypography>
-                  <VuiBox display="flex" alignItems="center" mb="40px">
-                    <VuiTypography variant="button" color="success" fontWeight="bold">
-                      + 5٪ أكثر
-                      <VuiTypography variant="button" color="text" fontWeight="regular">
-                        في عام 2021
-                      </VuiTypography>
-                    </VuiTypography>
-                  </VuiBox>
-                  <VuiBox sx={{ height: "310px" }}>
-                    <LineChart
-                      lineChartData={lineChartDataDashboard}
-                      lineChartOptions={lineChartOptionsDashboard}
-                    />
-                  </VuiBox>
-                </VuiBox>
-              </Card>
-            </Grid>
-            <Grid item xs={12} lg={5}>
-              <Card>
-                <VuiBox>
-                  <VuiBox
-                    mb="24px"
-                    height="220px"
-                    sx={{
-                      background: linearGradient(
-                        cardContent.main,
-                        cardContent.state,
-                        cardContent.deg
-                      ),
-                      borderRadius: "20px",
-                    }}
-                  >
-                    <BarChart
-                      barChartData={barChartDataDashboard}
-                      barChartOptions={barChartOptionsDashboard}
-                    />
-                  </VuiBox>
-                  <VuiTypography variant="lg" color="white" fontWeight="bold" mb="5px">
-                    المستخدمين النشطين
-                  </VuiTypography>
-                  <VuiBox display="flex" alignItems="center" mb="40px">
-                    <VuiTypography variant="button" color="success" fontWeight="bold">
-                      (+23)
-                      <VuiTypography variant="button" color="text" fontWeight="regular">
-                        من الأسبوع الماضي
-                      </VuiTypography>
-                    </VuiTypography>
-                  </VuiBox>
-                  <Grid container spacing="50px">
-                    <Grid item xs={6} md={3} lg={3}>
-                      <Stack
-                        direction="row"
-                        spacing={{ sm: "10px", xl: "4px", xxl: "10px" }}
-                        mb="6px"
-                      >
-                        <VuiBox
-                          bgColor="info"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
-                        >
-                          <IoWallet color="#fff" size="12px" />
-                        </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
-                          المستخدمون
-                        </VuiTypography>
-                      </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
-                        32,984
-                      </VuiTypography>
-                      <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
-                    </Grid>
-                    <Grid item xs={6} md={3} lg={3}>
-                      <Stack
-                        direction="row"
-                        spacing={{ sm: "10px", xl: "4px", xxl: "10px" }}
-                        mb="6px"
-                      >
-                        <VuiBox
-                          bgColor="info"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
-                        >
-                          <IoIosRocket color="#fff" size="12px" />
-                        </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
-                          نقرات
-                        </VuiTypography>
-                      </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
-                        2,42M
-                      </VuiTypography>
-                      <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
-                    </Grid>
-                    <Grid item xs={6} md={3} lg={3}>
-                      <Stack
-                        direction="row"
-                        spacing={{ sm: "10px", xl: "4px", xxl: "10px" }}
-                        mb="6px"
-                      >
-                        <VuiBox
-                          bgColor="info"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
-                        >
-                          <FaShoppingCart color="#fff" size="12px" />
-                        </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
-                          مبيعات
-                        </VuiTypography>
-                      </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
-                        2,400$
-                      </VuiTypography>
-                      <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
-                    </Grid>
-                    <Grid item xs={6} md={3} lg={3}>
-                      <Stack
-                        direction="row"
-                        spacing={{ sm: "10px", xl: "4px", xxl: "10px" }}
-                        mb="6px"
-                      >
-                        <VuiBox
-                          bgColor="info"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                          sx={{ borderRadius: "6px", width: "25px", height: "25px" }}
-                        >
-                          <IoBuild color="#fff" size="12px" />
-                        </VuiBox>
-                        <VuiTypography color="text" variant="button" fontWeight="medium">
-                          العناصر
-                        </VuiTypography>
-                      </Stack>
-                      <VuiTypography color="white" variant="lg" fontWeight="bold" mb="8px">
-                        320
-                      </VuiTypography>
-                      <VuiProgress value={60} color="info" sx={{ background: "#2D2E5F" }} />
-                    </Grid>
-                  </Grid>
-                </VuiBox>
-              </Card>
-            </Grid>
-          </Grid>
-        </VuiBox>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} lg={8}>
-            <Projects />
-          </Grid>
-          <Grid item xs={12} md={6} lg={4}>
-            <OrderOverview />
-          </Grid>
-        </Grid>
-      </VuiBox>
-      <Footer />
-    </DashboardLayout>
+        <Footer />
+      </DashboardLayout>
   );
 }
 

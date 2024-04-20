@@ -3,7 +3,7 @@
   you can customize the states for the different components here.
 */
 
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -102,4 +102,25 @@ export {
   setOpenConfigurator,
   setDirection,
   setLayout,
+};
+
+// Crear el context
+export const DataFetchContext = createContext();
+
+// Crear el provider
+export const DataFetchProvider = props => {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    setData({
+      numDrones: 2,
+      status: true,
+      speed: 30,
+    })
+  }, []);
+  return (
+    <DataFetchContext.Provider value={data}>
+      {props.children}
+    </DataFetchContext.Provider>
+  );
 };

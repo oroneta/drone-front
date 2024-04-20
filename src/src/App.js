@@ -30,6 +30,7 @@ import routes from "routes";
 
 // Oroneta contexts
 import { useVisionUIController, setMiniSidenav, setOpenConfigurator } from "context";
+import { UserProvider } from "context/UserProvider";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
@@ -115,9 +116,9 @@ export default function App() {
     </VuiBox>
   );
 
-  return direction === "rtl" ? (
-    <CacheProvider value={rtlCache}>
-      <ThemeProvider theme={themeRTL}>
+  return (
+    <UserProvider>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         {layout === "dashboard" && (
           <>
@@ -125,43 +126,20 @@ export default function App() {
               color={sidenavColor}
               brand=""
               brandName="ORONETA"
-              routes={routes}w
+              routes={routes}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-            {/* <Configurator />
-            {configsButton} */}
+            <Configurator />
+            {/* configsButton */}
           </>
         )}
-        {layout === "vr" /* && <Configurator /> */}
+        {layout === "vr" && <Configurator /> }
         <Switch>
           {getRoutes(routes)}
           <Redirect from="*" to="/dashboard" />
         </Switch>
       </ThemeProvider>
-    </CacheProvider>
-  ) : (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand=""
-            brandName="ORONETA"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          <Configurator />
-          {/* configsButton */}
-        </>
-      )}
-      {layout === "vr" && <Configurator /> }
-      <Switch>
-        {getRoutes(routes)}
-        <Redirect from="*" to="/dashboard" />
-      </Switch>
-    </ThemeProvider>
+    </UserProvider>
   );
 }

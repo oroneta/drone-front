@@ -1,15 +1,22 @@
-import React from 'react'
+import { UserContext } from 'context/UserContext';
+import React, { useContext } from 'react'
 import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
 
-const position = [39.4810,-0.3423]
+const position = [39.4371,-0.3177];
 
 export const MapView = ({href, height, width, borderRadius, enableTool, zoom}) => {
+    
+    const { infoDrones } = useContext( UserContext );
+    // console.log(infoDrones);
     return (
         (enableTool) ?
         (<MapContainer center={position} zoom={zoom} style={{height, width, borderRadius}}>
             <TileLayer
                 url={href}
             />
+            { infoDrones.map( (drone) => { return <Marker key={drone.id} position={drone.gps}></Marker>})}
+            {/* <Marker position={ [39.4371, -0.3177] }>
+            </Marker> */}
         </MapContainer>)
         :
         (<MapContainer 

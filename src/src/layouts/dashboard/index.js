@@ -34,10 +34,13 @@ import LineChart from "examples/Charts/LineCharts/LineChart";
 import { lineChartDataDashboard } from "layouts/dashboard/data/lineChartData";
 import { lineChartOptionsDashboard } from "layouts/dashboard/data/lineChartOptions";
 import { MapView } from '../../examples/MapView';
+import { useContext } from "react";
+import { UserContext } from "context/UserContext";
 
 function Dashboard() {
   // const { gradients } = colors;
   // const { cardContent } = gradients;
+  const { infoTotalDrones } = useContext( UserContext );
   const url = "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps";
   return (
     <DashboardLayout>
@@ -48,28 +51,28 @@ function Dashboard() {
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
                 title={{ text: "Total Drones", fontWeight: "regular" }}
-                count="3 Drones"
+                count= { infoTotalDrones.totalDrones + " Drones"}
                 icon={{ color: "info", component: <TbDrone size="21px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
                 title={{ text: "Active Drones" }}
-                count="2 Drones"
+                count={ infoTotalDrones.activeDrones + " Drones"}
                 icon={{ color: "info", component: <FaFeatherAlt size="22px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
                 title={{ text: "Charge Stations" }}
-                count="23 Stations"
+                count={ infoTotalDrones.activeChargerStation + infoTotalDrones.disableChargerStation + " stations" }
                 icon={{ color: "info", component: <RiBattery2ChargeFill size="22px" color="white" /> }}
               />
             </Grid>
             <Grid item xs={12} md={6} xl={3}>
               <MiniStatisticsCard
                 title={{ text: "Total Flights" }}
-                count="20 Flights"
+                count={ infoTotalDrones.totalFlights + " flights"}
                 percentage={{ color: "success", text: "+1" }}
                 icon={{ color: "info", component: <FaPlane size="20px" color="white" /> }}
               />

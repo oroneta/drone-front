@@ -24,6 +24,9 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 import breakpoints from "assets/theme/base/breakpoints";
 import colors from "assets/theme/base/colors";
 import borders from "assets/theme/base/borders";
+// Styles
+import './styles/style.css';
+
 
 function DefaultNavbar({ transparent, light, action }) {
   const { borderCol } = colors;

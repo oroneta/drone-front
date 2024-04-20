@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Stack } from '@mui/material';
 import VuiBox from 'components/VuiBox';
 import VuiTypography from 'components/VuiTypography';
@@ -6,11 +6,12 @@ import VuiTypography from 'components/VuiTypography';
 import { FaEllipsisH } from 'react-icons/fa';
 // import linearGradient from 'assets/theme/functions/linearGradient';
 import CircularProgress from '@mui/material/CircularProgress';
+import { UserContext } from 'context/UserContext';
 
 function ChargerStation() {
 	// const { info, gradients } = colors;
 	// const { cardContent } = gradients;
-
+	const { infoTotalDrones } = useContext( UserContext );
 	return (
 		<Card
 			className="Card-Root"
@@ -86,7 +87,7 @@ function ChargerStation() {
 								Activated
 							</VuiTypography>
 							<VuiTypography color='white' fontSize="12px" fontWeight='bold' sx={{fontSize: "15px"}}>
-								20 Stations
+								{ infoTotalDrones.activeChargerStation } Stations
 							</VuiTypography>
 						</VuiBox>
 						<VuiBox
@@ -109,7 +110,7 @@ function ChargerStation() {
 								Disactivated
 							</VuiTypography>
 							<VuiTypography color='white' fontWeight='bold' sx={{fontSize: "15px"}}>
-								3 Stations
+								{infoTotalDrones.disableChargerStation} Stations
 							</VuiTypography>
 						</VuiBox>
 					</Stack>

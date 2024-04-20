@@ -18,9 +18,9 @@ const WelcomeMark = () => {
     })}>
       <VuiBox height="100%" display="flex" flexDirection="column" justifyContent="space-between">
         <VuiBox>
-          <VuiTypography color="text" variant="button" fontWeight="regular" mb="12px">
-            Alexis Montalvo,
-          </VuiTypography>
+          {/* <VuiTypography color="text" variant="button" fontWeight="regular" mb="12px">
+            Greetings,
+          </VuiTypography> */}
           <VuiTypography color="white" variant="h3" fontWeight="bold" mb="18px">
             Alexis Montalvo
           </VuiTypography>
