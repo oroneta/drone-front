@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Card } from '@mui/material';
 import VuiBox from 'components/VuiBox';
@@ -13,12 +13,16 @@ import VuiBadge from "components/VuiBadge";
 import { FaBatteryFull, FaBatteryThreeQuarters, FaBatteryHalf, FaBatteryQuarter, FaBatteryEmpty } from "react-icons/fa6";
 import { MdWifi, MdWifi2Bar, MdWifi1Bar, MdSignalWifiStatusbarNull } from "react-icons/md"; // MdWifi = lleno, el númro después de MdWifi representa el número de barras
 import { BiSignal5, BiSignal4, BiSignal3, BiSignal2, BiSignal1, BiNoSignal } from "react-icons/bi";
-
+import { UserContext } from "context/UserContext";
+import { useContext } from "react";
 
 const DroneInfo = ({ height }) => {
+	const { infoDrone } = useContext( UserContext );
+	
+	
 	const { gradients } = colors;
 	const { cardContent } = gradients;
-
+	console.log(infoDrone.status);
 	return (
 		<Card sx={{ height: {height}, display:"flex"}}>
 			<VuiBox display='flex' flexDirection='column'>
@@ -26,6 +30,7 @@ const DroneInfo = ({ height }) => {
 					Drone Information
 				</VuiTypography>
 				<VuiBox sx={{ display: "flex", justifyContent: "space-between"}}>
+					{ infoDrone.status && 
 					<VuiBadge
 						variant="standard"
 						badgeContent="Online"
@@ -38,11 +43,28 @@ const DroneInfo = ({ height }) => {
 							borderRadius: borderRadius.md,
 							color: white.main,
 						})}
+						
 					/>
+					}
+					{ !infoDrone.status &&
+					<VuiBadge
+						variant="standard"
+						badgeContent="Offline"
+						color="error"
+						size="xs"
+						container
+						sx={({ palette: { white, error }, borders: { borderRadius, borderWidth } }) => ({
+							background: error.main,
+							border: `${borderWidth[1]} solid ${error.main}`,
+							borderRadius: borderRadius.md,
+							color: white.main,
+						})}
+					/>
+					}
 					<VuiBox sx={{padding: "0px 10px"}}>
 						<BiSignal5 color='white' style={{marginRight: "10px"}} />
 						<MdWifi color='white' style={{marginRight: "10px"}} />
-						<FaBatteryThreeQuarters color='white' style={{marginRight: "10px"}} />
+						{batteryRange(infoDrone.battery)}
 					</VuiBox>
 					
 				</VuiBox>
@@ -105,7 +127,7 @@ const DroneInfo = ({ height }) => {
 						alignItems='center'
 						sx={{ minWidth: '80px' }}>
 						<VuiTypography color='success' variant='h3'>
-							32KM/H
+							{ infoDrone.speed }KM/H
 						</VuiTypography>
 						<VuiTypography color='white' variant='caption' fontWeight='regular'>
 							ESP23-8888-001
@@ -121,3 +143,21 @@ const DroneInfo = ({ height }) => {
 };
 
 export default DroneInfo;
+
+
+function batteryRange(battery) {
+	switch (true) {
+		case battery >= 0 && battery <= 10:
+			return <FaBatteryEmpty color='white' style={{marginRight: "10px"}} />;
+		case battery > 10 && battery <= 25:
+			return <FaBatteryQuarter color='white' style={{marginRight: "10px"}} />;
+		case battery > 25 && battery <= 50:
+			return <FaBatteryHalf color='white' style={{marginRight: "10px"}} />;
+		case battery > 50 && battery <= 75:
+			return <FaBatteryThreeQuarters color='white' style={{marginRight: "10px"}} />;
+		case battery > 75 && battery <= 100:
+			return <FaBatteryFull color='white' style={{marginRight: "10px"}} />;
+		default:
+			return 'xd';
+	}
+}

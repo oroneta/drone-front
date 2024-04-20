@@ -21,7 +21,6 @@ import VuiButton from "components/VuiButton";
 
 // Oroneta example components
 import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
-import SidenavCard from "examples/Sidenav/SidenavCard";
 
 // Custom styles for the Sidenav
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
@@ -210,20 +209,6 @@ function Sidenav({ color, brandName, routes, ...rest }) {
           },
         })}
       >
-        <SidenavCard color={color} />
-        <VuiBox mt={2}>
-          <VuiButton
-            component="a"
-            href="https://github.com/oroneta"
-            target="_blank"
-            rel="noreferrer"
-            variant="contained"
-            color={color}
-            fullWidth
-          >
-            Upgrade to PRO
-          </VuiButton>
-        </VuiBox>
       </VuiBox>
     </SidenavRoot>
   );
