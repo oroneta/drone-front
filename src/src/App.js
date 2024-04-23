@@ -30,7 +30,7 @@ import routes from "routes";
 
 // Oroneta contexts
 import { useVisionUIController, setMiniSidenav, setOpenConfigurator } from "context";
-import { UserProvider } from "context/UserProvider";
+// import { UserProvider } from "context/UserProvider";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
@@ -117,7 +117,7 @@ export default function App() {
   );
 
   return (
-    <UserProvider>
+    // <UserProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {layout === "dashboard" && (
@@ -140,6 +140,6 @@ export default function App() {
           <Redirect from="*" to="/dashboard" />
         </Switch>
       </ThemeProvider>
-    </UserProvider>
+    // </UserProvider>
   );
 }
