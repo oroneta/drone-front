@@ -22,7 +22,6 @@ const DroneInfo = ({ height }) => {
 	
 	const { gradients } = colors;
 	const { cardContent } = gradients;
-	console.log(infoDrone.status);
 	return (
 		<Card sx={{ height: {height}, display:"flex"}}>
 			<VuiBox display='flex' flexDirection='column'>
