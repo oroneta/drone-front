@@ -11,14 +11,15 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 import Grid from "@mui/material/Grid";
-import team1 from "assets/images/avatar1.png";
-import team2 from "assets/images/avatar2.png";
-import team3 from "assets/images/avatar3.png";
-import team4 from "assets/images/avatar4.png";
+import linlei from "assets/images/linleiZheng.jpeg";
+// import team2 from "assets/images/avatar2.png";
+// import team3 from "assets/images/avatar3.png";
+// import team4 from "assets/images/avatar4.png";
+
 // Images
-import profile1 from "assets/images/profile-1.png";
-import profile2 from "assets/images/profile-2.png";
-import profile3 from "assets/images/profile-3.png";
+import UPVRoute1 from "assets/images/UPVRoute1.png";
+import HarborRoute from "assets/images/HarborRoute.png";
+import UPVRoute2 from "assets/images/UPVRoute2.png";
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
@@ -70,26 +71,26 @@ function Overview() {
           >
             <ProfileInfoCard
               title="profile information"
-              description="Hi, I’m Mark Johnson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Hi, I’m Alexis Montalvo, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
               info={{
-                fullName: "Mark Johnson",
-                mobile: "(44) 123 1234 123",
-                email: "mark@simmmple.com",
-                location: "United States",
+                fullName: "Alexis Montalvo",
+                mobile: "(34) 123 123 123",
+                email: "amoncal@oroneta.com",
+                location: "Spain",
               }}
               social={[
                 {
-                  link: "https://www.facebook.com/CreativeTim/",
+                  // link: "",
                   icon: <FacebookIcon />,
                   color: "facebook",
                 },
                 {
-                  link: "https://twitter.com/creativetim",
+                  // link: "",
                   icon: <TwitterIcon />,
                   color: "twitter",
                 },
                 {
-                  link: "https://www.instagram.com/creativetimofficial/",
+                  // link: "",
                   icon: <InstagramIcon />,
                   color: "instagram",
                 },
@@ -97,7 +98,7 @@ function Overview() {
             />
           </Grid>
         </Grid>
-      </VuiBox>
+      </VuiBox>   
       <Grid container spacing={3} mb="30px">
         <Grid item xs={12} xl={12}>
           <Card>
@@ -113,10 +114,10 @@ function Overview() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={profile1}
-                    label="project #2"
-                    title="modern"
-                    description="As Uber works through a huge amount of internal management turmoil."
+                    image={UPVRoute1}
+                    label="Route #1"
+                    title="Route of UPV"
+                    description="The drone will roam around the UPV."
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
@@ -124,19 +125,19 @@ function Overview() {
                       label: "VIEW ALL",
                     }}
                     authors={[
-                      { image: team1, name: "Elena Morison" },
-                      { image: team2, name: "Ryan Milly" },
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team4, name: "Peterson" },
+                      { image: linlei, name: "Linlei Zheng" },
+                      // { image: team2, name: "Ryan Milly" },
+                      // { image: team3, name: "Nick Daniel" },
+                      // { image: team4, name: "Peterson" },
                     ]}
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={profile2}
-                    label="project #1"
-                    title="scandinavian"
-                    description="Music is something that every person has his or her own specific opinion about."
+                    image={HarborRoute}
+                    label="Route #2"
+                    title="Route of Harbor"
+                    description="The drone will roam around the harbor of Valencia."
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
@@ -144,19 +145,16 @@ function Overview() {
                       label: "VIEW ALL",
                     }}
                     authors={[
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team4, name: "Peterson" },
-                      { image: team1, name: "Elena Morison" },
-                      { image: team2, name: "Ryan Milly" },
+                      { image: linlei, name: "Linlei Zheng" },
                     ]}
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={profile3}
-                    label="project #3"
-                    title="minimalist"
-                    description="Different people have different taste, and various types of music."
+                    image={UPVRoute2}
+                    label="Route #3"
+                    title="Route of UPV"
+                    description="The drone will roam around the UPV."
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
@@ -164,10 +162,7 @@ function Overview() {
                       label: "VIEW ALL",
                     }}
                     authors={[
-                      { image: team4, name: "Peterson" },
-                      { image: team3, name: "Nick Daniel" },
-                      { image: team2, name: "Ryan Milly" },
-                      { image: team1, name: "Elena Morison" },
+                      { image: linlei, name: "Linlei Zheng" },
                     ]}
                   />
                 </Grid>
