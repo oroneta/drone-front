@@ -18,14 +18,11 @@ import Table from "examples/Tables/Table";
 import authorsTableData from "layouts/drones/data/authorsTableData";
 import { MapView } from "examples/MapView";
 import DroneInfo from "./components/DroneInfo";
-// import { UserContext } from "context/UserContext";
-// import { useContext } from "react";
 
 function Tables() {
   const { columns, rows } = authorsTableData;
   const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
-  // const { infoDrone } = useContext( UserContext );
-  // console.log(infoDrone);
+  
   return (
     <DashboardLayout>
       <DashboardNavbar />
