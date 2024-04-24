@@ -1,34 +1,47 @@
 // import { useEffect } from "react"
+import { useEffect, useState } from "react";
 import { UserContext } from "./UserContext"
 
 
 export const UserProvider = ( { children } ) => {
-    const infoDrone = {
-        battery: 25,
-        gps: [39.4325, -0.3121],
+
+    // console.log('Se redibuja')
+    const [infoDrone, setInfoDrone] = useState({
         status: false,
-        speed: 19,
-    }
+        speed: 0,
+        gps: [39.428, -0.3183],
+        battery: 0
+    });
+    // Hace fetch a la API 
+    useEffect(() => {
+        const fetchDataPeriodically = () => {
+            fetch('http://localhost:60001/metadata/all/0', {
+            // mode: "no-cors",
+            headers: {Authorization: 'Bearer 0'}
+            })
+            .then( response => response.json())
+            .then( data => {
+                const aux = data;
+                const allDrones = aux.data;
+                // console.log(allDrones[0])
+                setInfoDrone(allDrones[0]);
+                console.log( "Los datos recibidos son ",infoDrone )
+                
+            })
+            .catch((error) => console.error('ERROR', error))
+        };
+        fetchDataPeriodically();
+        const intervalId = setInterval(fetchDataPeriodically, 5000);
 
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, [])
     
-    // Hace fetch a la API
-    const url = 'https://localhost:8081';
-    const token = 0; // HARDCODED xDDDDDDDDDDDD
-    fetch( url, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    })
-    .then( response => response.JSON())
-    .then( data => console.log( data ))
-    .catch((error) => console.error('ERROR', error))
-    
-
     const infoDrones = [
         {
             id: 0,
-            gps: [39.4325, -0.3121],
+            gps: infoDrone.gps,
         },
         {
             id: 1,

@@ -8,14 +8,17 @@ import App from "App";
 import { VisionUIControllerProvider } from "context";
 // import { MapView } from "layouts/dashboard/components/MapView";
 // import { MapContainer, TileLayer } from "react-leaflet";
+import { UserProvider } from "context/UserProvider";
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 
 root.render(<BrowserRouter>
+    <UserProvider>
     <VisionUIControllerProvider>
       <App />
     </VisionUIControllerProvider>
+    </UserProvider>
 </BrowserRouter>)
 
