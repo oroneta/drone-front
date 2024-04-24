@@ -12,9 +12,9 @@ import Grid from "@mui/material/Grid";
 // import team3 from "assets/images/avatar3.png";
 // import team4 from "assets/images/avatar4.png";
 // Images
-import profile1 from "assets/images/profile-1.png";
-import profile2 from "assets/images/profile-2.png";
-import profile3 from "assets/images/profile-3.png";
+import UPVRoute1 from "assets/images/UPVRoute1.png";
+import HarborRoute from "assets/images/HarborRoute.png";
+import UPVRoute2 from "assets/images/UPVRoute2.png";
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
@@ -129,20 +129,7 @@ function Overview() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={profile1}
-                    label="route #2"
-                    title="UPV"
-                    action={{
-                      type: "internal",
-                      route: "/pages/profile/profile-overview",
-                      color: "white",
-                      label: "VIEW",
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6} xl={4}>
-                  <DefaultProjectCard
-                    image={profile2}
+                    image={UPVRoute1}
                     label="route #1"
                     title="UPV"
                     action={{
@@ -155,7 +142,20 @@ function Overview() {
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={profile3}
+                    image={HarborRoute}
+                    label="route #2"
+                    title="Valencia's harbor"
+                    action={{
+                      type: "internal",
+                      route: "/pages/profile/profile-overview",
+                      color: "white",
+                      label: "VIEW",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} md={6} xl={4}>
+                  <DefaultProjectCard
+                    image={UPVRoute2}
                     label="route #3"
                     title="UPV"
                     action={{

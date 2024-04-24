@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import Tab from "@mui/material/Tab";
 import Tabs from "@mui/material/Tabs";
 // Images
-import burceMars from "assets/images/OronetaLogo.png";
+import oronetaLogo from "assets/images/OronetaLogo.png";
 // Oroneta base styles
 import breakpoints from "assets/theme/base/breakpoints";
 import VuiAvatar from "components/VuiAvatar";
@@ -90,7 +90,7 @@ function Header() {
             })}
           >
             <VuiAvatar
-              src={burceMars}
+              src={oronetaLogo}
               alt="profile-image"
               sx={{borderRadius: "5px"}}
               size="xl"

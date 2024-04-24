@@ -15,7 +15,7 @@ const EmployeesList = () => {
     return (<Card className="Card-Root">
                 <VuiBox display="flex" justifyContent="space-between" alignItems="center" mb="22px">
                     <VuiTypography variant="lg" color="white">
-                     List of Employees
+                        List of Employees
                     </VuiTypography>
                 </VuiBox>
                 <VuiBox

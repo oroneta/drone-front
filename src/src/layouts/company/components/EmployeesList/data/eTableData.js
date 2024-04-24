@@ -8,12 +8,11 @@ import VuiAvatar from "components/VuiAvatar";
 import VuiBadge from "components/VuiBadge";
 
 // Images
-import avatar1 from "assets/images/avatar1.png";
-import avatar2 from "assets/images/avatar2.png";
-import avatar3 from "assets/images/avatar3.png";
-import avatar4 from "assets/images/avatar4.png";
-import avatar5 from "assets/images/avatar5.png";
-import avatar6 from "assets/images/avatar6.png";
+import haitaoWu from "assets/images/haitaoWu.jpeg";
+import zhilinLi from "assets/images/zhilinLi.jpg";
+import mariaZapata from "assets/images/mariaZapata.jpeg";
+import linlei from "assets/images/linleiZheng.jpeg";
+import Elena from "assets/images/avatar6.png";
 
 function Employer({ image, name, email }) {
   return (
@@ -51,13 +50,13 @@ export default {
     { name: "name", align: "left" },
     { name: "role", align: "left" },
     { name: "status", align: "center" },
-    { name: "permission", align: "center" },
+    { name: "employed", align: "center" },
     { name: "drones", align: "center" },
   ],
 
   rows: [
     {
-      name: <Employer image={avatar4} name="Zheng Lin Lei" email="esthera@simmmple.com" />,
+      name: <Employer image={linlei} name="Zheng Lin Lei" email="llzheng@oroneta.com" />,
       role: <Function job="Manager" org="Organization" />,
       status: (
         <VuiBadge
@@ -74,20 +73,20 @@ export default {
           })}
         />
       ),
-      permission: (
+      employed: (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
           23/04/18
         </VuiTypography>
       ),
       drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+        <VuiTypography variant="caption" color="text" fontWeight="medium">
+          1
         </VuiTypography>
       ),
     },
     {
-      name: <Employer image={avatar2} name="Alexa Liras" email="alexa@simmmple.com" />,
-      role: <Function job="Programator" org="Developer" />,
+      name: <Employer image={Elena} name="Elena Clofent" email="eclemuo@oroneta.com" />,
+      role: <Function job="Programmer" org="Developer" />,
       status: (
         <VuiBadge
           variant="standard"
@@ -102,130 +101,103 @@ export default {
           })}
         />
       ),
-      permission: (
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          11/01/19
-        </VuiTypography>
-      ),
-      drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
-        </VuiTypography>
-      ),
-    },
-    {
-      name: <Employer image={avatar3} name="Laurent Michael" email="laurent@simmmple.com" />,
-      role: <Function job="Executive" org="Projects" />,
-      status: (
-        <VuiBadge
-          variant="standard"
-          badgeContent="Online"
-          color="success"
-          size="xs"
-          container
-          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
-            background: success.main,
-            border: `${borderWidth[1]} solid ${success.main}`,
-            borderRadius: borderRadius.md,
-            color: white.main,
-          })}
-        />
-      ),
-      permission: (
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          19/09/17
-        </VuiTypography>
-      ),
-      drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
-        </VuiTypography>
-      ),
-    },
-    {
-      name: <Employer image={avatar1} name="Freduardo Hill" email="freduardo@simmmple.com" />,
-      role: <Function job="Programator" org="Developer" />,
-      status: (
-        <VuiBadge
-          variant="standard"
-          badgeContent="Online"
-          color="success"
-          size="xs"
-          container
-          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
-            background: success.main,
-            border: `${borderWidth[1]} solid ${success.main}`,
-            borderRadius: borderRadius.md,
-            color: white.main,
-          })}
-        />
-      ),
-      permission: (
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          24/12/08
-        </VuiTypography>
-      ),
-      drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
-        </VuiTypography>
-      ),
-    },
-    {
-      name: <Employer image={avatar5} name="Daniel Thomas" email="daniel@simmmple.com" />,
-      role: <Function job="Manager" org="Executive" />,
-      status: (
-        <VuiBadge
-          variant="standard"
-          badgeContent="Offline"
-          size="xs"
-          container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
-            borderRadius: borderRadius.md,
-            color: white.main,
-          })}
-        />
-      ),
-      permission: (
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          04/10/21
-        </VuiTypography>
-      ),
-      drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
-        </VuiTypography>
-      ),
-    },
-    {
-      name: <Employer image={avatar6} name="Mark Wilson" email="mark@simmmple.com" />,
-      role: <Function job="Programtor" org="Developer" />,
-      status: (
-        <VuiBadge
-          variant="standard"
-          badgeContent="Offline"
-          size="xs"
-          container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
-            borderRadius: borderRadius.md,
-            color: white.main,
-          })}
-        />
-      ),
-      permission: (
+      employed: (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
           14/09/20
         </VuiTypography>
       ),
       drones: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+        <VuiTypography variant="caption" color="text" fontWeight="medium">
+          0
         </VuiTypography>
       ),
     },
+    {
+      name: <Employer image={zhilinLi} name="Zhilin Li" email="zli@oroneta.com" />,
+      role: <Function job="Programmer" org="Developer" />,
+      status: (
+        <VuiBadge
+          variant="standard"
+          badgeContent="Offline"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      employed: (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          11/01/19
+        </VuiTypography>
+      ),
+      drones: (
+        <VuiTypography variant="caption" color="text" fontWeight="medium">
+          0
+        </VuiTypography>
+      ),
+    },
+    {
+      name: <Employer image={mariaZapata} name="Maria Zapata" email="mzapale@oroneta.com" />,
+      role: <Function job="Programmer" org="Developer" />,
+      status: (
+        <VuiBadge
+          variant="standard"
+          badgeContent="Online"
+          color="success"
+          size="xs"
+          container
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: success.main,
+            border: `${borderWidth[1]} solid ${success.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      employed: (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          19/09/17
+        </VuiTypography>
+      ),
+      drones: (
+        <VuiTypography variant="caption" color="text" fontWeight="medium">
+          0
+        </VuiTypography>
+      ),
+    },
+    {
+      name: <Employer image={haitaoWu} name="Haitao Wu" email="hwu@oroneta.com" />,
+      role: <Function job="Programmer" org="Developer" />,
+      status: (
+        <VuiBadge
+          variant="standard"
+          badgeContent="Online"
+          color="success"
+          size="xs"
+          container
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: success.main,
+            border: `${borderWidth[1]} solid ${success.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      employed: (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          24/12/08
+        </VuiTypography>
+      ),
+      drones: (
+        <VuiTypography variant="caption" color="text" fontWeight="medium">
+          0
+        </VuiTypography>
+      ),
+    },
+    
   ],
 };

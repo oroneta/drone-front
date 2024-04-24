@@ -1,6 +1,6 @@
 import { UserContext } from 'context/UserContext';
 import React, { useContext } from 'react'
-import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Rectangle } from 'react-leaflet';
 
 const position = [39.4371,-0.3177];
 
