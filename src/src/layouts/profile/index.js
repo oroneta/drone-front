@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 
 // @mui material components
 // @mui icons
@@ -131,6 +131,7 @@ function Overview() {
                   <DefaultProjectCard
                     image={UPVRoute1}
                     label="route #1"
+                    description=""
                     title="UPV"
                     action={{
                       type: "internal",
@@ -145,6 +146,7 @@ function Overview() {
                     image={HarborRoute}
                     label="route #2"
                     title="Valencia's harbor"
+                    description=""
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
@@ -158,6 +160,7 @@ function Overview() {
                     image={UPVRoute2}
                     label="route #3"
                     title="UPV"
+                    description=""
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",

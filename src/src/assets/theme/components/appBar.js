@@ -1,6 +1,4 @@
-
-
-export default {
+const aB = {
   defaultProps: {
     color: "transparent",
   },
@@ -11,3 +9,5 @@ export default {
     },
   },
 };
+
+export default aB;

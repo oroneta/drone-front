@@ -45,7 +45,7 @@ const Welcome = () => {
             >
               Streaks
             </VuiTypography>
-            <VuiTypography color="white" variant="h2" fontWeight="semibold">
+            <VuiTypography color="white" variant="h2" fontWeight="bold">
               43 Days
             </VuiTypography>
           </VuiBox>

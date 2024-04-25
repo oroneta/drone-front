@@ -1,3 +1,5 @@
+import React, { Component }  from 'react';
+
 // @mui material components
 import Card from "@mui/material/Card";
 // Oroneta components
@@ -101,7 +103,7 @@ function Overview() {
       </VuiBox>   
       <Grid container spacing={3} mb="30px">
         <Grid item xs={12} xl={12}>
-          <Card>
+          <Card className="Card-Root">
             <VuiBox display="flex" flexDirection="column" height="100%">
               <VuiBox display="flex" flexDirection="column" mb="24px">
                 <VuiTypography color="white" variant="lg" fontWeight="bold" mb="6px">

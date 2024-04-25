@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 
 import { useState, useEffect } from "react";
 
@@ -97,8 +98,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
     >
       <NotificationItem
         image={<img src={team2} alt="person" />}
-        title={["New message", "from Lin"]}
-        date="Hace 13 minutos"
+        title={["New alarm", "from Image"]}
+        date="1 min"
         onClick={handleCloseMenu}
       />
       {/* <NotificationItem
@@ -107,7 +108,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
         date="1 day"
         onClick={handleCloseMenu}
       /> */}
-      <NotificationItem
+      {/* <NotificationItem
         color="text"
         image={
           <Icon fontSize="small" sx={{ color: ({ palette: { white } }) => white.main }}>
@@ -117,7 +118,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
         title={["", "Payment successfully completed"]}
         date="2 days"
         onClick={handleCloseMenu}
-      />
+      /> */}
     </Menu>
   );
 

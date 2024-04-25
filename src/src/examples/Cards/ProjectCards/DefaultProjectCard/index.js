@@ -1,5 +1,5 @@
 
-
+import React, { Component }  from 'react';
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -49,7 +49,7 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
         component="img"
         src={image}
         mb="8px"
-        borderRadius="15px"
+        borderRadius="5px"
         sx={({ breakpoints }) => ({
           [breakpoints.up("xl")]: {
             height: "200px",

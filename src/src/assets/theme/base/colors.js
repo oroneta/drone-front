@@ -1,5 +1,4 @@
-
-export default {
+const colors = {
   // Vision UI Colors
   background: {
     default: "#f8f9fa",
@@ -416,3 +415,4 @@ export default {
     indicator: { boxShadow: "#ddd" },
   },
 };
+export default colors;

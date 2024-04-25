@@ -1,5 +1,5 @@
 
-
+import React, { Component }  from 'react';
 import { useState, useEffect } from "react";
 
 // react-github-btn

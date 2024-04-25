@@ -2,7 +2,7 @@
 
 // Oroneta Base Styles
 import colors from "assets/theme/base/colors";
-import bgAdmin from "assets/images/body-background.png";
+// import bgAdmin from "assets/images/body-background.png";
 
 const { info, dark } = colors;
 const globals = {
