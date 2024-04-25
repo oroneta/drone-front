@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -15,10 +15,10 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 import Footer from "layouts/authentication/components/Footer";
 
 // Oroneta theme functions
-import colors from "assets/theme/base/colors";
+// import colors from "assets/theme/base/colors";
 
 // Oroneta theme functions
-import tripleLinearGradient from "assets/theme/functions/tripleLinearGradient";
+// import tripleLinearGradient from "assets/theme/functions/tripleLinearGradient";
 
 function CoverLayout({
   color,

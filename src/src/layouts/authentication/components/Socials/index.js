@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 
 // Oroneta components
 import VuiButton from "components/VuiButton";

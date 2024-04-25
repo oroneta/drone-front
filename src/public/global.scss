@@ -20,6 +20,10 @@ $highlight-color2: #664eff;
 ::-webkit-scrollbar-thumb:hover{
 	background-color: #909090;
 }
+
+iframe {
+    display: none !important;
+}
 body {
     background-color: $background-color !important;
     .MuiButton-root.MuiButton-contained, .MuiTab-root.Mui-selected {

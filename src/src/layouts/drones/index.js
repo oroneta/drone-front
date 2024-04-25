@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -67,7 +67,7 @@ function Tables() {
         </Grid>
       </VuiBox>
         <VuiBox mb={3}>
-          <Card>
+          <Card className="Card-Root">
             <VuiBox display="flex" justifyContent="space-between" alignItems="center" mb="22px">
               <VuiTypography variant="lg" color="white">
                 Drones

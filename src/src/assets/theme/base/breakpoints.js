@@ -6,7 +6,7 @@
  * You can customized the breakpoints for the entire Vision UI Dashboard  Material using thie file.
  */
 
-export default {
+const bp = {
   values: {
     xs: 375,
     sm: 425,
@@ -16,3 +16,4 @@ export default {
     xxl: 1680,
   },
 };
+export default bp;

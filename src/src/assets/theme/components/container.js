@@ -24,8 +24,7 @@ const sharedClasses = {
   width: "100% !important",
   position: "relative",
 };
-
-export default {
+const c = {
   [SM]: {
     ".MuiContainer-root": {
       ...sharedClasses,
@@ -57,3 +56,4 @@ export default {
     },
   },
 };
+export default c;

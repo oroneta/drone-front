@@ -23,7 +23,7 @@ const DroneInfo = ({ height }) => {
 	const { gradients } = colors;
 	const { cardContent } = gradients;
 	return (
-		<Card sx={{ height: {height}, display:"flex"}}>
+		<Card className="Card-Root" sx={{ height: {height}, display:"flex"}}>
 			<VuiBox display='flex' flexDirection='column'>
 				<VuiTypography variant='lg' color='white' fontWeight='bold' mb='4px'>
 					Drone Information
@@ -111,8 +111,8 @@ const DroneInfo = ({ height }) => {
 						flexDirection: 'row',
 						height: '82px',
 						mx: 'auto',
-						borderRadius: '20px',
-						background: linearGradient(cardContent.main, cardContent.state, cardContent.deg),
+						borderRadius: '5px',
+						background: "#1e1f23",
 						transform: 'translateY(-90%)',
 						zIndex: '1000'
 					})}>

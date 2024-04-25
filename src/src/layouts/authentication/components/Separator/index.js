@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 
 // @mui material components
 import Divider from "@mui/material/Divider";

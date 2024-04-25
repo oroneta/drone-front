@@ -1,13 +1,12 @@
 
 
 // Oroneta base styles
-import colors from "assets/theme/base/colors";
+// import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 
-const { grey, text, info } = colors;
+// const { grey, text, info } = colors;
 const { size } = typography;
-
-export default {
+const bq = {
   styleOverrides: {
     li: {
       lineHeight: 0,
@@ -18,3 +17,4 @@ export default {
     },
   },
 };
+export default bq;

@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 
 
 // prop-types is library for typechecking of props

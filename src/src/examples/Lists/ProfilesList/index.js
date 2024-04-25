@@ -1,4 +1,4 @@
-
+import React, { Component }  from 'react';
 
 // react-routers components
 import { Link } from "react-router-dom";

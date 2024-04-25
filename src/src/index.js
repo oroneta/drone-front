@@ -13,7 +13,6 @@ import { UserProvider } from "context/UserProvider";
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
-
 root.render(<BrowserRouter>
     <UserProvider>
     <VisionUIControllerProvider>
