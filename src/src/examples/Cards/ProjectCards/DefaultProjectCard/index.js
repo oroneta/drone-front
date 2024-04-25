@@ -15,7 +15,7 @@ import VuiTypography from "components/VuiTypography";
 import VuiButton from "components/VuiButton";
 import VuiAvatar from "components/VuiAvatar";
 
-function DefaultProjectCard({ image, label, title, description, action, authors }) {
+function DefaultProjectCard({ image, label, title, description, action, authors, funcion = () => {}}) {
   const renderAuthors = authors.map(({ image: media, name }) => (
     <Tooltip key={name} title={name} placement="bottom">
       <VuiAvatar
@@ -102,6 +102,7 @@ function DefaultProjectCard({ image, label, title, description, action, authors 
         <VuiBox display="flex" justifyContent="space-between" alignItems="center">
           {action.type === "internal" ? (
             <VuiButton
+              onClick={funcion}
               component={Link}
               to={action.route}
               variant="outlined"

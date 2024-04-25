@@ -12,6 +12,34 @@ export const UserProvider = ( { children } ) => {
         gps: [39.428, -0.3183],
         battery: 0
     });
+
+    const [statusRouteUPV, setStatusRouteUPV] = useState(false);
+    const [statusRouteHarbor1, setStatusRouteHarbor1] = useState(false);
+    const [statusRouteHarbor2, setStatusRouteHarbor2] = useState(false);
+    const [position, setPosition] = useState([39.4371,-0.3177])
+
+    const handleChangeRouteUPV = () => {
+        setStatusRouteUPV(!statusRouteUPV);
+        
+        // if (statusRouteUPV) {
+            // fetch(url, {
+            //     method: 
+            // })
+        // }
+    } 
+
+    const handleChangeRouteHarbor1 = () => {
+        setStatusRouteHarbor1(!statusRouteHarbor1);
+        // if (statusRouteHarbor1) {
+
+        // }
+    }
+
+    const handleChangeRouteHarbor2 = () => {
+        setStatusRouteHarbor2(!statusRouteHarbor2)
+        // if (statusRouteHarbor2)
+    }
+
     // Hace fetch a la API 
     useEffect(() => {
         const fetchDataPeriodically = () => {
@@ -26,7 +54,6 @@ export const UserProvider = ( { children } ) => {
                 // console.log(allDrones[0])
                 setInfoDrone(allDrones[0]);
                 console.log( "Los datos recibidos son ",infoDrone )
-                
             })
             .catch((error) => console.error('ERROR', error))
         };
@@ -58,7 +85,7 @@ export const UserProvider = ( { children } ) => {
     }
 
     return (
-        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones } }>
+        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position } }>
             { children }
         </UserContext.Provider>
     )

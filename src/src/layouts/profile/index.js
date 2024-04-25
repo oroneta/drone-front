@@ -1,4 +1,3 @@
-import React, { Component }  from 'react';
 
 // @mui material components
 // @mui icons
@@ -12,9 +11,9 @@ import Grid from "@mui/material/Grid";
 // import team3 from "assets/images/avatar3.png";
 // import team4 from "assets/images/avatar4.png";
 // Images
-import UPVRoute1 from "assets/images/UPVRoute1.png";
+import UPVRoute from "assets/images/UPVRoute.png";
 import HarborRoute from "assets/images/HarborRoute.png";
-import UPVRoute2 from "assets/images/UPVRoute2.png";
+import HarborRoute2 from "assets/images/HarborRoute2.png";
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
@@ -28,9 +27,12 @@ import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Welcome from "./components/Welcome/index";
 import Calendario from "./components/Calendar";
-
+// useContext
+import { UserContext } from 'context/UserContext';
+import React, { useContext } from 'react'
 
 function Overview() {
+  const { handleChangeRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2 } = useContext( UserContext );
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -129,44 +131,46 @@ function Overview() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={UPVRoute1}
-                    label="route #1"
-                    description=""
-                    title="UPV"
-                    action={{
-                      type: "internal",
-                      route: "/pages/profile/profile-overview",
-                      color: "white",
-                      label: "VIEW",
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6} xl={4}>
-                  <DefaultProjectCard
                     image={HarborRoute}
-                    label="route #2"
+                    label="route #1"
                     title="Valencia's harbor"
-                    description=""
                     action={{
                       type: "internal",
-                      route: "/pages/profile/profile-overview",
+                      route: "/map",
                       color: "white",
-                      label: "VIEW",
+                      label: "Go on",
                     }}
+                    funcion= { handleChangeRouteHarbor1 }
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={UPVRoute2}
+                    image={HarborRoute2}
+                    label="route #2"
+                    title="Valencia's harbor 2"
+                    action={{
+                      type: "internal",
+                      route: "/map",
+                      color: "white",
+                      label: "Go on",
+                    }}
+                    funcion={ handleChangeRouteHarbor2 }
+                  />
+                </Grid>
+                <Grid item xs={12} md={6} xl={4}>
+                  <DefaultProjectCard
+                    image={UPVRoute}
                     label="route #3"
                     title="UPV"
                     description=""
                     action={{
                       type: "internal",
-                      route: "/pages/profile/profile-overview",
+                      route: "/map",
                       color: "white",
-                      label: "VIEW",
+                      label: "Go on",
                     }}
+                    funcion={ handleChangeRouteUPV }
+
                   />
                 </Grid>
               </Grid>

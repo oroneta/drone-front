@@ -69,15 +69,15 @@ const routes = [
     component: Map,
     noCollapse: true,
   },
-  {
-    type: "collapse",
-    name: "Routes",
-    key: "routes",
-    route: "/routes",
-    icon: <MdRoute size="18px" color="inherit" />,
-    component: Routes,
-    noCollapse: true,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Routes",
+  //   key: "routes",
+  //   route: "/routes",
+  //   icon: <MdRoute size="18px" color="inherit" />,
+  //   component: Routes,
+  //   noCollapse: true,
+  // },
   // ------------------------------
   { type: "title", title: "Account", key: "account-pages" },
   {
