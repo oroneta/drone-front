@@ -8,6 +8,12 @@ class AlarmImage {
         // Show alert
         document.querySelector("#AlarmImage").classList.add("active");
 
+        // Set url
+        document.querySelector("#v_id").onclick = () => {
+            console.log(url);
+            document.location.href = url;
+        }
+
         // Auto hide
         if (auto) {
             setTimeout(() => {

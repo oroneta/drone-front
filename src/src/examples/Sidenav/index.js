@@ -18,7 +18,6 @@ import Icon from "@mui/material/Icon";
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
-import VuiButton from "components/VuiButton";
 
 // Oroneta example components
 import SidenavCollapse from "examples/Sidenav/SidenavCollapse";

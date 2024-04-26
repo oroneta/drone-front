@@ -20,6 +20,7 @@ import Sidenav from "examples/Sidenav";
 import theme from "assets/theme";
 // import themeRTL from "assets/theme/theme-rtl";
 
+import AlarmImage from 'examples/Alarm';
 
 // Oroneta routes
 import routes from "routes";
@@ -126,9 +127,10 @@ export default function App() {
               onMouseLeave={handleOnMouseLeave}
             />
             {/* configsButton */}
+            <AlarmImage />
           </>
         )}
-        {layout === "vr"}
+        {layout === "vr" && <AlarmImage />}
         <Switch>
           {getRoutes(routes)}
           <Redirect from="*" to="/dashboard" />
