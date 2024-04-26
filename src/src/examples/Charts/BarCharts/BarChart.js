@@ -1,6 +1,6 @@
 
 
-import React, { Component } from "react";
+import React, {Component} from "react";
 import Chart from "react-apexcharts";
 
 class BarChart extends Component {

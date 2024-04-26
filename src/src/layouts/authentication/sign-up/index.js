@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 
 import { useState } from "react";
 
@@ -71,7 +71,7 @@ function SignIn() {
           </VuiTypography>
           <Stack mb="25px" justifyContent="center" alignItems="center" direction="row" spacing={2}>
             <VuiBox borderRadius="xl">
-              <a href="#">
+              <a href="./#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"
@@ -99,7 +99,7 @@ function SignIn() {
               </a>
             </VuiBox>
             <VuiBox borderRadius="xl">
-              <a href="#">
+              <a href="./#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"
@@ -127,7 +127,7 @@ function SignIn() {
               </a>
             </VuiBox>
             <VuiBox borderRadius="xl">
-              <a href="#">
+              <a href=".#">
                 <IconButton
                   transition="all .25s ease"
                   justify="center"

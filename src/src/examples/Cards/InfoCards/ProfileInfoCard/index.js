@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 
 
 // prop-types is library for typechecking of props
@@ -13,7 +13,6 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Oroneta base styles
-import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 
 function ProfileInfoCard({ title, description, info, social }) {

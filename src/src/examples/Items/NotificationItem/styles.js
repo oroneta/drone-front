@@ -1,7 +1,7 @@
 function menuItem(theme) {
   const { palette, borders, transitions } = theme;
 
-  const { text, light } = palette;
+  const { text } = palette;
   const { borderRadius } = borders;
 
   return {

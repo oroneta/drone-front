@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React from 'react';
 
 import { useState, useEffect/*, useMemo */} from "react";
 
@@ -15,7 +15,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 // Oroneta example components
 import Sidenav from "examples/Sidenav";
-import Configurator from "examples/Configurator";
 
 // Oroneta themes
 import theme from "assets/theme";
@@ -126,11 +125,10 @@ export default function App() {
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
-            <Configurator />
             {/* configsButton */}
           </>
         )}
-        {layout === "vr" && <Configurator /> }
+        {layout === "vr"}
         <Switch>
           {getRoutes(routes)}
           <Redirect from="*" to="/dashboard" />

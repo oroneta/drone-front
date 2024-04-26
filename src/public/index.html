@@ -36,5 +36,24 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <div id="AlarmImage" class="Card-Root">
+      <div class="layout">
+        <ion-icon name="alert-circle-outline"></ion-icon>
+        <div>
+          <h4>New alarm</h4>
+          <p>
+            <span class="AlarmDroneDIC"></span> has detected a alarm image
+          </p>
+          <!-- <small>Click to view more</small> -->
+        </div>
+      </div>
+      <div class="btn">
+        <a class="c" onclick="this.parentElement.parentElement.classList.remove('active')">Close</a>
+        <a class="v">View</a>
+      </div>
+    </div>
   </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <!-- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+  <script src="%PUBLIC_URL%/script.js"></script>
 </html>

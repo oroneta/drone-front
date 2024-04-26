@@ -6,7 +6,6 @@ import { styled } from "@mui/material/styles";
 
 export default styled(Switch)(({ theme, ownerState }) => {
   const { palette } = theme;
-  const { color } = ownerState;
   const { white, secondary } = palette;
 
   // styles for the button with variant="contained"
