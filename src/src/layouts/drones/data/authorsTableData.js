@@ -78,7 +78,7 @@ export default {
     {
       Drone: 
       <VuiTypography variant="caption" color="white" fontWeight="medium">
-        FRA00001-001-0033
+        ESP00002-123-0033
       </VuiTypography>,
       function: <Function job="Programator" org="Developer" />,
       status: (
@@ -104,7 +104,7 @@ export default {
     {
       Drone: 
       <VuiTypography variant="caption" color="white" fontWeight="medium">
-        AUS78825-778-0001
+        ESP00003-123-0033
       </VuiTypography>,
       function: <Function job="Executive" org="Projects" />,
       status: (
@@ -124,7 +124,7 @@ export default {
       ),
       Last_fly: (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          19/09/17
+          Today
         </VuiTypography>
       ),
     },

@@ -30,9 +30,9 @@ const blueOptions = { color: '#1E90FF' };
 const limeOptions = { color: 'lime'};
 const yellowOptions = { color: '#FFFF00' };
 
-export const MapView = ({href, height, width, borderRadius, enableTool, zoom}) => {
+export const MapView = ({href, height, width, borderRadius, enableTool }) => {
     
-    const { infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, position } = useContext( UserContext );
+    const { infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, position, zoom } = useContext( UserContext );
     // console.log(infoDrones);
     return (
         (enableTool) ?
