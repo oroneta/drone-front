@@ -35,6 +35,11 @@ body {
             transform: none !important;
         }
     }
+    .swal2-modal {
+        background-color: #000 !important;
+        border: 1px solid white;
+        color: white !important;
+    }
     #root {
         min-height: 100vh;
         // Sidebar

@@ -103,24 +103,3 @@ export {
   setDirection,
   setLayout,
 };
-
-// Crear el context
-export const DataFetchContext = createContext();
-
-// Crear el provider
-export const DataFetchProvider = props => {
-  const [data, setData] = useState(null);
-  
-  useEffect(() => {
-    setData({
-      numDrones: 2,
-      status: true,
-      speed: 30,
-    })
-  }, []);
-  return (
-    <DataFetchContext.Provider value={data}>
-      {props.children}
-    </DataFetchContext.Provider>
-  );
-};

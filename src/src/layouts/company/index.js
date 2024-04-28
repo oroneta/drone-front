@@ -19,9 +19,9 @@ import linlei from "assets/images/linleiZheng.jpeg";
 // import team4 from "assets/images/avatar4.png";
 
 // Images
-import UPVRoute1 from "assets/images/UPVRoute1.png";
+import HarborRoute2 from "assets/images/HarborRoute2.png";
 import HarborRoute from "assets/images/HarborRoute.png";
-import UPVRoute2 from "assets/images/UPVRoute2.png";
+import UPVRoute from "assets/images/UPVRoute.png";
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
@@ -116,15 +116,15 @@ function Overview() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={UPVRoute1}
+                    image={HarborRoute}
                     label="Route #1"
-                    title="Route of UPV"
-                    description="The drone will roam around the UPV."
+                    title="Route of harbor"
+                    description="The drone will roam around the valencia's harbor."
                     action={{
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "Go on",
                     }}
                     authors={[
                       { image: linlei, name: "Linlei Zheng" },
@@ -136,7 +136,7 @@ function Overview() {
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={HarborRoute}
+                    image={HarborRoute2}
                     label="Route #2"
                     title="Route of Harbor"
                     description="The drone will roam around the harbor of Valencia."
@@ -144,7 +144,7 @@ function Overview() {
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "Go on",
                     }}
                     authors={[
                       { image: linlei, name: "Linlei Zheng" },
@@ -153,7 +153,7 @@ function Overview() {
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
-                    image={UPVRoute2}
+                    image={UPVRoute}
                     label="Route #3"
                     title="Route of UPV"
                     description="The drone will roam around the UPV."
@@ -161,7 +161,7 @@ function Overview() {
                       type: "internal",
                       route: "/pages/profile/profile-overview",
                       color: "white",
-                      label: "VIEW ALL",
+                      label: "Go on",
                     }}
                     authors={[
                       { image: linlei, name: "Linlei Zheng" },
