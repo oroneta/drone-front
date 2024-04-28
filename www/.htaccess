@@ -1,0 +1,10 @@
+RewriteEngine on
+
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#ERROR DOC
+ErrorDocument 404 /error/?error=404
+ErrorDocument 500 /error/?error=502
+ErrorDocument 403 /error/?error=403
+ErrorDocument 401 /error/?error=401
