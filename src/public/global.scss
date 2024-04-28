@@ -120,7 +120,7 @@ body {
         z-index: 9999;
         // background-color: $secondary-color;
         background: rgba($primary-color, 0.5) !important;
-        border-radius: 0 5px 5px 0;
+        border-radius: 0 !important;
         border-left: 3px solid $highlight-color2;
         transition: all 0.3s;
         &.active {
@@ -133,7 +133,7 @@ body {
         }
 
         .layout {
-            padding: 10px 30px 10px 10px;
+            padding: 10px 50px 10px 10px;
             display: flex;
             align-items: center;
             justify-content: center;

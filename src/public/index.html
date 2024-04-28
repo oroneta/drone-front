@@ -37,6 +37,27 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+  <script>
+    const HOST = "http://localhost:60001";
+
+    const DRONES = [
+      {
+        dic: "ESP00001-123-0033",
+        key: "0",
+        description: "Drone simulador",
+      },
+      {
+        dic: "ESP00002-123-0033",
+        key: "1",
+        description: "Drone fisico",
+      },
+      {
+        dic: "ESP00003-123-0033",
+        key: "2",
+        description: "Drone offline",
+      }
+    ]
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <!-- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
   <script src="%PUBLIC_URL%/script.js"></script>

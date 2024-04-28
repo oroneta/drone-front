@@ -1,11 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useGlobalState } from './GlobalStateProvider';
 
 const AlarmImage = () => {
-  const closeAlarm = () => {
-    document.getElementById('AlarmImage').classList.remove('active');
-  };
 
   return (
     <div id="AlarmImage" className="Card-Root">
@@ -20,11 +16,10 @@ const AlarmImage = () => {
         </div>
       </div>
       <div className="btn">
-        <a className="c" onClick={closeAlarm}>Close</a>
+        <a className="c">Close</a>
         <Link
           to="/map"
           className="v"
-          onClick={closeAlarm}
         //   component={Map}
         >
         View

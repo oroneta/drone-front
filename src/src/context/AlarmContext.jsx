@@ -1,20 +1,20 @@
 import React, { createContext, useContext } from 'react';
 
 // Crear un Context
-const GlobalStateContext = createContext();
+const AlarmDroneActive = createContext();
 
 // Crear un Provider
-export const GlobalStateProvider = ({ children }) => {
-  let globalVariable = 'Soy una variable global';
+export const AlarmStateProvider = ({ children }) => {
+  let droneDIC = '';
 
   return (
-    <GlobalStateContext.Provider value={globalVariable}>
+    <AlarmDroneActive.Provider value={droneDIC}>
       {children}
-    </GlobalStateContext.Provider>
+    </AlarmDroneActive.Provider>
   );
 };
 
 // Crear un Hook personalizado para usar el Context
-export const useGlobalState = () => {
-  return useContext(GlobalStateContext);
+export const useAlarmState = () => {
+  return useContext(AlarmDroneActive);
 };
