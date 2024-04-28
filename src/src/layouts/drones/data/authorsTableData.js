@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 
 /* eslint-disable react/prop-types */
 // Oroneta components

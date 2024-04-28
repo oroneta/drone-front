@@ -2,7 +2,7 @@
   This file is used for controlling the global states of the components,
   you can customize the states for the different components here.
 */
-import React, { Component }  from 'react';
+import React  from 'react';
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 
 // prop-types is a library for typechecking of props
@@ -31,9 +31,6 @@ function reducer(state, action) {
     }
     case "FIXED_NAVBAR": {
       return { ...state, fixedNavbar: action.value };
-    }
-    case "OPEN_CONFIGURATOR": {
-      return { ...state, openConfigurator: action.value };
     }
     case "DIRECTION": {
       return { ...state, direction: action.value };

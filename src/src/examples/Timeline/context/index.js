@@ -4,7 +4,7 @@
 /**
   This file is used for controlling the dark and light state of the TimelineList and TimelineItem.
 */
-import React, { Component }  from 'react';
+import React  from 'react';
 import { createContext, useContext } from "react";
 
 // The Timeline main context

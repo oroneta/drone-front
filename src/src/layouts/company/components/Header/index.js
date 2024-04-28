@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 
 import AppBar from "@mui/material/AppBar";
 // @mui material components
