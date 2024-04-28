@@ -1,4 +1,4 @@
-import React, { Component }  from 'react';
+import React  from 'react';
 // @mui material components
 import Drawer from "@mui/material/Drawer";
 import { styled } from "@mui/material/styles";

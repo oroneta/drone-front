@@ -1,5 +1,5 @@
 
-import React, { Component }  from 'react';
+import React  from 'react';
 import { forwardRef } from "react";
 
 // prop-types is a library for typechecking of props.
@@ -14,7 +14,7 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // custom styles for the NotificationItem
-import { menuItem, menuImage } from "examples/Items/NotificationItem/styles";
+import { menuItem } from "examples/Items/NotificationItem/styles";
 
 const NotificationItem = forwardRef(({ color, image, title, date, ...rest }, ref) => (
   <MenuItem {...rest} ref={ref} sx={(theme) => menuItem(theme)}>

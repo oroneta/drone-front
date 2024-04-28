@@ -1,0 +1,32 @@
+Issue:
+
+opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+library: 'digital envelope routines',
+reason: 'unsupported',
+code: 'ERR_OSSL_EVP_UNSUPPORTED'
+
+Here are two options now -
+
+    Try to uninstall Node.js version 17+ and reinstall Node.js version 16+
+
+1. You can re-install the current LTS Node.js version from their Official site. Or more specific downloads from here;
+
+2. You can use NVM (Node Version Manager)
+
+    Linux and Mac users can use this nvm package link
+    Windows users can use this nvm package link
+
+    Open a terminal and paste these as described:
+
+    Linux and macOS (Windows Git Bash)-
+
+        export NODE_OPTIONS=--openssl-legacy-provider
+
+    Windows command prompt-
+
+        set NODE_OPTIONS=--openssl-legacy-provider
+
+    Windows PowerShell-
+
+        $env:NODE_OPTIONS = "--openssl-legacy-provider"
+

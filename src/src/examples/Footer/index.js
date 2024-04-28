@@ -1,5 +1,5 @@
 
-import React, { Component }  from 'react';
+import React  from 'react';
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";

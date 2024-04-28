@@ -1,5 +1,5 @@
 
-import React, { Component }  from 'react';
+import React  from 'react';
 
 // @mui material components
 import Grid from "@mui/material/Grid";

@@ -5,7 +5,6 @@ import VuiProgress from "components/VuiProgress";
 import VuiTypography from 'components/VuiTypography';
 import colors from 'assets/theme/base/colors';
 import Grid from "@mui/material/Grid";
-import linearGradient from 'assets/theme/functions/linearGradient';
 
 import BarChart from "examples/Charts/BarCharts/BarChart";
 import { barChartDataDashboard } from "layouts/billing/components/Transactions/data/barChartData";
@@ -15,12 +14,10 @@ import { GiElectric } from "react-icons/gi";
 import { IoWallet } from "react-icons/io5";
 import { IoIosRocket } from "react-icons/io";
 import { IoBuild } from "react-icons/io5";
-import { FaShoppingCart } from "react-icons/fa";
 
 
 function TransactionsList() {
 	const { gradients } = colors;
-	const { cardContent } = gradients;
 
 	return (
 		<Card
