@@ -1,5 +1,4 @@
 import { UserContext } from 'context/UserContext';
-<<<<<<< HEAD
 import React, { useContext } from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Popup, Marker, Polyline } from 'react-leaflet';
@@ -40,15 +39,6 @@ const yellowOptions = { color: '#FFFF00' };
 export const MapView = ({href, height, width, borderRadius, enableTool }) => {
     
     const { infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, position, zoom } = useContext( UserContext );
-=======
-import React, { useContext } from 'react'
-import { MapContainer, TileLayer, Popup, Marker } from 'react-leaflet';
-const position = [39.4371,-0.3177];
-
-export const MapView = ({href, height, width, borderRadius, enableTool, zoom}) => {
-    
-    const { infoDrones } = useContext( UserContext );
->>>>>>> master
     // console.log(infoDrones);
     return (
         (enableTool) ?
@@ -56,7 +46,6 @@ export const MapView = ({href, height, width, borderRadius, enableTool, zoom}) =
             <TileLayer
                 url={href}
             />
-<<<<<<< HEAD
             { statusRouteHarbor1 && <Polyline pathOptions={blueOptions} positions={harborRoute} />}
             {  statusRouteUPV && <Polyline pathOptions={yellowOptions} positions={upvRoute} /> }
             { statusRouteHarbor2 && <Polyline pathOptions={limeOptions} positions={harborRoute2} />} 
@@ -66,10 +55,6 @@ export const MapView = ({href, height, width, borderRadius, enableTool, zoom}) =
                 </Popup>
             </Marker>})}
             {/* <Marker position={[39.4371, -0.3177]} >
-=======
-            { infoDrones.map( (drone) => { return <Marker key={drone.id} position={drone.gps}></Marker>})}
-            {/* <Marker position={ [39.4371, -0.3177] }>
->>>>>>> master
             </Marker> */}
         </MapContainer>)
         :

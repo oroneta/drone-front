@@ -78,11 +78,7 @@ export default {
     {
       Drone: 
       <VuiTypography variant="caption" color="white" fontWeight="medium">
-<<<<<<< HEAD
         ESP00002-123-0033
-=======
-        FRA00001-001-0033
->>>>>>> master
       </VuiTypography>,
       function: <Function job="Programator" org="Developer" />,
       status: (
@@ -108,11 +104,7 @@ export default {
     {
       Drone: 
       <VuiTypography variant="caption" color="white" fontWeight="medium">
-<<<<<<< HEAD
         ESP00003-123-0033
-=======
-        AUS78825-778-0001
->>>>>>> master
       </VuiTypography>,
       function: <Function job="Executive" org="Projects" />,
       status: (
@@ -132,11 +124,7 @@ export default {
       ),
       Last_fly: (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-<<<<<<< HEAD
           Today
-=======
-          19/09/17
->>>>>>> master
         </VuiTypography>
       ),
     },
