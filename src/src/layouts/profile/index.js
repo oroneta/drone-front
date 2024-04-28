@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React, { Component }  from 'react';
+>>>>>>> master
 
 // @mui material components
 // @mui icons
@@ -11,9 +15,15 @@ import Grid from "@mui/material/Grid";
 // import team3 from "assets/images/avatar3.png";
 // import team4 from "assets/images/avatar4.png";
 // Images
+<<<<<<< HEAD
 import UPVRoute from "assets/images/UPVRoute.png";
 import HarborRoute from "assets/images/HarborRoute.png";
 import HarborRoute2 from "assets/images/HarborRoute2.png";
+=======
+import UPVRoute1 from "assets/images/UPVRoute1.png";
+import HarborRoute from "assets/images/HarborRoute.png";
+import UPVRoute2 from "assets/images/UPVRoute2.png";
+>>>>>>> master
 // Oroneta components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
@@ -27,12 +37,18 @@ import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Welcome from "./components/Welcome/index";
 import Calendario from "./components/Calendar";
+<<<<<<< HEAD
 // useContext
 import { UserContext } from 'context/UserContext';
 import React, { useContext } from 'react'
 
 function Overview() {
   const { handleChangeRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2 } = useContext( UserContext );
+=======
+
+
+function Overview() {
+>>>>>>> master
   return (
     <DashboardLayout>
       <DashboardNavbar />
@@ -131,6 +147,7 @@ function Overview() {
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
+<<<<<<< HEAD
                     image={HarborRoute}
                     label="route #1"
                     title="Valencia's harbor"
@@ -141,10 +158,23 @@ function Overview() {
                       label: "Go on",
                     }}
                     funcion= { handleChangeRouteHarbor1 }
+=======
+                    image={UPVRoute1}
+                    label="route #1"
+                    description=""
+                    title="UPV"
+                    action={{
+                      type: "internal",
+                      route: "/pages/profile/profile-overview",
+                      color: "white",
+                      label: "VIEW",
+                    }}
+>>>>>>> master
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
+<<<<<<< HEAD
                     image={HarborRoute2}
                     label="route #2"
                     title="Valencia's harbor 2"
@@ -155,22 +185,45 @@ function Overview() {
                       label: "Go on",
                     }}
                     funcion={ handleChangeRouteHarbor2 }
+=======
+                    image={HarborRoute}
+                    label="route #2"
+                    title="Valencia's harbor"
+                    description=""
+                    action={{
+                      type: "internal",
+                      route: "/pages/profile/profile-overview",
+                      color: "white",
+                      label: "VIEW",
+                    }}
+>>>>>>> master
                   />
                 </Grid>
                 <Grid item xs={12} md={6} xl={4}>
                   <DefaultProjectCard
+<<<<<<< HEAD
                     image={UPVRoute}
+=======
+                    image={UPVRoute2}
+>>>>>>> master
                     label="route #3"
                     title="UPV"
                     description=""
                     action={{
                       type: "internal",
+<<<<<<< HEAD
                       route: "/map",
                       color: "white",
                       label: "Go on",
                     }}
                     funcion={ handleChangeRouteUPV }
 
+=======
+                      route: "/pages/profile/profile-overview",
+                      color: "white",
+                      label: "VIEW",
+                    }}
+>>>>>>> master
                   />
                 </Grid>
               </Grid>

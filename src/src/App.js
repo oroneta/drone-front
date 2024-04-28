@@ -36,6 +36,18 @@ export default function App() {
   // const [/*rtlCache,*/ setRtlCache] = useState(null);
   const { pathname } = useLocation();
   // const session = false;
+<<<<<<< HEAD
+=======
+  // Cache for the rtl
+  // useMemo(() => {
+  //   const cacheRtl = createCache({
+  //     key: "rtl",
+  //     stylisPlugins: [rtlPlugin],
+  //   });
+
+  //   setRtlCache(cacheRtl);
+  // }, []);
+>>>>>>> master
 
   // Open sidenav when mouse enter on mini sidenav
   const handleOnMouseEnter = () => {

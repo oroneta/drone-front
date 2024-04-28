@@ -34,7 +34,11 @@ function Mapping() {
           },
         })}
       >
+<<<<<<< HEAD
         <MapView href={url} height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} />
+=======
+        <MapView href={url} height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} zoom={15}/>
+>>>>>>> master
       </VuiBox>
     </>
   );

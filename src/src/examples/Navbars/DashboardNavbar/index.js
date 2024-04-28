@@ -42,7 +42,11 @@ import {
 } from "context";
 
 // Images
+<<<<<<< HEAD
 import team2 from "assets/images/linleiZheng.jpeg";
+=======
+import team2 from "assets/images/team-2.jpg";
+>>>>>>> master
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 
 function DashboardNavbar({ absolute, light, isMini }) {

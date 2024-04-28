@@ -2,7 +2,11 @@
 import React, { Component }  from 'react';
 import { useEffect, useState } from "react";
 import { UserContext } from "./UserContext"
+<<<<<<< HEAD
 import Swal from 'sweetalert2';
+=======
+
+>>>>>>> master
 
 export const UserProvider = ( { children } ) => {
     // console.log('Se redibuja')
@@ -12,6 +16,7 @@ export const UserProvider = ( { children } ) => {
         gps: [39.428, -0.3183],
         battery: 0
     });
+<<<<<<< HEAD
 
     const [statusRouteUPV, setStatusRouteUPV] = useState(false);
     const [statusRouteHarbor1, setStatusRouteHarbor1] = useState(false);
@@ -122,6 +127,8 @@ export const UserProvider = ( { children } ) => {
         
     }
 
+=======
+>>>>>>> master
     // Hace fetch a la API 
     useEffect(() => {
         const fetchDataPeriodically = () => {
@@ -136,6 +143,10 @@ export const UserProvider = ( { children } ) => {
                 // console.log(allDrones[0])
                 setInfoDrone(allDrones[0]);
                 console.log( "Los datos recibidos son ",infoDrone )
+<<<<<<< HEAD
+=======
+                
+>>>>>>> master
             })
             .catch((error) => console.error('ERROR', error))
         };
@@ -166,10 +177,15 @@ export const UserProvider = ( { children } ) => {
         totalFlights: 20,
     }
 
+<<<<<<< HEAD
 
     // the export of the variables, functions
     return (
         <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, zoom } }>
+=======
+    return (
+        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones } }>
+>>>>>>> master
             { children }
         </UserContext.Provider>
     )
