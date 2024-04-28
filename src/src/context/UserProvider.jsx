@@ -65,6 +65,7 @@ export const UserProvider = ( { children } ) => {
             showDenyButton: true,
             confirmButtonText: 'Go on',
             denyButtonText: 'Do not start the route',
+            
         }).then(( result ) => {
             if (result.isConfirmed) {
                 if (isUPV) {
