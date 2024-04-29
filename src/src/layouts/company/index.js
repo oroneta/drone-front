@@ -101,7 +101,7 @@ function Overview() {
           </Grid>
         </Grid>
       </VuiBox>   
-      <Grid container spacing={3} mb="30px">
+      {/* <Grid container spacing={3} mb="30px">
         <Grid item xs={12} xl={12}>
           <Card className="Card-Root">
             <VuiBox display="flex" flexDirection="column" height="100%">
@@ -172,7 +172,7 @@ function Overview() {
             </VuiBox>
           </Card>
         </Grid>
-      </Grid>
+      </Grid> */}
 
       <Footer />
     </DashboardLayout>

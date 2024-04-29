@@ -12,7 +12,7 @@ import haitaoWu from "assets/images/haitaoWu.jpeg";
 import zhilinLi from "assets/images/zhilinLi.jpg";
 import mariaZapata from "assets/images/mariaZapata.jpeg";
 import linlei from "assets/images/linleiZheng.jpeg";
-import Elena from "assets/images/avatar6.png";
+import Elena from "assets/images/elenaClofent.jpeg";
 
 function Employer({ image, name, email }) {
   return (
