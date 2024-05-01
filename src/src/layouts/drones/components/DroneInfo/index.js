@@ -129,7 +129,7 @@ const DroneInfo = ({ height }) => {
 							{ infoDrone.speed }KM/H
 						</VuiTypography>
 						<VuiTypography color='white' variant='caption' fontWeight='regular'>
-							ESP23-8888-001
+						ESP00001-123-0033
 						</VuiTypography>
 					</VuiBox>
 					<VuiTypography color='text' variant='caption' display='inline-block' fontWeight='regular'>

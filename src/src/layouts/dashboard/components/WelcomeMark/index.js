@@ -31,7 +31,7 @@ const WelcomeMark = () => {
         </VuiBox>
         <VuiTypography
           component="a"
-          href="/company"
+          href="/profile"
           variant="button"
           color="white"
           fontWeight="regular"
@@ -52,7 +52,7 @@ const WelcomeMark = () => {
             },
           }}
         >
-          Watch Company
+          Start route
           <Icon sx={{ fontWeight: "bold", ml: "5px" }}>arrow_forward</Icon>
         </VuiTypography>
       </VuiBox>

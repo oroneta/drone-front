@@ -53,7 +53,7 @@ const Welcome = () => {
         <VuiBox justifySelf="flex-end">
           <VuiTypography
             component="a"
-            href="#"
+            href="/map"
             variant="button"
             color="white"
             fontWeight="regular"
@@ -75,7 +75,7 @@ const Welcome = () => {
               },
             }}
           >
-            Tap to record
+            Go to the map
             <Icon sx={{ fontWeight: "bold", ml: "5px" }}>arrow_forward</Icon>
           </VuiTypography>
         </VuiBox>

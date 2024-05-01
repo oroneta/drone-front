@@ -13,6 +13,29 @@ export const UserProvider = ( { children } ) => {
         battery: 0
     });
 
+    const harborRoute = [
+        [39.4400359, -0.3222084],
+        [39.4336000, -0.3123000],
+        [39.4299000, -0.3152000],
+        [39.4359000, -0.3301000],
+        [39.4400359, -0.3222084],
+    ];
+    
+    const upvRoute = [
+        [39.4821000, -0.3404000],
+        [39.4814400, -0.3366300],
+        [39.4793100, -0.3377900],
+        [39.4802300, -0.3414900],
+        [39.4821000, -0.3404000],
+    ];
+    
+    const harborRoute2 = [
+        [39.4470673, -0.3086189],
+        [39.4469, -0.3048],
+        [39.4366000, -0.3056000],
+        [39.4419000, -0.3117000],
+        [39.4470673, -0.3086189],
+    ]    
     const [statusRouteUPV, setStatusRouteUPV] = useState(false);
     const [statusRouteHarbor1, setStatusRouteHarbor1] = useState(false);
     const [statusRouteHarbor2, setStatusRouteHarbor2] = useState(false);
@@ -56,7 +79,7 @@ export const UserProvider = ( { children } ) => {
         });
     }
 
-    const alertConfirmRoute = ( setStatus, isUPV ) => {
+    const alertConfirmRoute = ( setStatus, isUPV, coords ) => {
         Swal.fire({
             title: 'Do you want to start the route?',
             text: 'The route will be done by ESP00001-123-0033',
@@ -74,7 +97,21 @@ export const UserProvider = ( { children } ) => {
                     alert('salga y vuelva a entrar a la sección de mapa');
                 }
                 setStatus(true);
-                // do the post fetch here
+                fetch("http://localhost:60001/routes/0",
+                {
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer 0',
+                    },
+                    method: "POST",
+                    body: JSON.stringify({
+                        type: "waypoint",
+                        coord: coords
+                    }),
+                })
+                .then((res) => console.log(res))
+                .catch((res) => console.error(res))
             }
             if (result.isDenied) {
                 return;
@@ -93,7 +130,8 @@ export const UserProvider = ( { children } ) => {
             warningSameRoute();
             return;
         }
-        alertConfirmRoute(setStatusRouteUPV, true);
+        alertConfirmRoute(setStatusRouteUPV, true, upvRoute);
+        console.log("se ha comenzado la ruta :D");
     } 
 
     const handleChangeRouteHarbor1 = () => {
@@ -105,7 +143,7 @@ export const UserProvider = ( { children } ) => {
             warningSameRoute();
             return;
         }
-        alertConfirmRoute(setStatusRouteHarbor1, false);
+        alertConfirmRoute(setStatusRouteHarbor1, false, harborRoute);
     }
 
     const handleChangeRouteHarbor2 = () => {
@@ -118,7 +156,7 @@ export const UserProvider = ( { children } ) => {
             warningSameRoute();
             return;
         }
-        alertConfirmRoute(setStatusRouteHarbor2, false);
+        alertConfirmRoute(setStatusRouteHarbor2, false, harborRoute2);
         
     }
 
@@ -169,7 +207,7 @@ export const UserProvider = ( { children } ) => {
 
     // the export of the variables, functions
     return (
-        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, zoom } }>
+        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, zoom, harborRoute, harborRoute2, upvRoute } }>
             { children }
         </UserContext.Provider>
     )
