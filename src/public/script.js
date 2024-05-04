@@ -56,32 +56,32 @@ document.addEventListener("DOMContentLoaded", () => {
     //
     let previousUrl = window.location.href;
 
-    // setInterval(function() {
-    //     const currentUrl = window.location.href;
-    //     if (currentUrl !== previousUrl) {
-    //         // La URL ha cambiado
-    //         onChangeRenderEvent(currentUrl);
-    //         // Aquí puedes ejecutar tus funciones necesarias.
-    //         previousUrl = currentUrl;
-    //     }
+    setInterval(function() {
+        const currentUrl = window.location.href;
+        if (currentUrl !== previousUrl) {
+            // La URL ha cambiado
+            onChangeRenderEvent(currentUrl);
+            // Aquí puedes ejecutar tus funciones necesarias.
+            previousUrl = currentUrl;
+        }
 
-    //     // Verificar si hay una alarma activa
-    //     DRONES.forEach(el => {
-    //         fetch(`${HOST}/alarm/${el.dic}`,
-    //         {
-    //             method: 'GET',
-    //             headers: {
-    //                 Authorization: `Bearer ${el.key}`
-    //             }
-    //         })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (data.status === true) {
-    //                 AlarmImage.show(data.dic, false);
-    //             }
-    //         })
-    //     });
+        // Verificar si hay una alarma activa
+        DRONES.forEach(el => {
+            fetch(`${HOST}/alarm/${el.dic}`,
+            {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${el.key}`
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === true) {
+                    AlarmImage.show(data.dic, false);
+                }
+            })
+        });
 
-    // }, 1000); // Verificar cada segundo
+    }, 1000); // Verificar cada segundo
 
 });

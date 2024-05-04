@@ -183,4 +183,23 @@ body {
             color: white !important;
         }
     }
+    .btn-map {
+        z-index: 9999;
+        color: white;
+        bottom: 80px;
+        right: 80px;
+        position: fixed;
+        flex: 1;
+        padding: 20px;
+        border-radius: 10px;
+        font-size: 15px;
+        color: white !important;
+        text-align: center;
+        cursor: pointer;
+        background-color: rgba(#1e1f23, 0.5);
+        background-color: rgba($highlight-color2, 1);
+        &:hover {
+            background-color: $highlight-color2;
+        }
+    }
 }

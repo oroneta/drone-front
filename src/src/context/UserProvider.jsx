@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 export const UserProvider = ( { children } ) => {
     // console.log('Se redibuja')
     const [infoDrone, setInfoDrone] = useState({
-        status: false,
+        status: true,
         speed: 0,
         gps: [39.428, -0.3183],
         battery: 0
