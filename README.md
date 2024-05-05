@@ -53,7 +53,7 @@ Dashboard page:
 
 Drones page:
 
-![Drones page](./doc/img/drones.png)
+![Drones page](./doc/img/drone.png)
 
 Map page:
 
