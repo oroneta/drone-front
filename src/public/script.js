@@ -46,44 +46,63 @@ function onChangeRenderEvent(url) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#AlarmImage .btn .c").addEventListener("click", () => {
-        AlarmImage.hide();
-    });
-    document.querySelector("#AlarmImage .btn .v").addEventListener("click", () => {
-        AlarmImage.hide();
-    });
+    try {
+        document.querySelector("#AlarmImage .btn .c").addEventListener("click", () => {
+            AlarmImage.hide();
+        });
+        document.querySelector("#AlarmImage .btn .v").addEventListener("click", () => {
+            AlarmImage.hide();
+            // window.history.pushState({}, null, `/map?dic=${document.querySelector(".AlarmDroneDIC").innerText}`);
+        });
+    } catch (error) {
+        console.error("Error al obtener los elementos del DOM", error);
+    }
 
     //
     let previousUrl = window.location.href;
 
-    setInterval(function() {
-        if (localStorage.getItem("oroneta-user") == "true") {
-            const currentUrl = window.location.href;
-            if (currentUrl !== previousUrl) {
-                // La URL ha cambiado
-                onChangeRenderEvent(currentUrl);
-                // Aquí puedes ejecutar tus funciones necesarias.
-                previousUrl = currentUrl;
-            }
+    // setInterval(function() {
+    //     if (localStorage.getItem("oroneta-user") == "true") {
+    //         const currentUrl = window.location.href;
+    //         if (currentUrl !== previousUrl) {
+    //             // La URL ha cambiado
+    //             onChangeRenderEvent(currentUrl);
+    //             // Aquí puedes ejecutar tus funciones necesarias.
+    //             previousUrl = currentUrl;
+    //         }
 
-            // Verificar si hay una alarma activa
-            DRONES.forEach(el => {
-                fetch(`${HOST}/alarm/${el.dic}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Bearer ${el.key}`
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log("Drone ", el, data);
-                    if (data.status === true) {
-                        AlarmImage.show(data.dic, false);
-                    }
-                })
-            });
-        }
-    }, 1000); // Verificar cada segundo
+    //         // Verificar si hay una alarma activa
+    //         DRONES.forEach(el => {
+    //             fetch(`${HOST}/alarm/${el.dic}`,
+    //             {
+    //                 method: 'GET',
+    //                 headers: {
+    //                     Authorization: `Bearer ${el.key}`
+    //                 }
+    //             })
+    //             .then(response => {
+    //                 if (!response.ok) {
+    //                     throw new Error("Error al obtener la alarma");
+    //                 }
+    //                 return response.json()
+    //             })
+    //             .then(data => {
+    //                 if (data.data[el.dic].status === 1 && el.active === 0) {
+    //                     el.active = 1;
+    //                     console.log("Drone ", el, data);
+    //                     AlarmImage.show(el.dic, data.data[el.dic].image_path, false);
+    //                 }
+
+    //                 if (data.data[el.dic].status === 0 && el.active === 1) {
+    //                     el.active = 0;
+    //                     AlarmImage.hide();
+    //                 }
+    //             })
+    //             .catch(error => {
+    //                 console.log("Error al obtener la alarma", error);
+    //             });
+    //         });
+    //     }
+    // }, 1000); // Verificar cada segundo
 
 });

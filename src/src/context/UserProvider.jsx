@@ -238,10 +238,14 @@ export const UserProvider = ( { children } ) => {
         totalFlights: 20,
     }
 
+    const updatePosition = ( dic ) => {
+        setPosition(infoDrone[dic].gps);
+    }
+
 
     // the export of the variables, functions
     return (
-        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, zoom, harborRoute, harborRoute2, upvRoute } }>
+        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, updatePosition, zoom, harborRoute, harborRoute2, upvRoute } }>
             { children }
         </UserContext.Provider>
     )
