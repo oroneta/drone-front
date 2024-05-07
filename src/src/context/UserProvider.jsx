@@ -7,12 +7,34 @@ import Swal from 'sweetalert2';
 export const UserProvider = ( { children } ) => {
     // console.log('Se redibuja')
     const [infoDrone, setInfoDrone] = useState({
-        status: false,
-        speed: 0,
-        gps: [39.428, -0.3183],
-        battery: 0
+        "ESP00001-123-0033": {
+            dic: "ESP00001-123-0033",
+            key: "0",
+            description: "Drone simulador",
+            status: false,
+            speed: 0,
+            gps: [39.428, -0.3183],
+            battery: 0
+        },
+        "ESP00002-123-0033": {
+            dic: "ESP00002-123-0033",
+            key: "1",
+            description: "Drone fisico",
+            status: false,
+            speed: 0,
+            gps: [39.428, -0.4183],
+            battery: 0
+        },
+        "ESP00003-123-0033": {
+            dic: "ESP00003-123-0033",
+            key: "2",
+            description: "Drone offline",
+            status: false,
+            speed: 0,
+            gps: [39.328, -0.3183],
+            battery: 0
+        }
     });
-
     const harborRoute = [
         [39.4400359, -0.3222084],
         [39.4336000, -0.3123000],
@@ -61,7 +83,7 @@ export const UserProvider = ( { children } ) => {
     }
     const errorRouteInProgress = () => {
         Swal.fire({
-            title: 'ERROR: -3',
+            title: 'ERROR: Route in progress',
             text: "There's a route on going for ESP00001-123-0033",
             icon: 'error',
             styleAlert,
@@ -163,19 +185,40 @@ export const UserProvider = ( { children } ) => {
     // Hace fetch a la API 
     useEffect(() => {
         const fetchDataPeriodically = () => {
-            fetch('http://localhost:60001/metadata/all/0', {
+            if (localStorage.getItem("oroneta-user") !== "true") return;
+            let drones = Object.keys(infoDrone).join(';');
+            let keys = Object.keys(infoDrone).map( key => infoDrone[key].key).join(';');
+            fetch(`http://localhost:60001/metadata/all/${drones}`, {
             // mode: "no-cors",
-            headers: {Authorization: 'Bearer 0'}
+            headers: {Authorization: `Bearer ${keys}`},
             })
-            .then( response => response.json())
+            .then( response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then( data => {
-                const aux = data;
-                const allDrones = aux.data;
-                // console.log(allDrones[0])
-                setInfoDrone(allDrones[0]);
-                console.log( "Los datos recibidos son ",infoDrone )
+                console.log( data );
+                if (data.status === "OK") {
+                    let drones = Object.keys(data.data);
+                    // If every drone in infoDrone is not in data, then set status to false
+                    for (let drone in infoDrone) {
+                        if (!drones.includes(drone)) {
+                            infoDrone[drone].status = false;
+                        } else {
+                            infoDrone[drone].status = data.data[drone].status;
+                            infoDrone[drone].speed = data.data[drone].speed;
+                            infoDrone[drone].gps = data.data[drone].gps;
+                            infoDrone[drone].battery = data.data[drone].battery;
+                        }
+                    }
+                    // Re-render the component
+                    setInfoDrone({...infoDrone});
+                    console.log(infoDrone);
+                }
             })
-            .catch((error) => console.error('ERROR', error))
+            .catch((error) => console.log('ERROR', error))
         };
         fetchDataPeriodically();
         const intervalId = setInterval(fetchDataPeriodically, 5000);
@@ -185,16 +228,7 @@ export const UserProvider = ( { children } ) => {
         };
     }, [])
     
-    const infoDrones = [
-        {
-            id: 0,
-            gps: infoDrone.gps,
-        },
-        {
-            id: 1,
-            gps: [39.428, -0.3183],
-        }
-    ]
+    const infoDrones = infoDrone;
 
     const infoTotalDrones = {
         totalDrones: 3,

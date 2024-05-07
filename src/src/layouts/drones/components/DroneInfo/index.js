@@ -29,7 +29,7 @@ const DroneInfo = ({ height }) => {
 					Drone Information
 				</VuiTypography>
 				<VuiBox sx={{ display: "flex", justifyContent: "space-between"}}>
-					{ infoDrone.status && 
+					{ infoDrone["ESP00001-123-0033"].status && 
 					<VuiBadge
 						variant="standard"
 						badgeContent="Online"
@@ -45,7 +45,7 @@ const DroneInfo = ({ height }) => {
 						
 					/>
 					}
-					{ !infoDrone.status &&
+					{ !infoDrone["ESP00001-123-0033"].status &&
 					<VuiBadge
 						variant="standard"
 						badgeContent="Offline"
@@ -63,7 +63,7 @@ const DroneInfo = ({ height }) => {
 					<VuiBox sx={{padding: "0px 10px"}}>
 						<BiSignal5 color='white' style={{marginRight: "10px"}} />
 						<MdWifi color='white' style={{marginRight: "10px"}} />
-						{batteryRange(infoDrone.battery)}
+						{batteryRange(infoDrone["ESP00001-123-0033"].battery)}
 					</VuiBox>
 					
 				</VuiBox>
@@ -124,9 +124,9 @@ const DroneInfo = ({ height }) => {
 						display='flex'
 						justifyContent='center'
 						alignItems='center'
-						sx={{ minWidth: '80px' }}>
+						sx={{ minWidth: infoDrone["ESP00001-123-0033"].speed+'px' }}>
 						<VuiTypography color='success' variant='h3'>
-							{ infoDrone.speed }KM/H
+							{ infoDrone["ESP00001-123-0033"].speed }KM/H
 						</VuiTypography>
 						<VuiTypography color='white' variant='caption' fontWeight='regular'>
 						ESP00001-123-0033

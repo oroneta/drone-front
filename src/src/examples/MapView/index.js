@@ -5,8 +5,14 @@ import { MapContainer, TileLayer, Popup, Marker, Polyline } from 'react-leaflet'
 
 
 const droneMarker = new L.icon({
-    iconUrl: require("./icon/droneIconNoBg.jpg"),
+    iconUrl: require("./icon/drone-svgrepo-com.svg"),
     iconSize: [35, 35],
+    // iconAnchor: [17, 35],
+    // popupAnchor: [0, -35],
+    // shadowUrl: null,
+    // shadowSize: null,
+    // shadowAnchor: null
+
 })
 
 const blueOptions = { color: '#1E90FF' };
@@ -26,9 +32,9 @@ export const MapView = ({href, height, width, borderRadius, enableTool }) => {
             { statusRouteHarbor1 && <Polyline pathOptions={blueOptions} positions={harborRoute} />}
             {  statusRouteUPV && <Polyline pathOptions={yellowOptions} positions={upvRoute} /> }
             { statusRouteHarbor2 && <Polyline pathOptions={limeOptions} positions={harborRoute2} />} 
-            { infoDrones.map( (drone) => { return <Marker key={drone.id} position={drone.gps} icon={droneMarker}>
+            { Object.keys(infoDrones).map( (key) => { console.log(infoDrones[key]); if (infoDrones[key].status == true) return <Marker key={infoDrones[key].dic} position={infoDrones[key].gps} icon={droneMarker}>
                 <Popup>
-                    Información del dron
+                    {infoDrones[key].description}
                 </Popup>
             </Marker>})}
             {/* <Marker position={[39.4371, -0.3177]} >

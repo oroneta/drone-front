@@ -54,7 +54,7 @@ function SignIn() {
               palette.gradients.borderLight.angle
             )}
           >
-            <VuiInput type="email" placeholder="Your email..." fontWeight="500" />
+            <VuiInput type="email" id ="email" placeholder="Your email..." fontWeight="500" />
           </GradientBorder>
         </VuiBox>
         <VuiBox mb={2}>
@@ -75,6 +75,7 @@ function SignIn() {
           >
             <VuiInput
               type="password"
+              id = "password"
               placeholder="Your password..."
               sx={({ typography: { size } }) => ({
                 fontSize: size.sm,
@@ -95,10 +96,27 @@ function SignIn() {
           </VuiTypography>
         </VuiBox>
         <VuiBox mt={4} mb={1}>
-          <VuiButton color="info" fullWidth>
+          <VuiButton color="info" onClick={() => {
+            document.getElementById("signInError").style.display = "none";
+            if (document.getElementById("email").value.length === 0 || document.getElementById("password").value.length === 0) return;
+            if (document.getElementById("email").value === "admin" && document.getElementById("password").value === "admin") {
+              localStorage.setItem("oroneta-user", "true");
+              window.location.href = "/dashboard";
+            } else {
+              document.getElementById("signInError").style.display = "block";
+            }
+          }} fullWidth>
             SIGN IN
           </VuiButton>
         </VuiBox>
+        <VuiTypography
+            variant="caption"
+            fontWeight="medium"
+            id="signInError"
+            sx={{ color: "red", textAlign: "center", userSelect: "none" , display: "none", width: "100%"}}
+          >
+            Incorrect user or password
+          </VuiTypography>
         <VuiBox mt={3} textAlign="center">
           <VuiTypography variant="button" color="text" fontWeight="regular">
             Don&apos;t have an account?{" "}

@@ -67,8 +67,8 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
+  const getRoutes = (allRoutes) => {
+    return allRoutes.map((route) => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
@@ -79,6 +79,7 @@ export default function App() {
 
       return null;
     });
+  };
 
   // const configsButton = (
   //   <VuiBox
@@ -104,6 +105,8 @@ export default function App() {
   //   </VuiBox>
   // );
 
+  let user = localStorage.getItem("oroneta-user");
+
   return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -124,7 +127,7 @@ export default function App() {
         {layout === "vr" && <AlarmImage />}
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/dashboard" />
+          <Redirect from="*" to={ (user == "true" ) ? "/dashboard" : "authentication/sign-in" } />
         </Switch>
       </ThemeProvider>
   );
