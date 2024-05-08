@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useState, useEffect/*, useMemo */} from "react";
+import { useState, useEffect/*, useMemo */, useContext} from "react";
 
 // react-router components
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
@@ -27,7 +27,7 @@ import routes from "routes";
 
 // Oroneta contexts
 import { useVisionUIController, setMiniSidenav/*, setOpenConfigurator */} from "context";
-
+// import { UserContext } from "context/UserContext";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
@@ -35,6 +35,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   // const [/*rtlCache,*/ setRtlCache] = useState(null);
   const { pathname } = useLocation();
+
   // const session = false;
 
   // Open sidenav when mouse enter on mini sidenav

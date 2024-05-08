@@ -117,7 +117,43 @@ body {
         }
 
     }
+    .deactivate-btn {
+        display: none;
+    }
+    .btn-alarm {
+        flex: 1;
+        padding: 8px;
+        font-size: 12px;
+        color: white !important;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+        background-color: rgba($highlight-color2, 0.5);
+        &:hover {
+            background-color: $highlight-color2;
+        }
+    }
+    .leaflet-popup-tip {
+        background-color: $primary-color !important;
+    }
+    .leaflet-popup-close-button {
+        display: none !important;
+    }
+    .leaflet-popup-content-wrapper {
+        background-color: $primary-color !important;
+        border-radius: 5px;
+        color: white !important;
+        * {
+            color: white !important;
+        }
 
+        image {
+            border-radius: 5px;
+        }
+    }
     #AlarmImage {
         position: fixed;
         top: 10vh;

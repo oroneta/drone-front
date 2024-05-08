@@ -44,7 +44,7 @@ function Function({ job, org }) {
 
 export default () => {
   const { infoDrones } = useContext( UserContext );
-  console.log("aaaa", infoDrones["ESP00003-123-0033"].status);
+  // console.log("aaaa", infoDrones["ESP00003-123-0033"].status);
 
   return {
   columns: [
