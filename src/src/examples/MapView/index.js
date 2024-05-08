@@ -3,7 +3,6 @@ import React, { useContext, useRef } from 'react';
 import L from 'leaflet';
 import { MapContainer, TileLayer, Popup, Marker, Polyline } from 'react-leaflet';
 // Redirect
-import { Redirect } from 'react-router-dom';
 
 
 const droneMarker = new L.icon({
