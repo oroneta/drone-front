@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useContext} from 'react';
 
 // Oroneta components
 import VuiBox from "components/VuiBox";
@@ -8,12 +8,15 @@ import VuiBox from "components/VuiBox";
 
 // Mapping page components
 import { MapView } from "examples/MapView";
+import { UserContext } from "context/UserContext"
 
+// import { UserContext } from "./UserContext"
 
 function Mapping() {
   // Width 100% and height 100% to fill the parent container
   // const url = "https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps"
-  const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+  const url = "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+        
   // const url = "https://tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-token=PyTJUlEU1OPJwCJlW1k0NC8JIt2CALpyuj7uc066O7XbdZCjWEL3WYJIk6dnXtps";
   // const url = "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
   return (

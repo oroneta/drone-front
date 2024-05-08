@@ -4,6 +4,22 @@ let AlarmImageObj = {
     dic: "",
     url: ""
 };
+
+
+window.errorCommTries = 0;
+window.errorCommMaxTries = 3;
+
+window.errorCommShow = () => {
+    audio.play();
+    var r = document.querySelector(':root');
+    // r.style.setProperty('--highlight-color2', "grey");
+    document.querySelector(".errorConn").classList.add("active");
+};
+window.errorCommHide = () => {
+    document.querySelector(".errorConn").classList.remove("active");
+};
+   
+window.AlarmImageObj = AlarmImageObj;
 class AlarmImage {
     static show(dic, url, auto = true) {
         // Play sound ./alert.mp3
@@ -13,10 +29,10 @@ class AlarmImage {
         // Show alert
         document.querySelector("#AlarmImage").classList.add("active");
 
-        AlarmImageObj.status = true;
-        AlarmImageObj.dic = dic;
-        AlarmImageObj.url = url;
 
+        AlarmImageObj.dic = dic;
+        AlarmImageObj.url = HOST+url;
+        console.log("Mostrando la alarma", window.AlarmImage.dic, window.AlarmImage.url);
         // Auto hide
         if (auto) {
             setTimeout(() => {
@@ -31,57 +47,16 @@ class AlarmImage {
 
         // Hide alert
         document.querySelector("#AlarmImage").classList.remove("active");
-
-        AlarmImageObj.status = false;
-        AlarmImageObj.dic = "";
-        AlarmImageObj.url = "";
     }
 }
+window.AlarmImage = AlarmImage;
+
 
 function onChangeRenderEvent(url) {
     if (url.includes("/map")) {
         //!TODO: Implementar la funcionalidad de la alarma, mostrar la imagen
+
     }
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector("#AlarmImage .btn .c").addEventListener("click", () => {
-        AlarmImage.hide();
-    });
-    document.querySelector("#AlarmImage .btn .v").addEventListener("click", () => {
-        AlarmImage.hide();
-    });
-
-    //
-    let previousUrl = window.location.href;
-
-    // setInterval(function() {
-    //     const currentUrl = window.location.href;
-    //     if (currentUrl !== previousUrl) {
-    //         // La URL ha cambiado
-    //         onChangeRenderEvent(currentUrl);
-    //         // Aquí puedes ejecutar tus funciones necesarias.
-    //         previousUrl = currentUrl;
-    //     }
-
-    //     // Verificar si hay una alarma activa
-    //     DRONES.forEach(el => {
-    //         fetch(`${HOST}/alarm/${el.dic}`,
-    //         {
-    //             method: 'GET',
-    //             headers: {
-    //                 Authorization: `Bearer ${el.key}`
-    //             }
-    //         })
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             if (data.status === true) {
-    //                 AlarmImage.show(data.dic, false);
-    //             }
-    //         })
-    //     });
-
-    // }, 1000); // Verificar cada segundo
-
-});
