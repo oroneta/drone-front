@@ -7,9 +7,6 @@ import VuiTypography from "components/VuiTypography";
 // import VuiAvatar from "components/VuiAvatar";
 import VuiBadge from "components/VuiBadge";
 
-import { useContext } from 'react';
-
-import { UserContext } from 'context/UserContext';
 
 // function Author({ image, name, email }) {
 //   return (

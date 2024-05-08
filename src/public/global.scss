@@ -46,6 +46,78 @@ body {
         border: 1px solid white;
         color: white !important;
     }
+    #mapAddBtn {
+        display: flex;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        z-index: 999;
+
+        &.active {
+            button {
+                background-color: rgba(201, 19, 19, 0.8);
+                &:hover {
+                    background-color: rgb(201, 19, 19);
+                }
+                ion-icon {
+                    transform: rotate(45deg);
+                }
+            }
+            .popup {
+                display: flex;
+            }
+        }
+
+        button {
+            font-size: 38px;
+            display: flex;
+            border-radius: 5px;
+            background-color: rgba($highlight-color2, 0.8);
+            &:hover {
+                background-color: $highlight-color2;
+            }            border: none;
+            padding: 10px;
+            color: white;
+            transition: all 0.5s;
+            cursor: pointer;
+            ion-icon{
+                transition: all 0.5s;
+            }
+        }
+
+        .popup {
+            display: none;
+            position: absolute;
+            z-index: 999;
+            right: 0;
+            // transform: translateX(-50%);
+            background-color: $background-color;
+            padding: 7px;
+            min-width: 200px;
+            border-radius: 5px;
+            top: -5px;
+            transform: translateY(-100%);
+            color: white;
+            width: max-content;
+            // display: flex;
+            flex-direction: column;
+            .popuptext {
+                padding: 10px;
+                width: 100%;
+                cursor: pointer;
+                border-left: 3px solid $background-color;
+                color: white !important;
+                font-weight: 400;
+                font-size: 0.875rem;
+                &:hover {
+                    background-color: $primary-color;
+                    border-left: 3px solid $highlight-color2;
+                }
+            }
+            
+        }
+        // background-color: red;
+    }
     #root {
         min-height: 100vh;
         // Sidebar

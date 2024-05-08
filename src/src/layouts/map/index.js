@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
 // Oroneta components
 import VuiBox from "components/VuiBox";
@@ -9,6 +9,7 @@ import VuiBox from "components/VuiBox";
 // Mapping page components
 import { MapView } from "examples/MapView";
 import { UserContext } from "context/UserContext"
+import AddBtn from "./component/add";
 
 // import { UserContext } from "./UserContext"
 
@@ -37,6 +38,7 @@ function Mapping() {
         })}
       >
         <MapView href={url} height={"100%"} width={"100%"} borderRadius={"0"} enableTool={true} />
+        <AddBtn />
       </VuiBox>
     </>
   );
