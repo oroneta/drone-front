@@ -5,6 +5,10 @@ import { UserContext } from "./UserContext"
 import Swal from 'sweetalert2';
 
 let urlServer = "http://localhost:60001";
+let errorCommTries = 0;
+let errorCommMaxTries = 5;
+
+
 export const UserProvider = ( { children } ) => {
     // console.log('Se redibuja')
     const [infoDrone, setInfoDrone] = useState({
@@ -73,6 +77,7 @@ export const UserProvider = ( { children } ) => {
     const [statusRouteHarbor2, setStatusRouteHarbor2] = useState(false);
     // const [position, setPosition] = useState([39.4371,-0.4177])
     const [zoom, setZoom] = useState(15);
+    // Activate error connection label
     const mapRef = useRef(null);
 
     const styleAlert = {
@@ -205,7 +210,7 @@ export const UserProvider = ( { children } ) => {
             })
             .then( response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    console.log('Network response was not ok');
                 }
                 return response.json();
             })
@@ -231,9 +236,23 @@ export const UserProvider = ( { children } ) => {
                     // Re-render the component
                     setInfoDrone({...infoDrone});
                     console.log(infoDrone);
+
+                    // Hide error connection label
+                    window.errorCommHide();
+                    window.errorCommTries = 0;
                 }
             })
-            .catch((error) => console.log('ERROR', error))
+            .catch((error) => {
+                // Error connection
+                window.errorCommTries++;
+                console.log("Error connection", errorCommTries);
+
+                if (window.errorCommTries >= window.errorCommMaxTries) {
+                    console.log("Error en la conexión con el servidor");
+                    window.errorCommShow();
+                    window.errorCommTries = 0;
+                }
+            })
         };
         fetchDataPeriodically();
         const intervalId = setInterval(fetchDataPeriodically, 5000);
@@ -252,7 +271,7 @@ export const UserProvider = ( { children } ) => {
                     })
                     .then(response => {
                         if (!response.ok) {
-                            throw new Error("Error al obtener la alarma");
+                            console.log("Error al obtener la alarma", response)
                         }
                         return response.json()
                     })
@@ -273,9 +292,19 @@ export const UserProvider = ( { children } ) => {
                             window.AlarmImageObj.url = '';
                             window.AlarmImage.hide();
                         }
+
+                        window.errorCommHide();
+                        window.errorCommTries = 0;
                     })
                     .catch(error => {
-                        console.log("Error al obtener la alarma", error);
+                        // Error connection
+                        window.errorCommTries++;
+
+                        if (window.errorCommTries >= window.errorCommMaxTries) {
+                            console.log("Error en la conexión con el servidor");
+                            window.errorCommShow();
+                            window.errorCommTries = 0;
+                        }
                     });
                 });
             }

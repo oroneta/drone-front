@@ -23,6 +23,10 @@ $highlight-color2: #664eff;
 * {
     // box-sizing: border-box;
 }
+
+:root {
+    --highlight-color2: $highlight-color2;
+}
 iframe {
     display: none !important;
 }
@@ -116,6 +120,39 @@ body {
             }
         }
 
+    }
+    .errorConn {
+        bottom: -100%;
+        transition: all 0.3s;
+        &.active {
+            bottom: 30px;
+        }
+        // animation: tilt_shaking 0.4s infinite;
+        position: fixed;
+        padding: 20px;
+        background-color: $background-color;
+        border-left: 2px solid $highlight-color2;
+        color: white !important;
+        z-index: 999;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        ion-icon {
+            color: #ff0033;
+            font-size: 20px;
+            margin: 0 20px 0 5px;
+
+        }
+    }
+
+    @keyframes tilt_shaking {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(5px, 5px) rotate(5deg); }
+        50% { transform: translate(0, 0) rotate(0eg); }
+        75% { transform: translate(-5px, 5px) rotate(-5deg); }
+        100% { transform: translate(0, 0) rotate(0deg); }
     }
     .deactivate-btn {
         display: none;

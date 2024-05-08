@@ -5,6 +5,20 @@ let AlarmImageObj = {
     url: ""
 };
 
+
+window.errorCommTries = 0;
+window.errorCommMaxTries = 3;
+
+window.errorCommShow = () => {
+    audio.play();
+    var r = document.querySelector(':root');
+    // r.style.setProperty('--highlight-color2', "grey");
+    document.querySelector(".errorConn").classList.add("active");
+};
+window.errorCommHide = () => {
+    document.querySelector(".errorConn").classList.remove("active");
+};
+   
 window.AlarmImageObj = AlarmImageObj;
 class AlarmImage {
     static show(dic, url, auto = true) {
