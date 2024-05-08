@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useState, useEffect/*, useMemo */} from "react";
+import { useState, useEffect/*, useMemo */, useContext} from "react";
 
 // react-router components
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
@@ -27,7 +27,7 @@ import routes from "routes";
 
 // Oroneta contexts
 import { useVisionUIController, setMiniSidenav/*, setOpenConfigurator */} from "context";
-
+// import { UserContext } from "context/UserContext";
 
 export default function App() {
   const [controller, dispatch] = useVisionUIController();
@@ -35,6 +35,7 @@ export default function App() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   // const [/*rtlCache,*/ setRtlCache] = useState(null);
   const { pathname } = useLocation();
+
   // const session = false;
 
   // Open sidenav when mouse enter on mini sidenav
@@ -67,8 +68,8 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
+  const getRoutes = (allRoutes) => {
+    return allRoutes.map((route) => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
@@ -79,6 +80,7 @@ export default function App() {
 
       return null;
     });
+  };
 
   // const configsButton = (
   //   <VuiBox
@@ -104,6 +106,8 @@ export default function App() {
   //   </VuiBox>
   // );
 
+  let user = localStorage.getItem("oroneta-user");
+
   return (
       <ThemeProvider theme={theme}>
         <CssBaseline />
@@ -124,7 +128,7 @@ export default function App() {
         {layout === "vr" && <AlarmImage />}
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/dashboard" />
+          <Redirect from="*" to={ (user == "true" ) ? "/dashboard" : "authentication/sign-in" } />
         </Switch>
       </ThemeProvider>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const AlarmImage = () => {
-
+  // return;
   return (
     <div id="AlarmImage" className="Card-Root">
       <div className="layout">
@@ -12,14 +12,23 @@ const AlarmImage = () => {
           <p>
             <span className="AlarmDroneDIC"></span> has detected an alarm image
           </p>
-          {/* <small>Click to view more</small> */}
+          {/* <small style="display: none;">Click to view more</small> */}
         </div>
       </div>
       <div className="btn">
-        <a className="c">Close</a>
+        <a className="c"
+        onClick={() => {
+          window.AlarmImageObj.status = false;
+          window.AlarmImage.hide();
+        }}
+        >Close</a>
         <Link
           to="/map"
           className="v"
+          onClick={() => {
+            window.AlarmImageObj.status = true;
+            window.AlarmImage.hide();
+          }}
         //   component={Map}
         >
         View

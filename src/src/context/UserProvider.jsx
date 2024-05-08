@@ -1,18 +1,54 @@
 // import { useEffect } from "react"
 import React  from 'react';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { UserContext } from "./UserContext"
 import Swal from 'sweetalert2';
+
+let urlServer = "http://localhost:60001";
+let errorCommTries = 0;
+let errorCommMaxTries = 5;
+
 
 export const UserProvider = ( { children } ) => {
     // console.log('Se redibuja')
     const [infoDrone, setInfoDrone] = useState({
-        status: true,
-        speed: 0,
-        gps: [39.428, -0.3183],
-        battery: 0
+        "ESP00001-123-0033": {
+            dic: "ESP00001-123-0033",
+            key: "0",
+            description: "Drone simulador",
+            status: false,
+            speed: 0,
+            alarmActive: 0,
+            url : '',
+            gps: [39.428, -0.3183],
+            battery: 0,
+            ref: useRef(null)
+        },
+        "ESP00002-123-0033": {
+            dic: "ESP00002-123-0033",
+            key: "1",
+            description: "Drone fisico",
+            status: false,
+            speed: 0,
+            alarmActive: 0,
+            url : '',
+            gps: [39.428, -0.4183],
+            battery: 0,
+            ref: useRef(null)
+        },
+        "ESP00003-123-0033": {
+            dic: "ESP00003-123-0033",
+            key: "2",
+            description: "Drone offline",
+            status: false,
+            speed: 0,
+            alarmActive: 0,
+            url : '',
+            gps: [39.328, -0.3183],
+            battery: 0,
+            ref: useRef(null)
+        }
     });
-
     const harborRoute = [
         [39.4400359, -0.3222084],
         [39.4336000, -0.3123000],
@@ -39,8 +75,10 @@ export const UserProvider = ( { children } ) => {
     const [statusRouteUPV, setStatusRouteUPV] = useState(false);
     const [statusRouteHarbor1, setStatusRouteHarbor1] = useState(false);
     const [statusRouteHarbor2, setStatusRouteHarbor2] = useState(false);
-    const [position, setPosition] = useState([39.4371,-0.3177])
+    // const [position, setPosition] = useState([39.4371,-0.4177])
     const [zoom, setZoom] = useState(15);
+    // Activate error connection label
+    const mapRef = useRef(null);
 
     const styleAlert = {
         background: '#EAEAEA',
@@ -61,7 +99,7 @@ export const UserProvider = ( { children } ) => {
     }
     const errorRouteInProgress = () => {
         Swal.fire({
-            title: 'ERROR: -3',
+            title: 'ERROR: Route in progress',
             text: "There's a route on going for ESP00001-123-0033",
             icon: 'error',
             styleAlert,
@@ -92,12 +130,12 @@ export const UserProvider = ( { children } ) => {
         }).then(( result ) => {
             if (result.isConfirmed) {
                 if (isUPV) {
-                    setPosition([39.48084, -0.33843]);
+                    // position = [39.48084, -0.33843];
                     setZoom(17);
                     alert('salga y vuelva a entrar a la sección de mapa');
                 }
                 setStatus(true);
-                fetch("http://localhost:60001/routes/0",
+                fetch(urlServer+"/routes/0",
                 {
                     headers: {
                         'Accept': 'application/json',
@@ -163,38 +201,121 @@ export const UserProvider = ( { children } ) => {
     // Hace fetch a la API 
     useEffect(() => {
         const fetchDataPeriodically = () => {
-            fetch('http://localhost:60001/metadata/all/0', {
+            if (localStorage.getItem("oroneta-user") !== "true") return;
+            let drones = Object.keys(infoDrone).join(';');
+            let keys = Object.keys(infoDrone).map( key => infoDrone[key].key).join(';');
+            fetch(`${urlServer}/metadata/all/${drones}`, {
             // mode: "no-cors",
-            headers: {Authorization: 'Bearer 0'}
+            headers: {Authorization: `Bearer ${keys}`},
             })
-            .then( response => response.json())
+            .then( response => {
+                if (!response.ok) {
+                    console.log('Network response was not ok');
+                }
+                return response.json();
+            })
             .then( data => {
-                const aux = data;
-                const allDrones = aux.data;
-                // console.log(allDrones[0])
-                setInfoDrone(allDrones[0]);
-                console.log( "Los datos recibidos son ",infoDrone )
+                console.log("API response data", data );
+                if (data.status === "OK") {
+                    let drones = Object.keys(data.data);
+                    // If every drone in infoDrone is not in data, then set status to false
+                    for (let drone in infoDrone) {
+                        infoDrone[drone].url = '';
+                        if (!drones.includes(drone)) {
+                            infoDrone[drone].status = false;
+                            infoDrone[drone].speed = 0;
+                            infoDrone[drone].battery = 0;
+                        } else {
+                            infoDrone[drone].status = data.data[drone].status;
+                            infoDrone[drone].speed = data.data[drone].speed;
+                            infoDrone[drone].gps = data.data[drone].gps;
+                            infoDrone[drone].battery = data.data[drone].battery;
+                            infoDrone[drone].url = urlServer + data.data[drone].image_path;
+                        }
+                    }
+                    // Re-render the component
+                    setInfoDrone({...infoDrone});
+                    console.log(infoDrone);
+
+                    // Hide error connection label
+                    window.errorCommHide();
+                    window.errorCommTries = 0;
+                }
             })
-            .catch((error) => console.error('ERROR', error))
+            .catch((error) => {
+                // Error connection
+                window.errorCommTries++;
+                console.log("Error connection", errorCommTries);
+
+                if (window.errorCommTries >= window.errorCommMaxTries) {
+                    console.log("Error en la conexión con el servidor");
+                    window.errorCommShow();
+                    window.errorCommTries = 0;
+                }
+            })
         };
         fetchDataPeriodically();
         const intervalId = setInterval(fetchDataPeriodically, 5000);
 
+        setInterval(function() {
+            if (localStorage.getItem("oroneta-user") == "true") {
+    
+                // Verificar si hay una alarma activa
+                Object.keys(infoDrone).forEach(el => {
+                    fetch(`${urlServer}/alarm/${infoDrone[el].dic}`,
+                    {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Bearer ${infoDrone[el].key}`
+                        }
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            console.log("Error al obtener la alarma", response)
+                        }
+                        return response.json()
+                    })
+                    .then(data => {
+                        if (data.data[infoDrone[el].dic].status === 1 && infoDrone[el].alarmActive === 0) {
+                            infoDrone[el].alarmActive = 1;
+                            console.log("Drone ", infoDrone[el], data);
+                            window.AlarmImage.show(infoDrone[el].dic, data.data[infoDrone[el].dic].image_path, false);
+                        }
+    
+                        if (data.data[infoDrone[el].dic].status === 0 && infoDrone[el].alarmActive === 1) {
+                            infoDrone[el].alarmActive = 0;
+
+                            const marker = infoDrones[el].ref.current;
+                            if (marker) {
+                                marker.closePopup();
+                            }
+                            window.AlarmImageObj.url = '';
+                            window.AlarmImage.hide();
+                        }
+
+                        window.errorCommHide();
+                        window.errorCommTries = 0;
+                    })
+                    .catch(error => {
+                        // Error connection
+                        window.errorCommTries++;
+
+                        if (window.errorCommTries >= window.errorCommMaxTries) {
+                            console.log("Error en la conexión con el servidor");
+                            window.errorCommShow();
+                            window.errorCommTries = 0;
+                        }
+                    });
+                });
+            }
+        }, 1000); // Verificar cada segundo
+
         return () => {
             clearInterval(intervalId);
         };
-    }, [])
+    }, []);
     
-    const infoDrones = [
-        {
-            id: 0,
-            gps: infoDrone.gps,
-        },
-        {
-            id: 1,
-            gps: [39.428, -0.3183],
-        }
-    ]
+    const infoDrones = infoDrone;
 
     const infoTotalDrones = {
         totalDrones: 3,
@@ -204,10 +325,25 @@ export const UserProvider = ( { children } ) => {
         totalFlights: 20,
     }
 
+    const deactivateAlarm = (dic) => {
+        // Delete fetch to deactivate alarm /alarm/:dic
+        fetch(`${urlServer}/alarm/${dic}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${infoDrone[dic].key}`
+            }
+        });
+    }
+
+    // const updatePosition = ( gps ) => {
+    //     position = gps;
+    //     // And update position in dom
+    // }
+
 
     // the export of the variables, functions
     return (
-        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, position, zoom, harborRoute, harborRoute2, upvRoute } }>
+        <UserContext.Provider value={ { infoDrone, infoTotalDrones, infoDrones, statusRouteHarbor1, mapRef, deactivateAlarm, statusRouteHarbor2, statusRouteUPV, handleChangeRouteHarbor1, handleChangeRouteHarbor2, handleChangeRouteUPV, zoom, harborRoute, harborRoute2, upvRoute } }>
             { children }
         </UserContext.Provider>
     )

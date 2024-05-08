@@ -7,6 +7,9 @@ import VuiTypography from "components/VuiTypography";
 // import VuiAvatar from "components/VuiAvatar";
 import VuiBadge from "components/VuiBadge";
 
+import { useContext } from 'react';
+
+import { UserContext } from 'context/UserContext';
 
 // function Author({ image, name, email }) {
 //   return (
@@ -77,7 +80,11 @@ function Function({ job, org }) {
   );
 }
 
-export default {
+export default () => {
+  const { infoDrones } = useContext( UserContext );
+  // console.log("aaaa", infoDrones["ESP00003-123-0033"].status);
+
+  return {
   columns: [
     { name: "Drone", align: "Center" },
     // { name: "function", align: "left" },
@@ -93,7 +100,19 @@ export default {
       </VuiTypography>,
       function: <Function job="Manager" org="Organization" />,
       status: (
-        statusDrone()
+        <VuiBadge
+          variant="standard"
+          badgeContent={infoDrones["ESP00001-123-0033"].status ? "Online" : "Offline"}
+          color={infoDrones["ESP00001-123-0033"].status ? "success" : "danger"}
+          size="xs"
+          container
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: infoDrones["ESP00001-123-0033"].status ? success.main : "unset",
+            border: `${borderWidth[1]} solid ${infoDrones["ESP00001-123-0033"].status ? success.main : "white"}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
       ),
       Last_fly: (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
@@ -110,12 +129,13 @@ export default {
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Offline"
+          badgeContent={infoDrones["ESP00002-123-0033"].status ? "Online" : "Offline"}
           size="xs"
+          color={infoDrones["ESP00002-123-0033"].status ? "success" : "danger"}
           container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: infoDrones["ESP00002-123-0033"].status ? success.main : "unset",
+            border: `${borderWidth[1]} solid ${infoDrones["ESP00002-123-0033"].status ? success.main : "white"}`,
             borderRadius: borderRadius.md,
             color: white.main,
           })}
@@ -136,13 +156,13 @@ export default {
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Online"
-          color="success"
+          badgeContent={infoDrones["ESP00003-123-0033"].status ? "Online" : "Offline"}
+          color={infoDrones["ESP00003-123-0033"].status ? "success" : "danger"}
           size="xs"
           container
           sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
-            background: success.main,
-            border: `${borderWidth[1]} solid ${success.main}`,
+            background: infoDrones["ESP00003-123-0033"].status ? success.main : "unset",
+            border: `${borderWidth[1]} solid ${infoDrones["ESP00003-123-0033"].status ? success.main : "white"}`,
             borderRadius: borderRadius.md,
             color: white.main,
           })}
@@ -154,5 +174,6 @@ export default {
         </VuiTypography>
       ),
     },
-  ],
+  ]
+  };
 };
