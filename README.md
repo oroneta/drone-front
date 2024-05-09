@@ -55,11 +55,20 @@ Drones page:
 
 ![Drones page](./doc/img/drone.png)
 
+![Drones page](./doc/img/drone2.png)
+
 Map page:
 
 ![Routes page](./doc/img/map.png)
 
 ![Routes page](./doc/img/map2.png)
+
+![Routes page](./doc/img/map3.png)
+
+![Routes page](./doc/img/map4.png)
+
+![Routes page](./doc/img/map5.png)
+
 
 Profile page:
 
