@@ -26,9 +26,10 @@ services:
             context: ..
             dockerfile: ./docker/www/${SERVER_ENV}/Dockerfile
         ports: 
-            - "80:80"
+            - "80:3000"
         env_file:
             - .env
+        stdin_open: true
         depends_on:
             - oroneta.drone-front.db
         volumes:
@@ -44,7 +45,7 @@ services:
         depends_on: 
             - oroneta.drone-front.db
         ports:
-            - "8081:80"
+            - "8082:80"
         environment:
             # PMA_HOST: ${DB_HOST}
             PMA_HOST: ${DB_HOST}
