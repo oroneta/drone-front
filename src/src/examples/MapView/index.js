@@ -24,7 +24,7 @@ let position = [39.4371,-0.4177];
 
 export const MapView = ({href, height, width, borderRadius, enableTool }) => {
     
-    const { infoDrones, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, zoom, harborRoute, harborRoute2, upvRoute, mapRef, deactivateAlarm } = useContext( UserContext );
+    const { infoDrones, infoDrone, statusRouteHarbor1, statusRouteHarbor2, statusRouteUPV, zoom, harborRoute, harborRoute2, upvRoute, mapRef, deactivateAlarm } = useContext( UserContext );
 
 
     // Update position with infoDrones[dic].gps
@@ -88,8 +88,6 @@ export const MapView = ({href, height, width, borderRadius, enableTool }) => {
                     </div>
                 </Popup>
             </Marker>})}
-            {/* <Marker position={[39.4371, -0.3177]} >
-            </Marker> */}
         </MapContainer>)
         :
         (<MapContainer 

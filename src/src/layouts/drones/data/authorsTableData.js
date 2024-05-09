@@ -1,5 +1,5 @@
-import React  from 'react';
-
+import React, { useContext }  from 'react';
+import { UserContext } from 'context/UserContext';
 /* eslint-disable react/prop-types */
 // Oroneta components
 import VuiBox from "components/VuiBox";
@@ -7,9 +7,6 @@ import VuiTypography from "components/VuiTypography";
 // import VuiAvatar from "components/VuiAvatar";
 import VuiBadge from "components/VuiBadge";
 
-import { useContext } from 'react';
-
-import { UserContext } from 'context/UserContext';
 
 // function Author({ image, name, email }) {
 //   return (
@@ -28,6 +25,44 @@ import { UserContext } from 'context/UserContext';
 //     </VuiBox>
 //   );
 // }
+
+const statusDrone = (status) => {
+  if (status) {
+    return (
+      <VuiBadge
+        variant="standard"
+        badgeContent="Online"
+        color="success"
+        size="xs"
+        container
+        sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+          background: success.main,
+          border: `${borderWidth[1]} solid ${success.main}`,
+          borderRadius: borderRadius.md,
+          color: white.main,
+        })}
+      />
+    );
+  }
+  else {
+    return (
+      <VuiBadge
+          variant="standard"
+          badgeContent="Offline"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+    );
+  }
+};
+
+
 
 function Function({ job, org }) {
   return (
@@ -54,7 +89,6 @@ export default () => {
     { name: "Last_fly", align: "center" },
     // { name: "action", align: "center" },
   ],
-
   rows: [
     {
       Drone: 
