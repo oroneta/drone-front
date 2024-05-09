@@ -1,31 +1,15 @@
+# Build React Website
+FROM node:20.11.1 as build
 
-# Dev pre-production
-FROM php:8.0.0-apache
-ARG DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
 
-WORKDIR /var/www/html
+# Solve Error: error:0308010C:digital envelope routines::unsupported
+# https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
+# Copy source to build
+COPY ./src ./
 
-RUN docker-php-ext-install pdo
-RUN docker-php-ext-install pdo_mysql
-
-# Include alternative DB driver
-# RUN docker-php-ext-install mysqli
-
-
-RUN apt-get update \
-    && apt-get install -y sendmail libpng-dev \
-    && apt-get install -y libzip-dev \
-    && apt-get install -y zlib1g-dev \
-    && apt-get install -y libonig-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && docker-php-ext-install zip
-
-
-
-RUN docker-php-ext-install mbstring
-RUN docker-php-ext-install zip
-RUN docker-php-ext-install gd
-
-RUN a2enmod rewrite
-
+# Install all dependencies
+RUN npm install
+CMD ["npm", "run", "start", "&&", "tail", "-f", "/dev/null"]

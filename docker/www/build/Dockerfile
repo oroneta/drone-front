@@ -1,21 +1,21 @@
 # Build React Website
-FROM node:20.11.1 as build
+# FROM node:20.11.1 as build
 
-WORKDIR /app
+# WORKDIR /app
 
-# Solve Error: error:0308010C:digital envelope routines::unsupported
-# https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
-ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+# # Solve Error: error:0308010C:digital envelope routines::unsupported
+# # https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported
+# ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
-# Copy source to build
-COPY ./src ./
+# # Copy source to build
+# COPY ./src ./
 
-# Install all dependencies
-RUN npm install
-RUN npm run build
+# # Install all dependencies
+# RUN npm install
+# RUN npm run build
 
 
-# ---------------------------------
+# # ---------------------------------
 
 
 # Production
@@ -28,9 +28,9 @@ WORKDIR /var/www/html
 RUN rm -rf ./*
 
 # Copy from react buld to production server
-COPY --from=build /app/build /var/www/html
+COPY ./src/build /var/www/html
 
-COPY ./www .
+# COPY ./www .
 
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
